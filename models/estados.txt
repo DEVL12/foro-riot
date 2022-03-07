@@ -1,0 +1,4 @@
+    //el estado de la discusión puede ser: abierta/cerrada/terminada/oculta
+    //el estado de las respuestas serán 1 para normal y -1 para oculto
+    //el estado de los jugadores será 1 para normal y -1 para bloqueado
+    //el estado de bloqueo será 1 para activo y -1 para inactivo

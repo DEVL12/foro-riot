@@ -1,60 +1,66 @@
 <?php  
-	class PlayerModel extends BaseModel
+	class PlayerModel extends mysql
 	{
 		public function __construct()
 		{
 			parent::__construct();
 		}
-
-		public function AddPlayer($name, $photo, $email, $birthdayDate, $user, $password){
-			$this->sql = "INSERT INTO jugador (nombre, foto, correo, fecha_nacimiento, estado, rol, usuario, contraseña)
-				  VALUES ('$name', '$photo', '$email', '$birthdayDate', 1, 'jugador', '$user', '$password')";
-			$this->connection->query($this->sql);
-		}
 		
 		public function GetPlayersByAproxField($field, $search){
-			$this->result = mysqli_query($this->connection, "SELECT * FROM jugador WHERE $field LIKE '%$search%'");
-            return $this->GetRows();
+			$sql = "SELECT * FROM jugador WHERE $field LIKE '%$search%'";
+			$request = $this->select($sql);
+			return $request;
 		}
 
+		public function GetPlayerById($id){
+			$sql = "SELECT * FROM jugador WHERE id = {$id}";
+			$request = $this->select($sql);
+			return $request;
+		}
+		
+		public function AddPlayer($name, $photo, $email, $date, $user, $password){
+			$sql = "INSERT INTO jugador (nombre, foto, correo, fecha_nacimiento, estado, rol, usuario, contraseña)
+				VALUES (?, ?, ?, ?, 1, 'jugador', ?, ?)";
+      		$arrData = array($name, $photo, $email, $date, $user, $password);
+			$request = $this->insert($sql,$arrData);
+			return $request;
+		}
+		
+		public function UpdatePlayer($playerId, $name, $photo, $user, $password){
+			$request = $this->GetPlayerById($playerId);
+			if(!empty($request)) {
+				$sql = "UPDATE jugador 
+					SET nombre=?, foto =?, usuario=?, contraseña=?
+					WHERE id={$playerId}";
+				$arrData = array($name, $photo, $user, $password);
+				$request = $this->update($sql, $arrData);
+				return $request;
+			}
+			else
+				return NULL;
+		}
+		
 		public function TryLogIn($user, $password){
 			return $this->CheckLogIn($user, $password);
 		}
 
-		public function UpdatePlayer($playerId, $name, $photo, $user, $password){
-			$this->sql = "UPDATE jugador 
-			SET nombre='$name', foto='$photo', usuario='$user', contraseña='$password'
-			WHERE id=$playerId";
-			$this->connection->query($this->sql);
-		}
-		
 		public function CheckUser($user){
 			return $this->CompareUser($user);
 		}
 
-		public function CheckThis($field, $data){
-			if($field = 'usuario')
-				return $this->CheckUser();
-			else{
-				$this->result = mysqli_query($this->connection, "SELECT $field FROM jugador WHERE $field='$data'");
-				if(empty($this->GetRows()))
-					return false;
-				else
-					return true;
-			}
-		}
-
 		private function CompareUser($user){
-			$this->result = mysqli_query($this->connection, "SELECT usuario FROM jugador WHERE usuario='$user'");
-			if(empty($this->GetRows()))
+			$sql = "SELECT usuario FROM jugador WHERE usuario='$user'";
+			$request = $this->select($sql);
+			if(empty($request))
 				return false;
 			else
 				return true;
 		}
 		
 		private function ComparePassword($password){
-			$this->result = mysqli_query($this->connection, "SELECT * FROM jugador WHERE contraseña='$password'");
-			if(empty($this->GetRows()))
+			$sql = "SELECT * FROM jugador WHERE contraseña='$password'";
+			$request = $this->select($sql);
+			if(empty($request))
 				return false;
 			else
 				return true;

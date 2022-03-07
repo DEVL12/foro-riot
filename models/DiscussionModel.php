@@ -1,63 +1,91 @@
 <?php  
-	class DiscussionModel extends BaseModel
+	class DiscussionModel extends mysql
 	{
 		public function __construct()
 		{
 			parent::__construct();
 		}
 
-        public function AddDiscussion($title, $authorId, $content, $topic, $platform, $image){
-            $this->sql = "INSERT INTO discusion (titulo, id_autor, contenido, contenido_original, 
-                editado, tema, plataforma, imagen, fecha, hora, estado)
-                      VALUES ('$title', $authorId, '$content', '$content', 0, '$topic', '$platform',
-                     '$image', '". date('d/m/Y') . "', '" . date('G:i') . "', 'abierta')";
-            $this->connection->query($this->sql);
+        public function GetAllDiscussions(){
+            $sql = "SELECT * FROM discusion";
+            $request = $this->select_all($sql);
+            return $request;
         }
 
         public function GetDiscussionById($id){
-            $this->result = mysqli_query($this->connection, "SELECT * FROM discusion WHERE id=$id");
-            return $this->GetRows();
+            $sql = "SELECT * FROM discusion WHERE id = {$id}";
+			$request = $this->select($sql);
+			return $request;
         }
 
-        public function GetAllDiscussions(){
-            $this->result = mysqli_query($this->connection, "SELECT * FROM discusion");
-            return $this->GetRows();
-        }
-
+		public function GetVisibleDiscussions(){
+			$sql = "SELECT * FROM discusion WHERE estado != 'oculta'";
+			$request = $this->select($sql);
+			return $request;
+		}
+        
         public function GetNumberOfDiscussionOfAPlayer($playerId){
-            $this->result = mysqli_query($this->connection, "SELECT COUNT(id) FROM discusion WHERE id_autor =$playerId");
-            $result = $this->GetRows();
-			return $result['COUNT(id)'];
+            $sql = "SELECT COUNT(id) FROM discusion WHERE id_autor =$playerId";
+			$request = $this->select($sql);
+			return $request;
         }
-
+        
         public function GetDiscussionsByAproxField($field, $search){
-            $this->result = mysqli_query($this->connection, "SELECT * FROM discusion WHERE $field LIKE '%$search%'");
-            return $this->GetRows();
+            $sql = "SELECT * FROM discusion WHERE $field LIKE '%$search%'";
+			$request = $this->select($sql);
+			return $request;
         }
-
+        
         public function GetDiscussionsOfAnUser($id){
-            $this->result = mysqli_query($this->connection, "SELECT * FROM discusion WHERE id_autor=$id");
-            return $this->GetRows();
+            $sql = "SELECT * FROM discusion WHERE id_autor={$id}";
+			$request = $this->select($sql);
+			return $request;
+        }
+        
+        public function AddDiscussion($title, $authorId, $content, $topic, $platform, $image){
+            $sql = "INSERT INTO discusion (titulo, id_autor, contenido, contenido_original, 
+                    editado, tema, plataforma, imagen, fecha, hora, estado)
+                    VALUES (?, ?, ?, ?, 0, ?, ?, ?, '". date('d/m/Y') . "', '" . date('G:i') . "', 'abierta')";
+            $arrData = array($title, $authorId, $content, $content, $topic, $platform, $image);
+            $request = $this->insert($sql,$arrData);
+            return $request;
         }
         
         public function UpdateDiscussion($id, $title, $content, $image){
-            $this->sql = "UPDATE discusion 
-                SET titulo='$title', contenido='$content',
-                editado=1, imagen='$image'
-                WHERE id=$id";
-            $this->connection->query($this->sql);
+            $request = $this->GetDiscussionById($id);
+			if(!empty($request)) {
+				$sql = "UPDATE discusion 
+                    SET titulo=?, contenido=?, editado=1, imagen=?
+                    WHERE id={$id}";
+				$arrData = array($title, $content, $image);
+				$request = $this->update($sql, $arrData);
+				return $request;
+			}
+			else 
+				return NULL;
         }
 
         public function ChangeDiscussionState($id, $state){
-            $this->sql = "UPDATE discusion 
-                SET estado='$state'
-                WHERE id=$id";
-            $this->connection->query($this->sql);
+            $request = $this->GetDiscussionById($id);
+			if(!empty($request)) {
+				$sql = "UPDATE discusion SET estado=? WHERE id={$id}";
+				$arrData = array($state);
+				$request = $this->update($sql, $arrData);
+				return $request;
+			}
+			else 
+				return NULL;
         }
 
         public function DeleteDiscussion($id){
-            $this->sql = "DELETE FROM discusion WHERE id = $id";
-            $this->connection->query($this->sql);
+            $request = $this->GetPlatformById($id);
+			if(!empty($request)){
+				$sql = "DELETE FROM discusion WHERE id = {$id}";
+				$request = $this->delete($sql);
+				return $request;
+			}
+			else
+				return NULL;
         }
 	}
 ?>

@@ -1,36 +1,51 @@
 <?php  
-	class PlatformModel extends BaseModel
+	class PlatformModel extends mysql
 	{
 		public function __construct()
 		{
 			parent::__construct();
 		}
 
-		public function AddPlatform($name, $image){
-			$this->sql = "INSERT INTO plataforma (nombre, imagen) VALUES ('$name', '$image')";
-            $this->connection->query($this->sql);
-		}
-
 		public function GetAllPlatforms(){
-			$this->result = mysqli_query($this->connection, "SELECT * FROM plataforma");
-            return $this->GetRows();
+			$sql = "SELECT * FROM plataforma";
+			$request = $this->select_all($sql);
+			return $request;
 		}
 
-		public function GetPlatformByName($name){
-			$this->result = mysqli_query($this->connection, "SELECT * FROM plataforma WHERE nombre = '$name'");
-            return $this->GetRows();
+		public function GetPlatformById($id){
+			$sql = "SELECT * FROM plataforma WHERE id = {$id}";
+			$request = $this->select($sql);
+			return $request;
+		}
+
+		public function AddPlatform($name, $image){
+			$sql = "INSERT INTO plataforma (nombre, imagen) VALUES (?, ?)";
+      		$arrData = array($name, $image);
+			$request = $this->insert($sql,$arrData);
+			return $request;
 		}
 
 		public function UpdatePlatform($id, $name, $image){
-			$this->sql = "UPDATE plataforma 
-                SET nombre='$name', imagen='$image'
-                WHERE id=$id";
-            $this->connection->query($this->sql);
+			$request = $this->GetPlatformById($id);
+			if(!empty($request)) {
+				$sql = "UPDATE plataforma SET nombre = ?, imagen = ? WHERE id = {$id}";
+				$arrData = array($name, $image);
+				$request = $this->update($sql, $arrData);
+				return $request;
+			}
+			else
+				return NULL;
 		}
 
 		public function DeletePlatform($id){
-			$this->sql = "DELETE FROM plataforma WHERE id=$id";
-            $this->connection->query($this->sql);
+			$request = $this->GetPlatformById($id);
+			if(!empty($request)){
+				$sql = "DELETE FROM plataforma WHERE id = {$id}";
+				$request = $this->delete($sql);
+				return $request;
+			}
+			else
+				return NULL;
 		}
 	}
 ?>
