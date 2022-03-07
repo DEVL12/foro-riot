@@ -22,9 +22,9 @@
 		{
 			for ($i = 2; $i < count($arrUrl); $i++)
 			{
-				$params .= $arrUrl[$i] . ", ";
+				$params .= $arrUrl[$i] . ",";
 			}
-			$params = trim($params, ", ");
+			$params = trim($params, ",");
 		}
 	}
 	
