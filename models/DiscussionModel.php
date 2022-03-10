@@ -1,5 +1,5 @@
 <?php
-	class DiscussionModel extends mysql
+	class discussionModel extends mysql
 	{
 		public function __construct() {
 			parent::__construct();
