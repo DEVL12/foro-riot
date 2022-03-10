@@ -62,9 +62,11 @@
 				return NULL;
 		}
 
-		public function DeleteAnswer($id) {
+		public function DeleteAnswer($id){	
 			$request = $this->GetAnswerById($id);
-			if(!empty($request)) {
+			if(!empty($request)){
+				$sql = "DELETE FROM honor WHERE id_objetivo = {$id} AND tipo_objetivo='respuesta'";
+				$request = $this->delete($sql);
 				$sql = "DELETE FROM respuesta WHERE id={$id}";
 				$request = $this->delete($sql);
 				return $request;

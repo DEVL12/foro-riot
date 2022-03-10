@@ -80,6 +80,8 @@
         public function DeleteDiscussion($id){
             $request = $this->GetPlatformById($id);
 			if(!empty($request)){
+				$sql = "DELETE FROM honor WHERE id_objetivo = {$id} AND tipo_objetivo='discusion'";
+				$request = $this->delete($sql);
 				$sql = "DELETE FROM discusion WHERE id = {$id}";
 				$request = $this->delete($sql);
 				return $request;
