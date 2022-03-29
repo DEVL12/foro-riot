@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2022 a las 22:52:49
+-- Tiempo de generación: 28-03-2022 a las 17:51:23
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -72,7 +72,8 @@ CREATE TABLE `discusion` (
 --
 
 INSERT INTO `discusion` (`id`, `titulo`, `id_autor`, `contenido`, `contenido_original`, `editado`, `tema`, `plataforma`, `imagen`, `fecha`, `hora`, `estado`) VALUES
-(8, 'Zilean necesita un buff', 1, 'Zilean es una autentica basura, deberian hacer que cada ronda te de una bomba de tiempo', 'Zilean es una autentica basura, deberian hacer que cada ronda te de una bomba de tiempo', 1, 'Queja', 'Legends of Runaterra', '', '05/03/2022', '11:33', 'cerrada');
+(8, 'Zilean necesita un buff', 1, 'Zilean es una autentica basura, deberian hacer que cada ronda te de una bomba de tiempo', 'Zilean es una autentica basura, deberian hacer que cada ronda te de una bomba de tiempo', 1, 'Queja', 'Legends of Runaterra', '', '05/03/2022', '11:33', 'cerrada'),
+(11, 'Deseó la muerte a mi gato', 1, 'ayer estaba jugando una ranked y el jugador unknownenemy empezó\r\n    a insultarme porque moría mucho (normal, me gankeaba una evelyn invisible y me rompían el pink todo el rato)\r\n    y le deseó la muerte a mi, mi familia, mi gato y mis futuros hijos, además, al terminar la partida dejó este\r\n    comentario', 'ayer estaba jugando una ranked y el jugador unknownenemy empezó\r\n    a insultarme porque moría mucho (normal, me gankeaba una evelyn invisible y me rompían el pink todo el rato)\r\n    y le deseó la muerte a mi, mi familia, mi gato y mis futuros hijos, además, al terminar la partida dejó este\r\n    comentario', 0, 'Reporte a jugador', 'League of Legends', 'https://scontent.fbrm1-1.fna.fbcdn.net/v/t1.15752-9/275390662_536709401207810_1989488988735180439_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_ohc=5T1pQO781WcAX-qw_FD&_nc_ht=scontent.fbrm1-1.fna&oh=03_AVI5kcqz-KP8h1v3JpkkQN4TM3XMkrxjr12qoy8LUUoAew&oe=62672C78', '28/03/2022', '11:41', 'abierta');
 
 -- --------------------------------------------------------
 
@@ -193,8 +194,6 @@ CREATE TABLE `tema` (
 --
 
 INSERT INTO `tema` (`id`, `nombre`) VALUES
-(12, '07-03-2022 15:04:32 PM'),
-(13, '07-03-2022 17:14:08 PM'),
 (2, 'Bug'),
 (7, 'Creaciones de la comunidad'),
 (6, 'Eventos'),
@@ -203,7 +202,8 @@ INSERT INTO `tema` (`id`, `nombre`) VALUES
 (8, 'Memes'),
 (3, 'Problemas técnicos'),
 (1, 'Queja'),
-(4, 'Reclutamiento');
+(4, 'Reclutamiento'),
+(14, 'Reporte a jugador');
 
 --
 -- Índices para tablas volcadas
@@ -275,7 +275,7 @@ ALTER TABLE `bloqueo`
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `honor`
@@ -305,7 +305,7 @@ ALTER TABLE `respuesta`
 -- AUTO_INCREMENT de la tabla `tema`
 --
 ALTER TABLE `tema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
