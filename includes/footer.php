@@ -27,7 +27,7 @@
           <h5 class="title">Creadores</h5>
           <ul>
             <li><a href="">Jose A. Pérez</a></li>
-            <li><a href="">Richelly Castillo</a></li>
+            <li><a href="">Richellys Castillo</a></li>
             <li><a href="">José Díaz</a></li>
             <li><a href="">Gabriel Silva</a></li>
             <li><a href="">Douglas Torrealba</a></li>
