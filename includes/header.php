@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="assets/images/riot.png">
-    <title>Foro Riot Games | Inicio</title>
+    <link rel="icon" href="<?=base_url()?>assets/images/riot.png">
+    <title><?= $data['title']; ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/theme.css" rel="stylesheet">
     <!-- Begin tracking codes here, including ShareThis/Analytics -->
     <!-- End tracking codes here, including ShareThis/Analytics -->
   </head>
@@ -22,7 +22,7 @@
     <div class="container">
       <!-- Begin Logo -->
       <a class="navbar-brand" href="<?= base_url() ?>">
-        <img src="assets/images/logo1.png" alt="Affiliates - Free Bootstrap Template">
+        <img src="<?= base_url() ?>assets/images/logo1.png" alt="Affiliates - Free Bootstrap Template">
       </a>
       <!-- End Logo -->
       <!-- Begin Menu -->

@@ -9,11 +9,17 @@
 		public function home()
 		{
 			$data = array();
-			$data['titulo'] = "Página principal";
-			$data['contenido'] = "Sea bienvenido a nuestro foro :D";
+			$data['title'] = "Foro Riot Games | Inicio";
 			$data['script'] = "prueba.js";
+			$this->views->getViews($this, "home", $data);
+		}
 
-			$this->views->getViews($this,"home",$data);
+		public function aboutUs()
+		{
+			$data = array();
+			$data['title'] = "Foro Riot Games | Sobre Nosotros";
+			$data['script'] = "prueba.js";
+			$this->views->getViews($this, "aboutUs", $data);
 		}
 	}
 ?>

@@ -17,7 +17,7 @@
      <a class="nav-link" href="category.html">Guia De Uso</a>
    </li>
    <li class="nav-item">
-     <a class="nav-link" href="about.html">Sobre Nosostros</a>
+     <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>
    </li>
    <li class="nav-item">
      <a target="_blank" class="nav-link highlight" href="http://localhost/foro/member.php?action=register">Registrate</a>
