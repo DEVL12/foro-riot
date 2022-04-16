@@ -23,7 +23,7 @@
      <a target="_blank" class="nav-link highlight" href="http://localhost/foro/member.php?action=register">Registrate</a>
    </li>
    <li class="nav-item">
-     <a target="_blank" class="nav-link highlight" href="http://localhost/foro/member.php?action=login">Iniciar Sesión</a>
+     <a target="_blank" class="nav-link highlight" href="<?= base_url() ?>login">Iniciar Sesión</a>
    </li>
  </ul>
  <!-- End Menu -->
