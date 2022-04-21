@@ -6,12 +6,20 @@
       parent::__construct();
     }
 
-    public function session()
+    public function login()
     {
       $data = array();
-      $data['titulo'] = "Foro Riot Games - Iniciar sesión";
+      $data['title'] = "Foro Riot Games - Iniciar sesión";
       $data['script'] = "prueba.js";
       $this->views->getViews($this,"login",$data);
+    }
+
+    public function register()
+    {
+      $data = array();
+      $data['title'] = "Foro Riot Games - Registro";
+      $data['script'] = "prueba.js";
+      $this->views->getViews($this,"register",$data);
     }
   }
 ?>

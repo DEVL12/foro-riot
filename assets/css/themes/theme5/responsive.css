@@ -1,0 +1,771 @@
+@media only screen and (max-width: 1200px) {
+
+	.thead > .float_right{
+		float:none;
+		display:block;
+	}
+
+	.usernav-spacer {
+		padding-right:0px;
+	}
+
+	select {
+		margin-bottom:5px;
+	}
+
+	table {
+		overflow:hidden;
+	}
+
+	#receivedrequests, #sentrequests {
+		width:100% !important;
+	}
+
+	#show_smilies td {
+		display:table-cell;
+	}
+
+	.attribute_footer {
+		float:none;
+		margin-bottom:20px;
+	}
+
+	#footer {
+		text-align:center;
+	}
+
+	.footer_links a {
+	font-size:12px;
+	margin-right:15px;
+	}
+
+	#pm_folder_list {
+	max-height:700px;
+}
+
+	.guestwelcomemsg {
+background-position: right;
+	}
+
+	#modcp_pages .tborder, .table_fixed {
+	table-layout: fixed !important;
+	white-space: normal !important;
+	overflow:hidden !important;
+	}
+
+		#modcp_pages td, .table_fixed td {
+		display:table-cell !important;
+		overflow:hidden !important;
+	}
+
+	.show_hide_mobile_header {
+		font-weight:900;cursor:pointer;
+	}
+
+	.mobile_header {
+		background:#18181a;padding:8px 20px;border-bottom:1px solid #1c1d22;
+	}
+
+	.mobile_header a{
+		display:block;
+		padding:10px 5px;
+		border-bottom:1px solid #131314;
+		font-size:14px;
+	}
+
+	.mobile_header a:hover{
+		background:#131314;
+	}
+
+	.mobile_header i{
+		margin-right:12px;
+	}
+
+
+	.mobile_hide {
+		display:none;
+	}
+
+	#pm_folder_list {
+		height:auto !important;
+	}
+
+	#redirect_box {
+		width:90% !important;
+	}
+
+	#log_reg_table {
+		width:100%;
+	}
+
+	#guest_info_header {
+	margin-top:4px;
+	}
+
+	.title-img {
+		margin-top:5px;
+	}
+
+	.title-img-guest {
+		margin-top:2px !important;
+		margin-bottom:2px;
+	}
+
+
+	#member_info_header {
+	margin-top:-8px;
+	}
+
+	.top_links {
+		display:none;
+	}
+
+	.profile-containter_extras {
+margin:0px;margin-top:-180px;
+}
+
+	ul.tabs li {
+		display:inline-block !important;
+		}
+
+	.left-sidebar {
+	width:100% !important;margin-bottom:30px;
+	}
+
+	.sidebar-inner {
+		padding:0px !important;
+	}
+
+	.private_home_center_text{
+	position: static;top: auto;left:auto;padding:30px 0px;
+}
+
+	.private_main_box {
+		height:auto !important;
+	}
+
+	.memberlist_search_width {
+		width:240px !important;
+	}
+
+
+	.memberlist_card {
+		display:block;
+		width:100%;
+		box-sizing: border-box;
+		margin:0px;
+		margin-top:20px;
+	}
+
+	.mobile_only_tr {
+		display: table-row;
+	}
+
+	.mobile_only {
+		display:block;
+	}
+
+	.mobile_thread_sep {
+		margin-bottom:20px;
+		border-bottom:1px solid #1e1f24;
+	}
+	.mobile_modbit {
+		float:right;
+	}
+
+	.threadlisting {
+		margin-bottom:20px !important;
+	}
+
+	.threadlisting > td {
+		display:inline-block;
+		border-bottom:none;
+		padding:0px;
+		margin:0px;
+		max-width:250px;
+	}
+
+	.thread_info {
+		margin-left:30px !important;
+	}
+
+	.postbit_avatar {
+		width:30px !important;
+		height:30px !important;
+	}
+
+	.postbit_avatar_margins {
+		width:30px !important;
+		margin-left:23px;margin-right:-5px;margin-top:30px;
+		}
+
+	.post {
+		margin-left:0px;
+	}
+
+	.mobile_no_float {
+float:none !important;
+	}
+
+	.mobile_line_break {
+		display:block;
+	}
+
+
+
+body[class*="newreply"] .tborder *[class*="trow"],
+ body[class*="newthread"] .tborder *[class*="trow"],
+ body[class*="editpost"] .tborder *[class*="trow"],
+ body[class*="private.php send"] .tborder *[class*="trow"],
+body[class*="search.php"] .tborder *[class*="trow"],
+	body[class*="avatar"] .tborder *[class*="trow"],
+	body[class*="password"] .tborder *[class*="trow"],
+	body[class*="email"] .tborder *[class*="trow"],
+	body[class*="changename"] .tborder *[class*="trow"],
+	body[class*="editsig"] .tborder *[class*="trow"],
+	body[class*="contact_us"] .tborder *[class*="trow"]{
+  display:block;
+  width:auto;
+ }
+
+
+body[class*="usercp.php options"] td[width*="50%"] {
+  display:block;
+  width:auto;
+}
+
+body {
+margin-bottom:20px !important;
+}
+
+	.mobile_width {
+		width:100% !important;
+		box-sizing: border-box;
+	}
+
+input.textbox {
+  font-size: 16px !important;
+	box-sizing: border-box;
+	width:100% !important;
+}
+
+input.text {
+  font-size: 16px !important;
+}
+
+textarea {
+  font-size: 16px !important;
+	}
+
+.textbox {
+  font-size: 16px !important;
+	}
+
+td {
+  display:block;
+  width:auto;
+margin:4px 0px;
+	text-align:left;
+}
+
+	.tcat {
+		display:none;
+	}
+
+	.tcat_menu {
+		display:block !important;
+	}
+
+.red_alert {
+	width:100%;box-sizing: border-box;
+	}
+
+#panel .upper {
+padding:8px 0px;
+line-height:normal;
+height:auto;
+}
+
+#aboutus_page {
+width:auto;
+}
+
+.floating_button {
+	float:none;
+	display:block;
+	margin-top:5px;
+	}
+
+#backtop {
+bottom: 55px;
+right: 10px;
+}
+
+.desktop-td-only [class*="trow"] {
+	display:none; }
+
+.mobile-td-only [class*="trow"] {
+	display:table-cell;}
+
+.mobile-only {
+	display:block;
+}
+.desktop-only {
+	display:none;
+}
+#desktop-only {
+	display:none;
+}
+.mobile-only-inl {
+	display:inline-block;
+}
+.desktop-only-inl {
+	display:none;
+}
+#desktop-only-table {
+	display:none;
+}
+
+.wrapper {
+  width: 98%;
+  min-width: auto;
+  max-width: none;
+}
+
+.upper .wrapper {
+  padding-left:12px;
+  padding-right:12px;
+  box-sizing:border-box;
+}
+
+.upper .wrapper [style*="float:left"]{
+  float:none !Important;
+  display:inline-block;
+}
+
+.upper .wrapper [style*="float:left;margin-top:-2px;margin-left:30px"] {
+  display:none;
+}
+
+.upper .wrapper [style*="float:right;margin-top:-8px;margin-left:15px"] {
+  position:relative;
+  top:4px;
+}
+
+.v-center {
+  top:0;
+}
+
+#header ul.menu {
+  float:right;
+  position:relative;
+  top:6px;
+}
+
+#container {
+ min-width:auto;
+}
+
+#content {
+	margin-top:10px !important;
+  padding:10px;
+  box-sizing:border-box;
+	overflow:hidden;
+}
+
+.sidebar, .forums, .sidebar-pm, .forums-pm {
+  float:none !Important;
+  width:auto !Important;
+}
+
+.forums {
+  margin-top:8px;
+}
+
+.forums td[width="25%"] {
+  display:block;
+  width:auto;
+}
+
+.post [style*="margin-left:74px"] {
+   margin-left:0px !Important;
+}
+
+.post .avatar_style {
+  width:40px !Important;
+  height:40px !Important;
+}
+
+.post a[data-uid] {
+	float:left;
+  padding-right:10px;
+}
+
+
+
+body[class="member.php register"]   td[width*="50%"] {
+ display:block;
+ width:auto;
+}
+
+body[class*="modcp.php "]  td[valign="top"][width="240"], body[class*="modcp.php "]  td[valign="top"][width="240"] + td {
+  display:block;
+  width:auto;
+margin:4px 0px;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td:nth-child(2), body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td:nth-child(4) , body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td:nth-child(5){
+ display:none;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td {
+ text-align:left;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td:first-child {
+ width:65%;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(2) td:nth-child(3) {
+ text-align:right;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(3) td:nth-child(3), body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(3) td:nth-child(4) {
+ display:none;
+}
+
+body[class="modcp.php "]  td[valign="top"][width="240"] + td .tborder:nth-of-type(3) td:nth-child(2) {
+ text-align:right;
+}
+
+body[class="modcp.php allreports"] td[valign="top"][width="240"] + td .tborder td.tcat:not(:first-child ){
+ display:none;
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td:not(.thead):not(.tcat) {
+ display:block;
+ text-align:left;
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td:before {
+ display:block;
+ position:relative;
+ padding-bottom:3px;
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"] {
+ width:auto;
+ display:block;
+ border-width:0px 1px;
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(1):before {
+ content:"Reported Content";
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(2):before {
+ content:"Report reason";
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(3):before {
+ content:"Reporter";
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(4):before {
+ content:"# of Reports";
+}
+
+body[class="modcp.php allreports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(5):before {
+ content:"Reported";
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td:nth-child(3) {
+ display:none;
+}
+
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"] {
+ border-width:0px;
+}
+
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder .tcat:nth-child(2), body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder .tcat:nth-child(4) {
+ display:none;
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder .tcat:nth-child(5) {
+ text-align:right;
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder tr, body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td.thead{
+ display:block;
+ position:relative;
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"] {
+ display:block;
+ text-align:left;
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(5) {
+ position:absolute;
+ z-index:3;
+ top:0px;
+ right:0px;
+}
+
+body[class="modcp.php reports"] td[valign="top"][width="240"] + td .tborder td:before {
+ display:block;
+ position:relative;
+ padding-bottom:3px;
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(1):before {
+ content:"Reported Content";
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(2):before {
+ content:"Reported Reason";
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(3):before {
+ content:"# of reports";
+}
+
+body[class="modcp.php reports"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(4):before {
+ content:"Last Reported";
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td {
+ text-align:left;
+}
+
+
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder td:before {
+ display:block;
+ position:relative;
+ padding-bottom:3px;
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) .tcat:not(:first-child) {
+ display:none;
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"] {
+ display:block;
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"]:nth-child(1):before {
+ content:"Username";
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"]:nth-child(2):before {
+ content:"Date";
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"]:nth-child(3):before {
+ content:"Action";
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"]:nth-child(4):before {
+ content:"Information";
+}
+
+body[class="modcp.php modlogs"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td[class*="trow"]:nth-child(5):before {
+ content:"IP";
+}
+
+body[class="modcp.php finduser"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td:nth-child(2),
+body[class="modcp.php finduser"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td:nth-child(3),
+body[class="modcp.php finduser"]  td[valign="top"][width="240"] + td .tborder:nth-of-type(1) td:nth-child(4) {
+ display:none;
+}
+
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td:before {
+ display:block;
+ position:relative;
+ padding-bottom:3px;
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(1):before {
+ content:"Username";
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(2):before {
+ content:"Reason";
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(3):before {
+ content:"Length";
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(4):before {
+ content:"Banned By";
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td.tcat:not(:first-child) {
+ display:none;
+}
+
+body[class="modcp.php banning"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"] {
+ display:block;
+}
+
+body[class="modcp.php editprofile"]  td[valign="top"][width="240"] + td .tborder td  {
+ display:block;
+ width:auto;
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td.tcat:not(:first-child) {
+ display:none;
+}
+
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"] {
+ display:block;
+ text-align:left;
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td:before {
+ display:block;
+ position:relative;
+ padding-bottom:3px;
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(1):before {
+ content:"Warned User";
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(2):before {
+ content:"Warning";
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(3):before {
+ content:"Date Issued";
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(4):before {
+ content:"Expires";
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(5):before {
+ content:"Issued by";
+}
+
+body[class="modcp.php warninglogs"]  td[valign="top"][width="240"] + td .tborder td[class*="trow"]:nth-child(6):before {
+ content:"Details";
+}
+
+
+body[class="moderation.php threadnotes"]  form .tborder:not(:first-child) td.tcat:not(:first-child){
+  display:none;
+}
+
+body[class="moderation.php threadnotes"]  form .tborder:not(:first-child) td:not(.tcat) {
+ display:block;
+ width:auto;
+ border-width:1px 2px;
+ text-align:left;
+}
+
+body[class="moderation.php threadnotes"]  form .tborder:not(:first-child) td:not(.tcat):before {
+  display:block;
+  text-align:left;
+}
+
+body[class="moderation.php threadnotes"]  form .tborder:nth-child(2) td[class*="trow"]:nth-child(2):before{
+ content:"Date";
+}
+
+body[class="moderation.php threadnotes"]  form .tborder:nth-child(2) td[class*="trow"]:nth-child(3):before{
+ content:"Action";
+}
+
+body[class="moderation.php threadnotes"]  form .tborder:nth-child(2) td[class*="trow"]:nth-child(4):before{
+ content:"Information";
+}
+
+body[class="moderation.php threadnotes"] .tcat {
+ text-align:left;
+}
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td.tcat:not(:first-child) {
+ display:none;
+}
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td.tcat {
+ text-align:left;
+}
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td[class*="trow"]{
+ display:block;
+ width:auto;
+ text-align:left;
+}
+
+body[class="moderation.php delayedmoderation"]  .container .tborder.delayed_mod_queue td[class*="trow"]:before{
+  display:block;
+  text-align:left;
+  position:relative;
+}
+
+body[class="moderation.php delayedmoderation"]  .container .tborder.delayed_mod_queue td[class*="trow"]:nth-child(2):before {
+ content:"Days to perform action";
+}
+
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td[class*="trow"]:nth-child(3):before {
+ content:"Action";
+}
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td[class*="trow"]:nth-child(4):before {
+ content:"Information";
+}
+
+body[class="moderation.php delayedmoderation"]  .container  .tborder.delayed_mod_queue td[class*="trow"]:nth-child(5):before {
+ content:"Actions";
+}
+
+
+
+body[class="moderation.php delayedmoderation"]  td[class*="trow"],
+body[class="moderation.php merge"]  td[class*="trow"],
+body[class="moderation.php split"]  td[class*="trow"],
+body[class="moderation.php move"]  td[class*="trow"] {
+ display:block;
+ width:auto;
+}
+
+body[class="private.php "] .box-bgs ~ .tborder.tborder td[class*="trow"]:nth-child(2),
+body[class="private.php "] .box-bgs ~ .tborder.tborder td[class*="trow"]:nth-child(4) {
+    display:none;
+}
+
+
+
+.search_page .tborder td{
+ display:block;
+ width:auto;
+ border-width:1px 2px;
+
+}
+
+.modal {
+ width:78%;
+}
+
+form #message {
+ width:100% !Important;
+ box-sizing:border-box;
+}
+
+form[action*="newthread.php?fid=67"] .tborder {
+   width:100% !Important;
+}
+
+form[action*="editpost.php"] .tborder {
+   width:100% !Important;
+}
+}

@@ -20,7 +20,7 @@
      <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>
    </li>
    <li class="nav-item">
-     <a target="_blank" class="nav-link highlight" href="http://localhost/foro/member.php?action=register">Registrate</a>
+     <a target="_blank" class="nav-link highlight" href="<?= base_url() ?>Session/register">Registrate</a>
    </li>
    <li class="nav-item">
      <a target="_blank" class="nav-link highlight" href="<?= base_url() ?>Session/login">Iniciar Sesión</a>
