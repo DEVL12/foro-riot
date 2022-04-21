@@ -20,10 +20,10 @@
      <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>
    </li>
    <li class="nav-item">
-     <a target="_blank" class="nav-link highlight" href="<?= base_url() ?>Session/register">Registrate</a>
+     <a class="nav-link highlight" href="<?= base_url() ?>Session/register">Registrate</a>
    </li>
    <li class="nav-item">
-     <a target="_blank" class="nav-link highlight" href="<?= base_url() ?>Session/login">Iniciar Sesión</a>
+     <a class="nav-link highlight" href="<?= base_url() ?>Session/login">Iniciar Sesión</a>
    </li>
  </ul>
  <!-- End Menu -->

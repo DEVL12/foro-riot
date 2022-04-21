@@ -1,4 +1,4 @@
-<?php getHeader($data); ?>
+<?php getHeader($data, "headerMain"); ?>
 <div class="site-content">
   <!-- Home Jumbotron
     ================================================== -->

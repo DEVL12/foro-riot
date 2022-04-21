@@ -47,9 +47,13 @@
 		return $string;
 	}
 
-	function getHeader($data = "")
+	function getHeader($data = "", $document)
 	{
-		$include = "includes/header.php";
+		$include = "";
+		switch($document) {
+			case 'headerMain' : $include = "includes/headers/headerMain.php"; break;
+			case 'headerSession' : $include = "includes/headers/headerSession.php"; break;
+		}
 		require_once($include);
 	}
 
