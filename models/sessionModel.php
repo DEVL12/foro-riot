@@ -1,9 +1,8 @@
 <?php
-	class loginModel extends mysql
+	class sessionModel extends mysql
 	{
 		public function __construct() {
 			parent::__construct();
 		}
-
 	}
 ?>
