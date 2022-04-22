@@ -51,22 +51,30 @@
 	{
 		$include = "";
 		switch($document) {
-			case 'headerMain' : $include = "includes/headers/headerMain.php"; break;
+			case 'headerMain'    : $include = "includes/headers/headerMain.php"; break;
 			case 'headerSession' : $include = "includes/headers/headerSession.php"; break;
+			case 'headerForos'   : $include = "includes/headers/headerForos.php"; break;
 		}
 		require_once($include);
 	}
 
-	function getNav($data = "")
+	function getNav($data = "", $document)
 	{
-		$include = "includes/nav.php";
+		$include = "";
+		switch($document) {
+			case 'navMain' : $include = "includes/navs/navMain.php"; break;
+			case 'navForos': $include = "includes/navs/navForos.php"; break;
+		}
 		require_once($include);
 	}
 
-	function getFooter($data = "")
+	function getFooter($data = "", $document)
 	{
-		$include = "includes/footer.php";
+		$include = "";
+		switch($document) {
+			case 'footerMain' : $include = "includes/footers/footerMain.php"; break;
+			case 'footerForos': $include = "includes/footers/footerForos.php"; break;
+		}
 		require_once($include);
 	}
-
 ?>

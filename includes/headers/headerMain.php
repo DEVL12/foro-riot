@@ -27,7 +27,7 @@
       <!-- End Logo -->
       <!-- Begin Menu -->
       <div class="collapse navbar-collapse" id="navbarsWow">
-        <?php getNav($data); ?>
+        <?php getNav($data, "navMain"); ?>
       </div>
     </div>
   </header>

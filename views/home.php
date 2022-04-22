@@ -304,4 +304,4 @@
       </div>
     </div>
   </div>
-  <?php getFooter($data);?>
+  <?php getFooter($data, "footerMain");?>
