@@ -45,7 +45,9 @@ a.profile_button:hover {
 }
 
 .title-img img {
-	height:20px;width:auto;
+	height:20px;
+	width:auto;
+	margin-bottom: 40%;
 }
 
 .title-img a:hover {

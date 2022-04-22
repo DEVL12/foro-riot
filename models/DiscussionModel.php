@@ -27,7 +27,7 @@
 			$discussions = $this->GetVisibleDiscussions();
 			$discussions = array_reverse($discussions);
 			$result = [];
-			for ($i=0; $i <= $number-1; $i++) { 
+			for ($i=0; $i <= $number-1; $i++) {
 				if(!empty($discussions[$i]))
 					array_push($result, $discussions[$i]);
 			}
@@ -38,17 +38,6 @@
 			$sql = "SELECT COUNT(id) FROM discusion WHERE id_autor =$playerId";
 			$request = $this->select($sql);
 			return $request;
-		}
-
-		public function GetLastDiscussions($number) {
-			$discussions = $this->GetVisibleDiscussions();
-			$discussions = array_reverse();
-			$result = [];
-			for ($i=0; $i <= $number-1; $i++) { 
-				if(!empty($discussions[$i]))
-					array_push($result, $discussions[$i]);
-			}
-			return $result;
 		}
 
 		public function GetDiscussionsByAproxField($field, $search) {

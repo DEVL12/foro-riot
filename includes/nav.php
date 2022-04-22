@@ -6,11 +6,13 @@
    <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Foros</a>
      <div class="dropdown-menu" aria-labelledby="dropdown01">
-       <a class="dropdown-item" href="http://localhost/foro/forumdisplay.php?fid=3">League of Legends</a>
-       <a class="dropdown-item" href="http://localhost/foro/forumdisplay.php?fid=4">Valorant</a>
-       <a class="dropdown-item" href="http://localhost/foro/forumdisplay.php?fid=5">League of Legends Wild Rift</a>
-       <a class="dropdown-item" href="http://localhost/foro/forumdisplay.php?fid=6">Legend of Runaterra</a>
-       <a class="dropdown-item" href="http://localhost/foro/forumdisplay.php?fid=7">Teamfight Tactics</a>
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">Temas recientes</a>
+       <hr style="margin: 2px auto 2px; width: 80%;">
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">League of Legends</a>
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">Valorant</a>
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">League of Legends Wild Rift</a>
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">Legend of Runaterra</a>
+       <a class="dropdown-item" href="<?= base_url() ?>discussion">Teamfight Tactics</a>
      </div>
    </li>
    <li class="nav-item">
