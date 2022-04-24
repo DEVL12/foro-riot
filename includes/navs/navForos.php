@@ -15,11 +15,11 @@
         </div>
         <ul class="menu top_links float_left">
           <li><a href="<?= base_url() ?>">Inicio</a></li>
-          <li><a href="foro.html">Foros</a></li>
+          <li><a href="<?= base_url() ?>/discussion">Foros</a></li>
           <li><a href="search.html">Búsqueda</a></li>
           <li><a href="memberlist.html">Lista de miembros</a></li>
-          <li><a href="help.html" class="help">Ayuda</a></li>
           <li><a href="busqueda.html">Nuevas Publicaciones</a></li>
+          <li><a href="help.html" class="help">Ayuda</a></li>
         </ul>
       </div>
     </div>
@@ -44,11 +44,11 @@
 
     <div id="mobile_header_links" style="display:none;">
       <a href="<?= base_url() ?>"><i class="fas fa-inicio fa-fw"></i>Inicio</a>
-      <a href="foro.html"><i class="fas fa-home fa-fw"></i>Foros</a>
+      <li><a href="<?= base_url() ?>/discussion">Foros</a></li>
       <a href="search.html"><i class="fas fa-search fa-fw"></i>Buscar</a>
       <a href="memberlist.html"><i class="fas fa-users fa-fw"></i>Miembros</a>
-      <a href="help.html"><i class="fas fa-info-circle fa-fw"></i>Ayuda</a>
       <a href="busqueda.html" style="border-bottom:none;"><i class="fas fa-comments fa-fw"></i>Nuevas Publicaciones</a>
+      <a href="help.html"><i class="fas fa-info-circle fa-fw"></i>Ayuda</a>
     </div>
   </div>
 </div>
