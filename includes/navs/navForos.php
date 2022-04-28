@@ -53,28 +53,10 @@
   </div>
   <?php } ?>
 
-  <script type="text/javascript">
-    if(use_xmlhttprequest == "1"){
-      $("#dropmenu, #moremenu").popupMenu();
-    }
-  </script>
-
-  <script>
-    $(document).ready(function() {
-      $("#welcomemsg").css("display", "block");
-      $("#newthread_guest_text").css("display", "inline-block");
-    });
-  </script>
+  <script src="<?= base_url()?>assets/js/navForos.js"></script>
 
   <div class="mobile_header mobile_only">
-    <center>
-      <div class="show_hide_mobile_header"><i class="fas fa-bars" style="font-size:10px;"></i>Menu</div>
-      <script>
-        $('.show_hide_mobile_header').click(function() {
-          $('#mobile_header_links').slideToggle();
-        });
-      </script>
-    </center>
+    <center> <div class="show_hide_mobile_header"><i class="fas fa-bars" style="font-size:10px;"></i>Menu</div> </center>
 
     <div id="mobile_header_links" style="display:none;">
       <a href="<?= base_url() ?>"><i class="fas fa-inicio fa-fw"></i>Inicio</a>
