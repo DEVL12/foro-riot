@@ -53,8 +53,6 @@
   </div>
   <?php } ?>
 
-  <script src="<?= base_url()?>assets/js/navForos.js"></script>
-
   <div class="mobile_header mobile_only">
     <center> <div class="show_hide_mobile_header"><i class="fas fa-bars" style="font-size:10px;"></i>Menu</div> </center>
 
@@ -68,3 +66,5 @@
     </div>
   </div>
 </div>
+
+<script src="<?= base_url()?>assets/js/navForos.js"></script>
