@@ -15,8 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.js"></script>
-  <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.plugins.min.js?"></script>
+  <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.plugins.min.js"></script>
   <script type="text/javascript" src="<?= base_url() ?>assets/js/general.js"></script>
+  <script type="text/javascript"> var cookieSecureFlag = "0"; var use_xmlhttprequest = "1"; </script>
 </head>
 
 <body>
