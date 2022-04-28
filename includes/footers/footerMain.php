@@ -14,11 +14,11 @@
         <div class="footer-widget">
           <h5 class="title">Foros</h5>
           <ul>
-            <li><a target="_blank" href="http://localhost/foro/forumdisplay.php?fid=3">league of legends</a></li>
-            <li><a target="blank" href="http://localhost/foro/forumdisplay.php?fid=4">Valorant</a></li>
-            <li><a target="blank" href="http://localhost/foro/forumdisplay.php?fid=5">League of legends Wild Rift</a></li>
-            <li><a target="blank" href="http://localhost/foro/forumdisplay.php?fid=6">Legends of Runaterra</a></li>
-            <li><a target="blank" href="http://localhost/foro/forumdisplay.php?fid=7">Teamfight Tactics</a></li>
+            <li><a href="<?= base_url()?>discussion">League of legends</a></li>
+            <li><a href="<?= base_url()?>discussion">Valorant</a></li>
+            <li><a href="<?= base_url()?>discussion">League of legends Wild Rift</a></li>
+            <li><a href="<?= base_url()?>discussion">Legends of Runaterra</a></li>
+            <li><a href="<?= base_url()?>discussion">Teamfight Tactics</a></li>
           </ul>
         </div>
       </div>
@@ -26,11 +26,11 @@
         <div class="footer-widget">
           <h5 class="title">Creadores</h5>
           <ul>
-            <li><a href="">Jose A. Pérez</a></li>
-            <li><a href="">Richellys Castillo</a></li>
-            <li><a href="">José Díaz</a></li>
-            <li><a href="">Gabriel Silva</a></li>
-            <li><a href="">Douglas Torrealba</a></li>
+            <li>Jose A. Pérez</li>
+            <li>Richellys Castillo</li>
+            <li>José Díaz</li>
+            <li>Gabriel Silva</li>
+            <li>Douglas Torrealba</li>
           </ul>
         </div>
       </div>
@@ -38,7 +38,9 @@
         <div class="footer-widget textwidget">
           <h5 class="title">Misión Dentro de La Comunidad</h5>
           <p>
-            Nuestro proposito es brindar un espacio para que los jugadores, creadores de contenido y todo aquel interesado; pueda conversar,opinar y preguntar sobre cualquier tema relacionado con el <a href="">Foro</a>.
+            Nuestro proposito es brindar un espacio para que los jugadores, creadores de contenido y todo aquel interesado;
+            pueda conversar,opinar y preguntar sobre cualquier tema relacionado con el
+            <a href="<?= base_url()?>discussion">Foro</a>.
           </p>
         </div>
       </div>
@@ -47,7 +49,6 @@
       <p class="pull-left">
         Copyright © 2022
       </p>
-
       <div class="clearfix">
       </div>
     </div>
