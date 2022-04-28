@@ -17,8 +17,8 @@
           <li><a href="<?= base_url() ?>">Inicio</a></li>
           <li><a href="<?= base_url() ?>discussion">Foros</a></li>
           <li><a href="<?= base_url() ?>search">Búsqueda</a></li>
-          <li><a href="memberlist.html">Lista de miembros</a></li>
-          <li><a href="busqueda.html">Nuevas Publicaciones</a></li>
+          <li><a href="<?= base_url() ?>memberList">Lista de miembros</a></li>
+          <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
           <li><a href="help.html" class="help">Ayuda</a></li>
         </ul>
       </div>
