@@ -138,7 +138,7 @@
                                     <a href="<?= base_url()?>answer" style="padding:10px 0px;margin-right:18px;">
                                       <i class="fas fa-external-link-square-alt"></i>&nbsp; Open Thread
                                     </a>
-                                    <a href="newreply.php?tid=3"><button class="button"><i class="far fa-edit"></i>&nbsp; Reply</button></a>
+                                    <a href="<?= base_url() ?>answer/reply/Talpublicacion"><button class="button"><i class="far fa-edit"></i>&nbsp; Reply</button></a>
                                   </td>
                                 </tr>
                               </tbody>

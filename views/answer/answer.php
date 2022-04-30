@@ -87,7 +87,7 @@
                   <ul>
                     <li>
                       <br>
-                      <a href="newreply.php?tid=1&amp;replyto=1" title="Cita este mensaje en tu respuesta" class="postbit_quote postbit_mirage"><span>Responder</span></a>
+                      <a href="<?= base_url() ?>answer/reply/Talpublicacion" title="Cita este mensaje en tu respuesta" class="postbit_quote postbit_mirage"><span>Responder</span></a>
                     </li>
                   </ul>
                 </div>
