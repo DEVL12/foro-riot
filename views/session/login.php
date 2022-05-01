@@ -39,9 +39,9 @@
 				</form>
 				<br>
 				<center>
-					<div class="smalltext white_text">Don't have an account? <a href="terminos.html" class="white_text" style="font-weight:600;">Sign Up</a>
+					<div class="smalltext white_text">¿No tienes una cuenta? <a href="<?= base_url() ?>session/register" class="white_text" style="font-weight:600;">¡Registrate!</a>
 
-						<br><br><a href="index.html" class="white_text" style="font-weight:900"><i class="fas fa-backspace"></i>&nbsp; Home</a>
+						<br><br><a href="<?= base_url() ?>" class="white_text" style="font-weight:900"><i class="fas fa-backspace"></i>&nbsp; Home</a>
 					</div>
 				</center>
 			</div>

@@ -27,7 +27,6 @@
             <img src = "<?=base_url()?>assets/images/theme.jpg" alt="affiliates free bootstrap template"/>
           </p>
         </div>
-
       </section>
     </div>
   </div>

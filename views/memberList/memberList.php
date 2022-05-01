@@ -28,27 +28,27 @@
             <img src="<?= base_url() ?>assets/images/default_avatar.png" alt="" class="rounded-avatar avatar_white_border_transparent avatar_shadow" style="border-width:8px;width:100px;height:100px;" />
             <br>
             <h1>
-              <a href="#"><span style="color: green;"><strong><em>Persona <?= $i ?></em></strong></span></a>
+              <a href="<?= base_url()?>player/profile/talUsuario"><span style="color: green;"><strong><em>Persona <?= $i ?></em></strong></span></a>
             </h1>
 
             <div class="smalltext" style="margin-bottom:5px;">Administrator</div>
 
             <div class="memberlist_stat_box_wrap">
-              <a href="search.php?action=finduser&uid=1" class="stat_box_href">
+              <a href="<?= base_url() ?>answer" class="stat_box_href">
                 <div class="profile-stat-boxes">
                   <h2>2</h2>
                   <span class="smalltext">Posts</span>
                 </div>
               </a>
 
-              <a href="search.php?action=finduserthreads&uid=1" class="stat_box_href">
+              <a href="<?= base_url() ?>answer" class="stat_box_href">
                 <div class="profile-stat-boxes">
                   <h2>2</h2>
                   <span class="smalltext">Threads</span>
                 </div>
               </a>
 
-              <a href="reputation.php?uid=1" class="stat_box_href">
+              <a href="#!" class="stat_box_href">
                 <div class="profile-stat-boxes">
                   <h2>0</h2>
                   <span class="smalltext">Rating</span>

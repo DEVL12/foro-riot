@@ -12,8 +12,8 @@
       <h1> Bienvenido a los Foros de Riot Games </h1>
       TEXTO ......................................
       <br><br>
-      <a href="<?php base_url() ?>session/login" style="color:#fff;">Login</a> &nbsp;&nbsp;
-      <a href="<?php base_url() ?>session/login" style="color:#fff;width:auto;" class="button">Register</a>
+      <a href="<?= base_url() ?>session/login" style="color:#fff;">Login</a> &nbsp;&nbsp;
+      <a href="<?= base_url() ?>session/register" style="color:#fff;width:auto;" class="button">Register</a>
     </div>
 
     <div class="sidebar">
@@ -38,7 +38,7 @@
               <ul class="category_ul">
                 <!-- start: forumbit_depth2_forum -->
                 <li style="list-style-type:none;">
-                  <a href="forumdisplay.php?fid=3">
+                  <a href="<?= base_url() ?>discussion">
                     <div class="forum_status forum_on ajax_mark_read" title="Foro que contiene mensajes nuevos" id="mark_read_3">
                       <i class="far fa-comment-alt"></i>
                     </div>
@@ -49,7 +49,7 @@
                 <ul style="list-style-type:none;"></ul>
 
                 <li style="list-style-type:none;">
-                  <a href="forumdisplay.php?fid=4">
+                  <a href="<?= base_url() ?>discussion">
                     <div class="forum_status forum_on ajax_mark_read" title="Foro que contiene mensajes nuevos" id="mark_read_4">
                       <i class="far fa-comment-alt"></i>
                     </div>
@@ -60,7 +60,7 @@
                 <ul style="list-style-type:none;"></ul>
 
                 <li style="list-style-type:none;">
-                  <a href="forumdisplay.php?fid=5">
+                  <a href="<?= base_url() ?>discussion">
                     <div class="forum_status forum_off ajax_mark_read" title="Foro que no contiene mensajes nuevos" id="mark_read_5">
                       <i class="far fa-comment-alt"></i>
                     </div>
@@ -71,20 +71,22 @@
                 <ul style="list-style-type:none;"></ul>
 
                 <li style="list-style-type:none;">
-                  <a href="forumdisplay.php?fid=6">
+                  <a href="<?= base_url() ?>discussion">
                     <div class="forum_status forum_off ajax_mark_read" title="Foro que no contiene mensajes nuevos" id="mark_read_6">
                       <i class="far fa-comment-alt"></i>
-                    </div>&nbsp;&nbsp;Legends of Runaterra
+                    </div>
+                    &nbsp;&nbsp;Legends of Runaterra
                   </a>
                 </li>
 
                 <ul style="list-style-type:none;"></ul>
 
                 <li style="list-style-type:none;">
-                  <a href="forumdisplay.php?fid=7">
+                  <a href="<?= base_url() ?>discussion">
                     <div class="forum_status forum_off ajax_mark_read" title="Foro que no contiene mensajes nuevos" id="mark_read_7">
                       <i class="far fa-comment-alt"></i>
-                    </div>&nbsp;&nbsp;Teamfight Tactics
+                    </div>
+                    &nbsp;&nbsp;Teamfight Tactics
                   </a>
                 </li>
 
@@ -124,16 +126,15 @@
                               <tbody>
                                 <tr>
                                   <td class="trow1 scaleimages no_bottom_border" valign="top">
-                                    <img src="http://localhost/foro/images/default_avatar.png" class="rounded-avatar box_shadowed avatar_white_border" style="width:50px;height:50px;float:left;border-width:5px;margin-bottom:10px;margin-right:10px;margin-top:5px;">
-                                    <a href="http://localhost/foro/showthread.php?tid=3">
+                                    <img src="<?= base_url() ?>assets/images/default_avatar.png" class="rounded-avatar box_shadowed avatar_white_border" style="width:50px;height:50px;float:left;border-width:5px;margin-bottom:10px;margin-right:10px;margin-top:5px;">
+                                    <a href="<?= base_url() ?>answer">
                                       <h2 style="margin:0px;display:inline-block;">Hola</h2>
                                     </a><br>
                                     <h4>Valorant &nbsp;&nbsp; <i class="far fa-comment-alt"></i> 2 Replies </h4>
-                                    <a href="#">Nautilus</a>, 03-31-2022, 02:49 PM
+                                    <a href="<?= base_url()?>player/profile/talUsuario">Nautilus</a>, 03-31-2022, 02:49 PM
                                     <div class="border_sep" style="margin-top:10px;"></div>
                                     <p class="portal-message" style="max-height:300px;overflow:hidden;">
-                                      <img src="http://localhost/foro/images/smilies/biggrin.png" alt="Big Grin" title="Big Grin" class="smilie smilie_4"> &nbsp;HOLA
-                                      <img src="http://localhost/foro/images/smilies/biggrin.png" alt="Big Grin" title="Big Grin" class="smilie smilie_4">
+                                      HOLA
                                     </p><br>
                                     <a href="<?= base_url()?>answer" style="padding:10px 0px;margin-right:18px;">
                                       <i class="fas fa-external-link-square-alt"></i>&nbsp; Open Thread

@@ -30,15 +30,15 @@
                 </button><br><br>
 
                 <div class="profile_stats_a_bg">
-                  <a href="#" class="profile_stats_a">
+                  <a href="<?= base_url() ?>discussion" class="profile_stats_a">
                     <h3>6</h3>
                     <span class="smalltext">Posts</span>
                   </a>
-                  <a href="#" class="profile_stats_a">
+                  <a href="<?= base_url() ?>discussion" class="profile_stats_a">
                     <h3>3</h3>
                     <span class="smalltext">Threads</span>
                   </a>
-                  <a href="#" class="profile_stats_a" style="margin-right:0px;border:none;">
+                  <a href="#!" class="profile_stats_a" style="margin-right:0px;border:none;">
                     <h3>
                       <strong class="reputation_neutral">0</strong>
                     </h3>
@@ -73,7 +73,7 @@
               <div class="profile-ctbox">
                 <div><strong>Estado:</strong></div>
                 <div class="smalltext description">
-                  <a href="online.php"><span class="online" style="font-weight: bold;">En línea</span></a> (Viendo perfil de <a href="member.php?action=profile&amp;uid=1">Nautilus</a> @ 06:18 PM)
+                  <span class="online" style="font-weight: bold;">En línea</span> (Viendo perfil de Nautilus @ 06:18 PM)
                 </div>
               </div>
 
@@ -90,10 +90,10 @@
               <tr>
                 <td class="trow2"><strong>Nivel de advertencia:</strong></td>
                 <td class="trow2">
-                  <a href="warnings.php?uid=1">
+                  <a href="#!">
                     <span class="normal_warning">0%</span>
                   </a>
-                  [<a href="warnings.php?action=warn&amp;uid=1">Advertencia</a>]
+                  [<a href="#!">Advertencia</a>]
                 </td>
               </tr>
             </div>
@@ -104,7 +104,7 @@
             <div class="profile-ctbox">
               <div><strong>Mensajes totales:</strong></span></div>
               <div class="smalltext description">6 (0.2 mensajes por día | 100 &#37; del total)
-                <span class="smalltext description">[<a href="search.php?action=finduser&amp;uid=1">Buscar sus mensajes</a>]</span>
+                <span class="smalltext description">[<a href="#!">Buscar sus mensajes</a>]</span>
               </div>
             </div>
 
@@ -112,7 +112,7 @@
               <div><strong>Temas totales:</strong></div>
               <div class="smalltext description">3 (0.1 temas por día | 100 &#37; del total)
                 <!-- start: member_profile_findthreads -->
-                <span class="smalltext description">[<a href="search.php?action=finduserthreads&amp;uid=1">Buscar sus temas</a>]</span>
+                <span class="smalltext description">[<a href="#!">Buscar sus temas</a>]</span>
                 <!-- end: member_profile_findthreads -->
               </div>
             </div>
@@ -123,17 +123,17 @@
               <div><strong>Opciones de moderador:</strong></div><br/>
               <div>
                 <div>&bull;&nbsp;
-                  <a href="#">Editar en el panel de moderación</a>
+                  <a href="#!">Editar en el panel de moderación</a>
                 </div>
 
                 <div>&bull;&nbsp;
-                  <a href="#">Suspender en el panel de moderación</a>
+                  <a href="#!">Suspender en el panel de moderación</a>
                 </div>
               </div>
 
               <div><br/>
                 Actualmente no hay notas sobre este usuario.<br/>
-                <a href="#">Editar notas en el panel de moderación</a>
+                <a href="#!">Editar notas en el panel de moderación</a>
               </div>
             </div>
 
@@ -145,8 +145,8 @@
             <div class="profile-ctbox">
               <div><strong>Opciones administrador:</strong></div><br />
               <div>
-                <div>&bull;&nbsp; <a href="http://localhost/foro/admin/index.php?module=user-users&amp;action=edit&amp;uid=1">Editar en el panel de administración</a></div>
-                <div>&bull;&nbsp; <a href="http://localhost/foro/admin/index.php?module=user-banning&amp;uid=1">Suspender en el panel de administración</a></div>
+                <div>&bull;&nbsp; <a href="#!">Editar en el panel de administración</a></div>
+                <div>&bull;&nbsp; <a href="#!">Suspender en el panel de administración</a></div>
               </div>
             </div>
           </div>

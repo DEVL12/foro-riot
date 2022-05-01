@@ -59,9 +59,8 @@
                       </td>
                     </tr>
                   </table>
-                  <!-- end: member_register_question -->
-
                   <br>
+
                   <div>
                     <input type="submit" class="button log_reg_btn" name="regsubmit" value="Crear cuenta" />
                   </div>
@@ -74,8 +73,8 @@
         <center>
           <div class="smalltext white_text">
             Already have an account?
-            <a href="login.html" style="color:#fff;font-weight:600;">Login</a> <br><br>
-            <a href="index.html" class="white_text" style="font-weight:900"> <i class="fas fa-backspace"></i>&nbsp; Home </a>
+            <a href="<?= base_url() ?>session/login" style="color:#fff;font-weight:600;">Login</a> <br><br>
+            <a href="<?= base_url() ?>" class="white_text" style="font-weight:900"> <i class="fas fa-backspace"></i>&nbsp; Home </a>
           </div>
         </center>
       </div>

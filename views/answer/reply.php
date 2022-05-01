@@ -3,13 +3,13 @@
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="http://localhost/foro/index.php">Foro Riot Games</a><!-- start: nav_sep -->
+      <a href="<?= base_url() ?>">Foro Riot Games</a><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="forumdisplay.php?fid=1">Foros</a><!-- start: nav_sep -->
+      <a href="<?= base_url() ?>discussion">Foros</a><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="forumdisplay.php?fid=4">Valorant</a><!-- start: nav_sep -->
+      <a href="<?= base_url() ?>discussion">Valorant</a><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="showthread.php?tid=3">Hola</a>
+      <a href="<?= base_url() ?>answer">Hola</a>
       <span class="nav-spacer">›</span>
       <span class="active">Enviar respuesta</span>
     </div>
@@ -38,9 +38,6 @@
 
           <tr>
             <td class="trow2" valign="top"><strong>Tu mensaje:</strong><br>
-              <div style="margin:auto; width: 170px; margin-top: 20px;display:none;" id="show_smilies">
-                <center><a href="javascript:void(0)" onclick="MyBB.popupWindow('/misc.php?action=smilies&amp;popup=true&amp;editor=MyBBEditor&amp;modal=1'); return false;">See All</a></center>
-              </div>
             </td>
             <td class="trow2">
               <textarea id="message" name="message" rows="20" cols="70" tabindex="2" style="width: 100%; background-color: #BBB; color:black; font-size: 18px ;"></textarea>
