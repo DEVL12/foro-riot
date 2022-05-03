@@ -9,6 +9,7 @@
         </div>
       </div>
     </div>
+    <script src= "<?= base_url()?>assets/js/scripts/<?= $data['script'] ?>" type="module"></script>
   </body>
 </html>
 <!-- end: index -->
