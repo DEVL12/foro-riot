@@ -9,7 +9,7 @@
     </div>
     <br />
 
-    <form>
+    <form id ="formSearch" autocomplete="off">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tr>
           <td colspan="2" class="thead"><strong>Búsqueda</strong></td>
