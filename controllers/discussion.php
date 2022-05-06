@@ -10,7 +10,7 @@
 		{
 			$data = array();
 			$data['title'] = "Foro Riot Games";
-			$data['script'] = "prueba.js";
+			$data['script'] = "discussion.js";
 			$this->views->getViews($this,"discussion",$data);
 		}
 	}

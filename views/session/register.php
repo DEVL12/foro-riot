@@ -80,5 +80,6 @@
       </div>
     </div>
   </div>
+	<script src= "<?= base_url()?>assets/js/scripts/register.js" type="module"></script>
 </body>
 </html>

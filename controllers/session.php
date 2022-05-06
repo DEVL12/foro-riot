@@ -10,7 +10,6 @@
     {
       $data = array();
       $data['title'] = "Foro Riot Games - Iniciar sesión";
-      $data['script'] = "prueba.js";
       $this->views->getViews($this,"login",$data);
     }
 
@@ -18,7 +17,6 @@
     {
       $data = array();
       $data['title'] = "Foro Riot Games - Registro";
-      $data['script'] = "prueba.js";
       $this->views->getViews($this,"register",$data);
     }
   }

@@ -13,7 +13,7 @@
 
 			$data = array();
 			$data['title'] = "Foro Riot Games - Perfil de " . $Usuario;
-			$data['script'] = "prueba.js";
+			$data['script'] = "player.js";
 
 			$this->views->getViews($this,"player",$data);
 		}

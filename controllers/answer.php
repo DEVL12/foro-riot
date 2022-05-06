@@ -10,7 +10,7 @@
 		{
 			$data = array();
 			$data['title'] = "tal usuario - Respuestas";
-			$data['script'] = "prueba.js";
+			$data['script'] = "answer.js";
 			$this->views->getViews($this,"answer",$data);
 		}
 
@@ -21,7 +21,7 @@
 
 			$data = array();
 			$data['title'] = $forum." - Respondiendo";
-			$data['script'] = "prueba.js";
+			$data['script'] = "reply.js";
 			$this->views->getViews($this,"reply",$data);
 		}
   }
