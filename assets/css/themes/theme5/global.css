@@ -2309,8 +2309,7 @@ div.jqi .jqisubstate .jqibuttons button{
  right: -20px; bottom: 10px; border-left-color: #fff;
 }
 
+.errores-input{
+  border: 2px solid crimson !important;
+}
 /** Impromptu End */
-
-
-
-

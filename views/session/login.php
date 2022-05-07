@@ -10,9 +10,20 @@
 						<img src="<?= base_url() ?>assets/images/darko-logo-white.png" style="height:35px;width:auto;">
 					</a>
 					<br><br>
-					<div id="log_reg_table"></div>
+					<div id="log_reg_table">
+						<div class="error">
+							<p><em>Corrige los siguientes errores antes de continuar:</em></p>
+								<ul>
+									<li>
+										Mensaje....
+										HOLA EL CAMPO DEBE TENER TAL..
+										Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, iste!
+									</li>
+								</ul>
+						</div>
+						<br>
+					</div>
 				</center>
-
 				<form>
 					<table border="0" cellspacing="0" cellpadding="5" class="tborder" id="log_reg_table" style="padding:30px;padding-bottom:10px;">
 						<tr>
