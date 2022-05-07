@@ -2309,7 +2309,13 @@ div.jqi .jqisubstate .jqibuttons button{
  right: -20px; bottom: 10px; border-left-color: #fff;
 }
 
+.validado-input{
+	color: green;
+  border: 2px solid green !important;
+}
+
 .errores-input{
+	color: crimson;
   border: 2px solid crimson !important;
 }
 /** Impromptu End */
