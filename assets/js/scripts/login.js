@@ -10,8 +10,8 @@ let input = {
 
 const comprobar = (e) => {
   switch(e.target.name) {
-    case 'username': validarInput(e.target, e.target.name, " _\\-¡!¿?:.^$", "3,16"); break;
-    case 'password': validarInput(e.target, e.target.name, "_\\-¡!¿?:.^$#@&", "5,15"); break;
+    case 'username': validarInput(e.target, " _\\-¡!¿?:.^$", "3,16"); break;
+    case 'password': validarInput(e.target, "_\\-¡!¿?:.^$#@&", "5,15"); break;
   }
 }
 
@@ -19,15 +19,15 @@ inputs.forEach((inputs) => {
    inputs.addEventListener('keyup', comprobar);
 });
 
-const validarInput = (target, name, simbols, limit) => {
+const validarInput = (target, simbols, limit) => {
   if((validar.ValidateText(target.value, true, true, true, simbols, limit))) {
-    input[name] = true;
-    document.getElementById(name).classList.add('validado-input');
-    document.getElementById(name).classList.remove('errores-input');
+    input[target.name] = true;
+    document.getElementById(target.name).classList.add('validado-input');
+    document.getElementById(target.name).classList.remove('errores-input');
   } else {
-    input[name] = false;
-    document.getElementById(name).classList.remove('validado-input');
-    document.getElementById(name).classList.add('errores-input');
+    input[target.name] = false;
+    document.getElementById(target.name).classList.remove('validado-input');
+    document.getElementById(target.name).classList.add('errores-input');
   }
 }
 
