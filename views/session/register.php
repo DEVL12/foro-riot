@@ -52,7 +52,7 @@
                   <legend><strong>Pregunta de seguridad</strong></legend>
                   <table cellspacing="0" cellpadding="5">
                     <tr>
-                      <td colspan="2"><span class="smalltext">Por favor, responte a la pregunta. Este proceso se utiliza para evitar registros automáticos.</span></td>
+                      <td colspan="2"><span class="smalltext">Por favor, responde a la pregunta. Este proceso se utiliza para evitar registros automáticos.</span></td>
                     </tr>
                     <tr>
                       <td colspan="2"><br /><span class="smalltext" id="question" style="font-weight:bold;">Cuanto es 2 + 2?</span></td>
