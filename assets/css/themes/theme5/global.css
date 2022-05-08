@@ -2317,4 +2317,8 @@ div.jqi .jqisubstate .jqibuttons button{
 	color: crimson !important;
   border: 2px solid crimson !important;
 }
+
+.alert-input{
+  border: 2px solid orange !important;
+}
 /** Impromptu End */

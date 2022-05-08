@@ -6,8 +6,13 @@
       <div class="wrapper">
         <center>
           <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/darko-logo-white.png" ; style="height:35px;width:auto;"></a>
+          <br><br>
+					<div id ="log_reg_table" class="log_reg_table_msg">
+
+					</div>
         </center><br>
-        <form>
+
+        <form id = "formRegister" autocomplete="off">
           <table border="0" cellspacing="0" cellpadding="5" class="tborder" id="log_reg_table">
             <tr>
               <td width="100%" class="trow1" valign="top">
@@ -15,28 +20,27 @@
                   <table cellspacing="0" cellpadding="5" width="100%">
                     <tr>
                       <td colspan="2">
-                        <div class="smalltext login_text_titles"><label for="username">Username</label></div>
+                        <div class="smalltext login_text_titles"><label for="username">Nombre de usuario</label></div>
                         <input type="text" class="textbox" name="username" id="username" style="width: 100%" value="" />
                       </td>
                     </tr>
-                    <!-- start: member_register_password -->
                     <tr>
                       <td width="50%" valign="top">
-                        <div class="smalltext login_text_titles">Password</div>
+                        <div class="smalltext login_text_titles">Contraseña</div>
                         <input type="password" class="textbox" name="password" id="password" style="width: 100%" />
                       </td>
                       <td width="50%" valign="top">
-                        <div class="smalltext login_text_titles">Confirm Password</div>
+                        <div class="smalltext login_text_titles">Confirmar contraseña</div>
                         <input type="password" class="textbox" name="password2" id="password2" style="width: 100%" />
                       </td>
                     </tr>
                     <tr>
                       <td width="50%" valign="top">
-                        <div class="smalltext login_text_titles"><label for="email">Email</label></div>
+                        <div class="smalltext login_text_titles"><label for="email">Correo</label></div>
                         <input type="text" class="textbox" name="email" id="email" style="width: 100%" maxlength="50" value="" />
                       </td>
                       <td width="50%" valign="top">
-                        <div class="smalltext login_text_titles"><label for="email2">Confirm Email</label></div>
+                        <div class="smalltext login_text_titles"><label for="email2">Confirmar Correo</label></div>
                         <input type="text" class="textbox" name="email2" id="email2" style="width: 100%" maxlength="50" value="" />
                       </td>
                     </tr>
@@ -72,7 +76,7 @@
         <br>
         <center>
           <div class="smalltext white_text">
-            Already have an account?
+            ¿Ya posees una cuenta?
             <a href="<?= base_url() ?>session/login" style="color:#fff;font-weight:600;">Login</a> <br><br>
             <a href="<?= base_url() ?>" class="white_text" style="font-weight:900"> <i class="fas fa-backspace"></i>&nbsp; Home </a>
           </div>

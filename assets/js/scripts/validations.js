@@ -23,6 +23,11 @@ class validations {
     return (convert != false &&  result != false) ? parseInt(data) : result;
   }
 
+  CustomValidation(data = "", expresion = "") {
+    expresion = new RegExp(expresion);
+    return expresion.test(data);
+  }
+
   ValidateSearch(keywordSearch = '', keywordSearchType = '',
                  forumToSearch = '', topicSearch = '',
                  nicknameSearch = '', equalNickname = '',
