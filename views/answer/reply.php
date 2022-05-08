@@ -15,7 +15,11 @@
     </div>
     <br>
 
-    <form>
+    <center>
+      <div id ="log_reg_table" class="log_reg_table_msg" style="display: inline-block;"></div>
+    </center>
+
+    <form id="answer-riot">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
           <tr>
@@ -33,14 +37,14 @@
 
           <tr>
             <td class="trow2" width="20%"><strong>Título del mensaje:</strong></td>
-            <td class="trow2"><input type="text" class="textbox" name="subject" size="40" maxlength="85" placeholder="Escribe el titulo del mensaje" tabindex="1"></td>
+            <td class="trow2"><input type="text" class="textbox" id="subject" name="subject" size="40" maxlength="85" placeholder="Escribe el titulo del mensaje" tabindex="1"></td>
           </tr>
 
           <tr>
             <td class="trow2" valign="top"><strong>Tu mensaje:</strong><br>
             </td>
             <td class="trow2">
-              <textarea id="message" name="message" rows="20" cols="70" tabindex="2" style="width: 100%; background-color: #BBB; color:black; font-size: 18px ;"></textarea>
+              <textarea id="message" name="message" rows="20" cols="70" tabindex="2" style="width: 100%; background-color: #15161b; color:black; font-size: 18px ;"></textarea>
             </td>
           </tr>
 
@@ -68,22 +72,6 @@
                   Ubica este tema al principio de la lista de temas (A la vista de todos).
                 </label>
               </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="thead" colspan="3"><strong>Archivos adjuntos</strong></td>
-          </tr>
-
-          <tr>
-            <td class="tcat smalltext" colspan="3">Tu cuota para archivos adjuntos es de Ilimitado.  </td>
-          </tr>
-
-          <tr>
-            <td class="trow1" width="1"><img src="<?= base_url() ?>assets/images/paperclip.png" alt=""></td>
-            <td class="trow1" style="white-space: nowrap">
-              <strong>Nuevo archivo adjunto:</strong>
-              <input type="file" name="attachments[]" size="30" class="fileupload" multiple="multiple">
             </td>
           </tr>
         </tbody>
@@ -134,4 +122,5 @@
     <br clear="all">
   </div>
 </div>
+<script type="module" src="../../assets/js/scripts/reply.js"></script>
 <?php getFooter($data, "footerForos")?>

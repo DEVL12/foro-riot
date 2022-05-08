@@ -12,7 +12,8 @@ class validations {
     if(simbols != "")  expresion += simbols;
     expresion += (limit != "") ? "]{"+(limit)+"}$" : "]+$";
 
-    if(expresion == "^[]+$") expresion = "^[a-zA-Z ]+$"
+    if(expresion == "^[]+$") expresion = "^[a-zA-Z ]+$";
+    console.log(expresion);
     expresion = new RegExp(expresion);
     return expresion.test(data);
   }
