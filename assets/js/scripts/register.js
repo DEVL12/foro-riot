@@ -114,11 +114,11 @@ formRegister.addEventListener('submit', e => {
     formRegister.reset();
   } else {
     let text = "";
-    if(input.username === false) text += "<li>El nombre de usuario debe tener un minimo de 3 y un maximo de 16 caracteres</li>";
-    if(input.password2 == false || input.password == false) text += "<li>Las contraseñas no son validas y debe tener un minimo de 5 y un maximo de 15 caracteres</li>";
-    if(input.passwordCheck == false) text += "<li>Las contraseñas no coindiden</li>";
+    if(input.username === false) text += "<li>El nombre de usuario deben tener un minimo de 3 y un maximo de 16 caracteres</li>";
+    if(input.password2 == false || input.password == false) text += "<li>Las contraseñas no son validas y deben tener un minimo de 5 y un maximo de 15 caracteres</li>";
+    if(input.passwordCheck == false) text += "<li>Las contraseñas no coinciden</li>";
     if(input.email == false || input.email2 == false) text += "<li>Los correos no son validos</li>";
-    if(input.emailCheck == false) text += "<li>Los correos no coindiden</li>";
+    if(input.emailCheck == false) text += "<li>Los correos no coinciden</li>";
     if(input.suma == false || document.getElementById('answer').value != 4) text += "<li>Intenta nuevamente la pregunta de seguridad</li>";
 
     document.querySelector('.log_reg_table_msg').innerHTML =
