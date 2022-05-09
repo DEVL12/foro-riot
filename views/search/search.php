@@ -52,7 +52,7 @@
 
         <tr>
           <td class="trow1 no_bottom_border" rowspan="5">
-            <select name="forums[]" size="20" multiple="multiple" style="height:auto;">
+            <select name="forum" size="20" multiple="multiple" style="height:auto;">
               <option value="all" selected="selected">Buscar en todos los foros</option>
               <option value="all">----------------------</option>
               <option value="1"> Foros</option>
@@ -68,7 +68,7 @@
             <select name="findthreadst">
               <option value="1">Temas con un mínimo de</option>
               <option value="2">Temas con un máximo de</option>
-            </select> <input type="text" class="textbox" name="numreplies" size="2" maxlength="4" />&nbsp;Respuestas<br /><br />
+            </select> <input type="number" class="textbox" id="numreplies" name="numreplies" size="2" value = "0" maxlength="4" />&nbsp;Respuestas<br /><br />
 
             <select name="postdate">
               <option value="0">Mensajes de cualquier fecha</option>
@@ -80,10 +80,32 @@
               <option value="180">Mensajes de hace 6 meses</option>
               <option value="365">Mensajes de hace 1 año</option>
             </select>&nbsp;&nbsp;
-            <input type="radio" class="radio" name="pddir" value="1" checked="checked" />Y más nuevos
-            <input type="radio" class="radio" name="pddir" value="0" />Y más antiguos<br /><br />
+            <input type="radio" class="radio" name="pddir" value="1"  />Y más nuevos
+            <input type="radio" class="radio" name="pddir" value="0" checked="checked" />Y más antiguos<br /><br />
           </td>
         </tr>
+
+        <tr>
+          <td class="tcat"><strong>Tema</strong></td>
+        </tr>
+
+        <tr>
+          <td class="trow1">
+            <select name="topic">
+            <option value="all">Todos</option>
+              <option value="Bug">Bug</option>
+              <option value="Creaciones de la comunidad">Creaciones de la comunidad</option>
+              <option value="Eventos">Eventos</option>
+              <option value="General">General</option>
+              <option value="Jugabilidad">Jugabilidad</option>
+              <option value="Memes">Memes</option>
+              <option value="Problemas tecnicos">Problemas técnicos</option>
+              <option value="Queja">Queja</option>
+              <option value="Reclutamiento">Reclutamiento</option>
+              <option value="Reporte a jugador">Reporte a jugador</option>
+            </select>
+        </tr>
+
 
         <tr>
           <td class="tcat"><strong>Opciones de organización</strong></td>
