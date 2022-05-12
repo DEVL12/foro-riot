@@ -24,7 +24,7 @@
           <td class="trow1">
             <table>
               <tr>
-                <td valign="top"><input type="text" class="textbox" name="keywords" size="35" maxlength="250" /></td>
+                <td valign="top"><input type="text" class="textbox" name="keywords" id="keywords" size="35" maxlength="250" /></td>
               </tr>
               <tr>
                 <td>
