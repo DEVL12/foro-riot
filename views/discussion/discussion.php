@@ -19,7 +19,7 @@
     <div class="sidebar">
       <h1 style="margin-bottom:5px;"> Categorias </h1>
       <div class="newthreadindex">
-        <a href="#!" class="button btn_gradient" style="cursor:default !important;">Comenzar un nuevo hilo</a>
+        <a href="<?= base_url() ?>discussion/newdiscussion" class="button btn_gradient" style="cursor:default !important;">Comenzar un nuevo hilo</a>
         <span class="newthreadindex_text">
           <center>
             <i class="fas fa-info-circle"></i>&nbsp;

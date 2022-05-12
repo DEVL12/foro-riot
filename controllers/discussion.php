@@ -13,5 +13,13 @@
 			$data['script'] = "discussion.js";
 			$this->views->getViews($this,"discussion",$data);
 		}
+
+		public function newdiscussion()
+		{
+			$data = array();
+			$data['title'] = "Foro Riot Games";
+			$data['script'] = "newdiscussion.js";
+			$this->views->getViews($this,"newdiscussion",$data);
+		}
 	}
 ?>
