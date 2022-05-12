@@ -13,6 +13,7 @@ const validateInput = (target, simbols, limit) => {
 }
 
 const ChangeClass = (condicion, name) => {
+  console.log(condicion);
   if(condicion === "correct") {
     document.getElementById(name).classList.add('validado-input');
     document.getElementById(name).classList.remove('errores-input');
@@ -24,19 +25,17 @@ const ChangeClass = (condicion, name) => {
     document.getElementById(name).classList.add('alert-input');
   } else if(condicion == "cleanAlert") {
     document.getElementById(name).classList.remove('alert-input');
+  }else{
+    
   }
 }
 
 formSearch.addEventListener('submit', e => {
   e.preventDefault();
-  if(validar.CheckIfEmpty(formSearch.author.value)){
-    validateInput(formSearch.author, " _\\-¡!¿?:.^$", "3,16");
-  }
+  allOK = true;
 
-  if(validar.CheckIfEmpty(formSearch.keywords.value)){
-    validateInput(formSearch.keywords,"", "1,9999");
-  }
-
+  validateInput(formSearch.author, " _\\-¡!¿?:.^$", "0,16");
+  validateInput(formSearch.keywords,"", "0,999");
   if(parseInt(formSearch.numreplies.value)< 0){
     ChangeClass("error",formSearch.numreplies.name);
   }
