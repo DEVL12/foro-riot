@@ -96,6 +96,18 @@
                   [<a href="#!">Advertencia</a>]
                 </td>
               </tr>
+
+              <div class="profile-ctbox">
+                <a href="<?= base_url()?>block">
+                  <div><strong>Reportar usuario</strong></div>
+                </a>
+              </div>
+
+              <div class="profile-ctbox">
+                <a href="<?= base_url()?>">
+                  <div><strong>Banear usuario</strong></div>
+                </a>
+              </div>
             </div>
           </div>
 
