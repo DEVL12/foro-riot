@@ -13,6 +13,10 @@
     </div>
     <br>
 
+    <center>
+      <div id ="log_reg_table" class="log_reg_table_msg" style="display: inline-block;"></div>
+    </center>
+
     <form id="new-disc">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
@@ -40,32 +44,24 @@
           <tr>
             <td class="trow2" width="20%" style="font-size: 20px"><strong>Que tipo de tema es:</strong></td>
             <td class="trow2">
-              <!--En este lugar no sabia sinceramente que poner porque en la BD salen respuestas que alguien pudo haber escrito no se si vamos a colocar un estandar y el administrador ira agregando etiquetas o no asi que es mejor lo dejo asi me dices luego XD-->
-              <input type="text" class="textbox" id="tema" name="tema" size="45" maxlength="85" placeholder="Escribir el tipo de tema que es" tabindex="1">
-              <!--solo validare el input de texto por si acaso-->
-               <select name="Tema">
-              <option value="0">Escojer el tipo de tema</option>
-              <option value="1">Reporte</option>
-              <option value="2">Bug</option>
-              <option value="3">Queja</option>
-            </select>
+              <span class="smalltext">
+                <input type="checkbox" class="checkbox" name="matchusername" value="1">Reporte
+                <input type="checkbox" class="checkbox" name="matchusername" value="2">Bug
+                <input type="checkbox" class="checkbox" name="matchusername" value="3">Queja
+              </span>
             </td>
           </tr>
-
         </tbody>
       </table>
       <br>
-
-
 
       <div align="center">
         <input type="submit" class="button" name="submit" value="Crear Discusión" tabindex="3" accesskey="s">
       </div>
     </form>
-
     <br>
-
     <br clear="all">
+
   </div>
 </div>
 <?php getFooter($data, "footerForos")?>
