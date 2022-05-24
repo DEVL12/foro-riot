@@ -1,5 +1,5 @@
 <?php getHeader($data, "headerForos"); ?>
-<div id="content">
+  <div id="content">
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
@@ -12,7 +12,7 @@
     <center>
       <h1> Lista de miembros </h1>
       <div class="white_bg radiused box_shadowed" style="display:inline-block;padding:10px;">
-        <form>
+        <form id = "formMemberList">
           <input type="submit" class="button" name="submit" value="Buscar" style="padding:6.5px 15px;float:right;margin-top:4px;margin-left:8px;" />
           <input type="text" class="textbox memberlist_search_width" name="username" id="username" style="width: 500px; margin-top: 4px;" value="" />
         </form>
@@ -58,7 +58,7 @@
             <br>
 
             <div class="border_sep"></div>
-            <small class="light_text"">Visited 03-31-2022, 01:03 AM</b></small>
+            <small class="light_text">Visited 03-31-2022, 01:03 AM</b></small>
           </div>
         </center>
 	    </div>

@@ -122,5 +122,4 @@
     <br clear="all">
   </div>
 </div>
-<script type="module" src="../../assets/js/scripts/reply.js"></script>
 <?php getFooter($data, "footerForos")?>

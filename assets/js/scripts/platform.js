@@ -1,20 +1,15 @@
 import validations from "./validations.js";
 const validar = new validations();
-const formReply = document.getElementById('answer-riot'); // seleccionar el formulario segun un id
-const inputs = document.querySelectorAll('#answer-riot input');// seleccionar TODOS los inputs del formulario
-const respuesta = document.querySelectorAll('#answer-riot textarea');//seleccionamos el textarea
 
+const formReply = document.getElementById('platform-riot'); // seleccionar el formulario segun un id
+const inputs = document.querySelectorAll('#platform-riot input');// seleccionar TODOS los inputs del formulario
 
   let input = {
-    subject: false,
-    message: false
+    subject: false
   }
 
   const comprobar = (e) => {
     switch (e.target.name){
-      case 'message':
-      validarInput(e.target, "4,5000");
-      break;
       case 'subject':
       validarInput(e.target, "4,50");
       break;
@@ -25,12 +20,8 @@ const respuesta = document.querySelectorAll('#answer-riot textarea');//seleccion
     input.addEventListener('keyup', comprobar);
   });
 
-  respuesta.forEach((textarea) => {
-    textarea.addEventListener('keyup', comprobar);
-  });
-
   const validarInput = (target, limit) => {
-    if ((validar.ValidateText(target.value, true, true, true, " _\\-¡!¿?:\\n.#/*-+=,\"\\\\", limit))) {
+    if ((validar.ValidateText(target.value, true, true, true, " _\\-¡!¿?:\\n.#/*-+=\"\\\\", limit))) {
       input[target.name] = true;
       document.getElementById(target.name).style.border = "2px solid green";
       document.getElementById(target.name).style.color = "white";
@@ -43,7 +34,7 @@ const respuesta = document.querySelectorAll('#answer-riot textarea');//seleccion
 
   formReply.addEventListener('submit', e => {
     e.preventDefault();
-    if(input.message && input.subject) {
+    if(input.subject) {
       alert("Se envio su respuesta");
       formReply.reset();
     } else {
