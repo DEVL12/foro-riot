@@ -98,7 +98,7 @@ $plataforms = $data['plataforms'];
                                       <p class="portal-message" style="max-height:300px;overflow:hidden;"><?= $discusiones[$i]['contenido_discusion'] ?>
                                       </p><br>
 
-                                      <a href="<?= base_url() ?>answer" style="padding:10px 0px;margin-right:18px;">
+                                      <a href="<?= base_url() . 'answer/answers_for/' . $discusiones[$i]['id_discusion'] ?>" style="padding:10px 0px;margin-right:18px;">
                                         <i class="fas fa-external-link-square-alt"></i>&nbsp; Ver respuestas
                                       </a>
 
