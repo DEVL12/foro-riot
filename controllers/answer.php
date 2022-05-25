@@ -6,11 +6,13 @@
 			parent::__construct();
 		}
 
-    public function answer()
+    public function answers_for($id_discussion)
 		{
-			$data = array();
-			$data['title'] = "tal usuario - Respuestas";
-			$data['script'] = "answer.js";
+			$data = [
+				'title' => "tal usuario - Respuestas",
+				'script' => "answer.js",
+			];
+
 			$this->views->getViews($this,"answer",$data);
 		}
 

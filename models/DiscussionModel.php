@@ -6,7 +6,12 @@
 		}
 
 		public function GetAllDiscussions() {
-			$sql = "SELECT * FROM discusion";
+			$sql = "SELECT titulo, contenido_discusion, fecha_discusion, nombre_tema, nombre_jugador, nombre_plataforma, id_discusion
+					FROM discusion
+					INNER JOIN jugador ON discusion.fk_jugador = jugador.id_jugador
+					INNER JOIN tema ON discusion.fk_tema = tema.id_tema
+					INNER JOIN plataforma ON discusion.fk_plataforma = plataforma.id_plataforma
+				";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -49,6 +54,12 @@
 		public function GetDiscussionsOfAnUser($id) {
 			$sql = "SELECT * FROM discusion WHERE id_autor={$id}";
 			$request = $this->select($sql);
+			return $request;
+		}
+
+		public function GetAllPlatforms() {
+			$sql = "SELECT * FROM plataforma";
+			$request = $this->select_all($sql);
 			return $request;
 		}
 
