@@ -6,12 +6,13 @@
 		}
 
 		public function GetAllDiscussions() {
-			$sql = "SELECT titulo, contenido_discusion, fecha_discusion, nombre_tema, nombre_jugador, nombre_plataforma, id_discusion
-					FROM discusion
-					INNER JOIN jugador ON discusion.fk_jugador = jugador.id_jugador
-					INNER JOIN tema ON discusion.fk_tema = tema.id_tema
-					INNER JOIN plataforma ON discusion.fk_plataforma = plataforma.id_plataforma
-				";
+			$sql = $this->GetDiscusionQuery(); // Lo converti en una funcion porque el query era muy extenso y se repetia
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+		public function GetAllDiscussionsByPlataform($name_plataform) {
+			$sql =  $this->GetDiscusionQuery()." WHERE plataforma.nombre_plataforma = '{$name_plataform}'";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -57,7 +58,7 @@
 			return $request;
 		}
 
-		public function GetAllPlatforms() {
+		public function GetAllPlatforms() { //No quiero repetir esto :C pero bueno luego veo como lo mejoro
 			$sql = "SELECT * FROM plataforma";
 			$request = $this->select_all($sql);
 			return $request;
@@ -107,6 +108,17 @@
 			}
 			else
 				return NULL;
+		}
+
+		// PRIVATE FUNCTIONS
+		private function GetDiscusionQuery() {
+			return (
+				"SELECT titulo, contenido_discusion, fecha_discusion, nombre_tema, nombre_jugador, nombre_plataforma, id_discusion
+				FROM discusion
+				INNER JOIN jugador ON discusion.fk_jugador = jugador.id_jugador
+				INNER JOIN tema ON discusion.fk_tema = tema.id_tema
+				INNER JOIN plataforma ON discusion.fk_plataforma = plataforma.id_plataforma"
+			);
 		}
 	}
 ?>

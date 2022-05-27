@@ -12,7 +12,7 @@ $plataforms = $data['plataforms'];
     <br />
 
     <div id="welcomemsg" class="guestwelcomemsg">
-      <h1> Bienvenido a los Foros de Riot Games </h1>
+      <h1>Bienvenido a los Foros de <?= $data['name_plataform'] ?> </h1>
       TEXTO ......................................
       <br><br>
       <a href="<?= base_url() ?>session/login" style="color:#fff;">Login</a> &nbsp;&nbsp;
@@ -24,11 +24,11 @@ $plataforms = $data['plataforms'];
       <div class="newthreadindex">
         <a href="<?= base_url() ?>discussion/newdiscussion" class="button btn_gradient" style="cursor:default !important;">Comenzar un nuevo hilo</a>
         <span class="newthreadindex_text">
-          <center>
+          <!-- <center>
             <i class="fas fa-info-circle"></i>&nbsp;
             <span id="newthread_guest_text" style="display:none;">Primero deberá registrar una cuenta.</span>
             Elija una de las categorías a continuación para comenzar un nuevo hilo
-          </center>
+          </center>  CUANDO TENGAMOS UN LOGIN ENVIARE ESTE MSJ-->
         </span>
       </div>
 
@@ -44,9 +44,8 @@ $plataforms = $data['plataforms'];
                 if (is_array($plataforms)) {
                   for ($i = 0; $i < count($plataforms); $i++) {
                 ?>
-
                     <li style="list-style-type:none;">
-                      <a href="<?= base_url() ?>discussion">
+                      <a href="<?= base_url(). 'discussion/foro/' . $plataforms[$i]['nombre_plataforma']?>">
                         <div class="forum_status forum_off ajax_mark_read" id="mark_read_3">
                           <i class="far fa-comment-alt"></i>
                         </div>
@@ -73,7 +72,7 @@ $plataforms = $data['plataforms'];
             <tbody>
               <tr>
                 <td valign="top">
-                  <h1>Ultimos hilos</h1>
+                  <h1>Ultimos hilos <?php ( ($data['name_plataform']) != "Riot Games" ) ? print("de: ".$data['name_plataform']) : print("publicados")?></h1>
                   <br>
                   <?php
                   if (is_array($discusiones)) {
