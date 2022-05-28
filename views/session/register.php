@@ -84,6 +84,7 @@
       </div>
     </div>
   </div>
+  <script> const base_url = "<?= base_url(); ?>"; </script>
 	<script src= "<?= base_url()?>assets/js/scripts/register.js" type="module"></script>
 </body>
 </html>

@@ -103,15 +103,20 @@ const ChangeClass = (condicion, name) => {
 
 formRegister.addEventListener('submit', e => {
   e.preventDefault();
-  let valuesInput = Object.values(input), ckeck = true;
-  for(let i = 0; i < valuesInput.length; i++) {
-    if(valuesInput[i] != true) {
-      ckeck = false; break;
-    }
-  }
+  let is_validated = true;
 
-  if(ckeck && (input.suma && document.getElementById('answer').value == 4)) {
-    formRegister.reset();
+  Object.values(input).forEach((value) => {
+    if(value == false)
+      is_validated = false;
+  });
+
+  if(is_validated && (input.suma && document.getElementById('answer').value == 4)) {
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+		var ajaxUrl = base_url+"session/setNewUser";
+		var formData = new FormData(formRegister);
+		request.open("POST",ajaxUrl,true);
+		request.send(formData);
+
   } else {
     let text = "";
     if(input.username === false) text += "<li>El nombre de usuario deben tener un minimo de 3 y un maximo de 16 caracteres</li>";
