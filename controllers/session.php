@@ -21,9 +21,19 @@
       $email = strClean($_POST['email']);
       $password = strClean($_POST['password']);
 
-      $requets = $this->model->AddUser($name, $email, $password);
-      echo $requets;
+      $request_Account = $this->model->VerifyAccount($name, $email);
+      if($request_Account === false ) {
+        $requets = $this->model->AddUser($name, $email, $password);
+        if($requets > 0) {
+          $arrResponse = array('status' => true, 'msg' => 'USUARIO REGISTRADOR CORRECTAMENTE');
+        } else {
+          $arrResponse = array('status' => false, 'msg' => 'OCURRIO UN ERROR AL REGISTRAR EL USUARIO. INTENTELO MAS TARDE');
+        }
+      } else {
+        $arrResponse =  array('status' => false, 'msg' => $request_Account);
+      }
 
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
       die();
     }
   }

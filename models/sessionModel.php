@@ -39,41 +39,40 @@
 				return NULL;
 		}
 
-		public function TryLogIn($user, $password) {
-			return $this->CheckLogIn($user, $password);
+		public function VerifyAccount($user, $email) {
+			$user = $this->CompareUser($user);
+			$email = $this->CompareEmail($email);
+
+			if($user || $email) {
+				$user ? $data = ["msg" => "El nombre de usuario ya está en uso", "input" => "username"] : $data = [NULL];
+				$email ? $data2 = ["msg" => "El correo ya está en uso", "input" => "email"] : $data2 = [NULL];
+				$msg = [$data, $data2];
+			} else {
+				$msg = false;
+			}
+			return $msg;
 		}
 
-		public function CheckUser($user) {
-			return $this->CompareUser($user);
+		public function CheckLogIn($user, $password) {
+			return ( ($this->CompareUser($user)) && ($this->ComparePassword($password)) ) ? true : false;
 		}
 
 		private function CompareUser($user) {
-			$sql = "SELECT usuario FROM jugador WHERE usuario='$user'";
+			$sql = "SELECT * FROM jugador WHERE nombre_jugador = '{$user}'";
 			$request = $this->select($sql);
-			if(empty($request))
-				return false;
-			else
-				return true;
+			return (empty($request)) ? false : true;
 		}
 
 		private function ComparePassword($password) {
-			$sql = "SELECT * FROM jugador WHERE contraseña='$password'";
+			$sql = "SELECT * FROM jugador WHERE contraseña='{$password}'";
 			$request = $this->select($sql);
-			if(empty($request))
-				return false;
-			else
-				return true;
+			return (empty($request)) ? false : true;
 		}
 
-		private function CheckLogIn($user, $password) {
-			if( ($this->CompareUser($user)) && ($this->ComparePassword($password)) ) {
-				var_dump('LOGUEADO');
-					return true;
-			}
-			else{
-				var_dump('ERROR');
-				return false;
-			}
+		private function CompareEmail($email) {
+			$sql = "SELECT * FROM jugador WHERE correo ='{$email}'";
+			$request = $this->select($sql);
+			return (empty($request)) ? false : true;
 		}
 	}
 ?>

@@ -101,6 +101,15 @@ const ChangeClass = (condicion, name) => {
   }
 }
 
+const ShowMsg = (title, text, color) => {
+  document.querySelector('.log_reg_table_msg').innerHTML =
+  `<div class="error">
+    <p><em style = "color: ${color};">${title}</em></p>
+    <ul style = "color: ${color};">${text}</ul>
+  </div>
+  <br>`;
+}
+
 formRegister.addEventListener('submit', e => {
   e.preventDefault();
   let is_validated = true;
@@ -111,11 +120,32 @@ formRegister.addEventListener('submit', e => {
   });
 
   if(is_validated && (input.suma && document.getElementById('answer').value == 4)) {
-    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-		var ajaxUrl = base_url+"session/setNewUser";
-		var formData = new FormData(formRegister);
-		request.open("POST",ajaxUrl,true);
-		request.send(formData);
+    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let ajaxUrl = base_url+"session/setNewUser";
+    let formData = new FormData(formRegister);
+    request.open("POST",ajaxUrl,true);
+    request.send(formData);
+
+    request.onreadystatechange = function(){
+      if(request.readyState == 4 && request.status == 200) {
+        let objData = JSON.parse(request.responseText);
+        if(objData.status) {
+          ShowMsg("¡LOGUEO EXITOSO!", "Tu cuenta a sido creada correctamente", "green");
+          setTimeout(() => {
+            window.location = base_url+"discussion";
+          },3500);
+        } else {
+          let text = "";
+          objData.msg.forEach((msg) => {
+            if(msg.msg != null){
+              text += `<li> ${msg.msg} </li>`;
+            }
+          });
+
+          ShowMsg("¡DATOS EXISTENTES!", text, "crimson");
+        }
+      }
+    }
 
   } else {
     let text = "";
@@ -125,13 +155,7 @@ formRegister.addEventListener('submit', e => {
     if(input.email == false || input.email2 == false) text += "<li>Los correos no son validos</li>";
     if(input.emailCheck == false) text += "<li>Los correos no coinciden</li>";
     if(input.suma == false || document.getElementById('answer').value != 4) text += "<li>Intenta nuevamente la pregunta de seguridad</li>";
-
-    document.querySelector('.log_reg_table_msg').innerHTML =
-    '<div class="error">'+
-      '<p><em>ERROR AL CREAR UNA NUEVA CUENTA</em></p>'+
-        '<ul style = "color: crimson;">'+text+'</ul>'+
-    '</div>'+
-    '<br>';
+    ShowMsg("ERROR AL CREAR UNA NUEVA CUENTA", text, "crimson");
   }
 });
 
