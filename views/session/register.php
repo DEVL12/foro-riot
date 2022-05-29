@@ -7,9 +7,9 @@
         <center>
           <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/darko-logo-white.png" ; style="height:35px;width:auto;"></a>
           <br><br>
-					<div id ="log_reg_table" class="log_reg_table_msg">
+          <div id ="log_reg_table" class="log_reg_table_msg">
 
-					</div>
+          </div>
         </center><br>
 
         <form id = "formRegister" autocomplete="off">
@@ -85,6 +85,6 @@
     </div>
   </div>
   <script> const base_url = "<?= base_url(); ?>"; </script>
-	<script src= "<?= base_url()?>assets/js/scripts/register.js" type="module"></script>
+  <script src= "<?= base_url()?>assets/js/scripts/register.js" type="module"></script>
 </body>
 </html>

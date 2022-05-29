@@ -1,17 +1,17 @@
 <?php
-	class honor extends controllers
-	{
-		public function __construct()
-		{
-			parent::__construct();
-		}
+  class honor extends controllers
+  {
+    public function __construct()
+    {
+      parent::__construct();
+    }
 
-		public function honor()
-		{
-			$data = array();
-			$data['titulo'] = "Honores";
-			$data['contenido'] = "Vista de los honores";
-			$data['script'] = "prueba.js";
+    public function honor()
+    {
+      $data = array();
+      $data['titulo'] = "Honores";
+      $data['contenido'] = "Vista de los honores";
+      $data['script'] = "prueba.js";
 
       $request = "HOLA :D";
 
@@ -26,7 +26,7 @@
       else
         dep($request);
 
-			$this->views->getViews($this,"honor",$data);
-		}
-	}
+      $this->views->getViews($this,"honor",$data);
+    }
+  }
 ?>
