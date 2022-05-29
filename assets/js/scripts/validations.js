@@ -13,12 +13,11 @@ class validations {
     expresion += (limit != "") ? "]{"+(limit)+"}$" : "]+$";
 
     if(expresion == "^[]+$") expresion = "^[a-zA-Z ]+$";
-    console.log(expresion);
     expresion = new RegExp(expresion);
     return expresion.test(data);
   }
 
-  ValidateNumber(data = "", limit = "", convert = false){
+  ValidateNumber(data = "", limit = "", convert = false) {
     const expression =  (limit != "") ? new RegExp('^\\d{'+limit+'}$') : new RegExp('^\\d+$');
     let result = expression.test(data);
     return (convert != false &&  result != false) ? parseInt(data) : result;

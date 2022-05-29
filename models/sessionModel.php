@@ -44,8 +44,8 @@
       $email = $this->CompareEmail($email);
 
       if($user || $email) {
-        $user ? $data = ["msg" => "El nombre de usuario ya está en uso", "input" => "username"] : $data = [NULL];
-        $email ? $data2 = ["msg" => "El correo ya está en uso", "input" => "email"] : $data2 = [NULL];
+        $user ? $data = ["msg" => "El nombre de usuario ya está en uso", "input" => ["username"]] : $data = [NULL];
+        $email ? $data2 = ["msg" => "El correo ya está en uso", "input" => ["email", "email2"]] : $data2 = [NULL];
         $msg = [$data, $data2];
       } else {
         $msg = false;

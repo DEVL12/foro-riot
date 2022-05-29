@@ -42,7 +42,6 @@ const comprobar = (e) => {
     }
     case 'answer' : {
       input.suma = validar.ValidateNumber(e.target.value) ? true : false;
-      console.log()
       if(input.suma == false) ChangeClass("error","answer");
       else ChangeClass("correct","answer");
       break;
@@ -130,23 +129,24 @@ formRegister.addEventListener('submit', e => {
       if(request.readyState == 4 && request.status == 200) {
         let objData = JSON.parse(request.responseText);
         if(objData.status) {
-          ShowMsg("¡LOGUEO EXITOSO!", "Tu cuenta a sido creada correctamente", "green");
+          ShowMsg("¡CREACION DE CUENTA!", "Tu cuenta a sido creada correctamente", "green");
           setTimeout(() => {
-            window.location = base_url+"discussion";
-          },3500);
+            window.location = base_url+"session/login";
+          },2000);
+          document.getElementById('regsubmit').setAttribute('hidden',"true");
+
         } else {
           let text = "";
           objData.msg.forEach((msg) => {
             if(msg.msg != null){
               text += `<li> ${msg.msg} </li>`;
+              msg.input.forEach(input => ChangeClass("error", input));
             }
           });
-
           ShowMsg("¡DATOS EXISTENTES!", text, "crimson");
         }
       }
     }
-
   } else {
     let text = "";
     if(input.username === false) text += "<li>El nombre de usuario deben tener un minimo de 3 y un maximo de 16 caracteres</li>";

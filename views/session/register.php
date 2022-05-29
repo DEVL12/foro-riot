@@ -66,7 +66,7 @@
                   <br>
 
                   <div>
-                    <input type="submit" class="button log_reg_btn" name="regsubmit" value="Crear cuenta" />
+                    <input type="submit" class="button log_reg_btn" name="regsubmit" id="regsubmit" value="Crear cuenta" />
                   </div>
                 </center>
               </td>
