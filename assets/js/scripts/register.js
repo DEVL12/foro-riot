@@ -129,9 +129,7 @@ formRegister.addEventListener('submit', e => {
           ShowMsg(objData.msg, "<li>Tu cuenta a sido creada correctamente</li>", "green");
           setTimeout(() => { window.location = base_url+"session/login"; }, 2000);
           document.getElementById('regsubmit').setAttribute('hidden',"true");
-        } else if (typeof(objData.msg) === "string") {
-          ShowMsg(objData.msg, "<li>Al parecer ocurrio un error con el servidor. Por favor intentelo mas tarde</li>", "crimson");
-        } else {
+        } else if (typeof(objData.msg) === "object") {
           let text = "";
           objData.msg.forEach((msg) => {
             if(msg.msg != null){
@@ -140,6 +138,8 @@ formRegister.addEventListener('submit', e => {
             }
           });
           ShowMsg("¡DATOS EXISTENTES!", text, "crimson");
+        } else {
+          ShowMsg(objData.msg, "<li>Al parecer ocurrio un error con el servidor. Por favor intentelo mas tarde</li>", "crimson");
         }
       }
     }
