@@ -54,7 +54,9 @@
     }
 
     public function CheckLogIn($user, $password) {
-      return ( ($this->CompareUser($user)) && ($this->ComparePassword($password)) ) ? true : false;
+      $sql = "SELECT id_jugador, nombre_jugador, correo, estado_jugador, rol FROM jugador WHERE nombre_jugador = '{$user}' AND contrasenia = '{$password}'";
+      $request = $this->select($sql);
+      return (empty($request)) ? false : $request;
     }
 
     private function CompareUser($user) {
@@ -64,7 +66,7 @@
     }
 
     private function ComparePassword($password) {
-      $sql = "SELECT * FROM jugador WHERE contraseña='{$password}'";
+      $sql = "SELECT * FROM jugador WHERE contrasenia='{$password}'";
       $request = $this->select($sql);
       return (empty($request)) ? false : true;
     }

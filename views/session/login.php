@@ -31,7 +31,7 @@
             </tr>
             <tr>
               <td class="trow1" colspan="2" align="center">
-                <div align="center"><input type="submit" class="button log_reg_btn" name="submit" value="Iniciar sesión" />
+                <div align="center"><input type="submit" class="button log_reg_btn" id = "btn_submit" name="submit" value="Iniciar sesión" />
                 </div>
               </td>
             </tr>

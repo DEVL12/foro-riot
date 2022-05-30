@@ -51,6 +51,7 @@ const comprobar = (e) => {
 
 inputs.forEach((inputs) => {
    inputs.addEventListener('keyup', comprobar);
+   inputs.addEventListener('click', comprobar);
 });
 
 const validarInput = (target, simbols, limit) => {
@@ -112,11 +113,7 @@ const ShowMsg = (title, text, color) => {
 formRegister.addEventListener('submit', e => {
   e.preventDefault();
   let is_validated = true;
-
-  Object.values(input).forEach((value) => {
-    if(value == false)
-      is_validated = false;
-  });
+  Object.values(input).forEach((value) => { if(value === false) is_validated = false; });
 
   if(is_validated && (input.suma && document.getElementById('answer').value == 4)) {
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -125,16 +122,15 @@ formRegister.addEventListener('submit', e => {
     request.open("POST",ajaxUrl,true);
     request.send(formData);
 
-    request.onreadystatechange = function(){
+    request.onreadystatechange = function() {
       if(request.readyState == 4 && request.status == 200) {
         let objData = JSON.parse(request.responseText);
         if(objData.status) {
-          ShowMsg("¡CREACION DE CUENTA!", "Tu cuenta a sido creada correctamente", "green");
-          setTimeout(() => {
-            window.location = base_url+"session/login";
-          },2000);
+          ShowMsg(objData.msg, "<li>Tu cuenta a sido creada correctamente</li>", "green");
+          setTimeout(() => { window.location = base_url+"session/login"; }, 2000);
           document.getElementById('regsubmit').setAttribute('hidden',"true");
-
+        } else if (typeof(objData.msg) === "string") {
+          ShowMsg(objData.msg, "<li>Al parecer ocurrio un error con el servidor. Por favor intentelo mas tarde</li>", "crimson");
         } else {
           let text = "";
           objData.msg.forEach((msg) => {

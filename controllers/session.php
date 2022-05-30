@@ -1,17 +1,16 @@
 <?php
   class session extends controllers {
     public function __construct() {
+      session_start();
       parent::__construct();
     }
 
     public function login() {
-      $data = array();
       $data['title'] = "Foro Riot Games - Iniciar sesión";
       $this->views->getViews($this,"login",$data);
     }
 
     public function register() {
-      $data = array();
       $data['title'] = "Foro Riot Games - Registro";
       $this->views->getViews($this,"register",$data);
     }
@@ -20,17 +19,33 @@
       $name = strClean($_POST['username']);
       $email = strClean($_POST['email']);
       $password = strClean($_POST['password']);
-
       $request_Account = $this->model->VerifyAccount($name, $email);
-      if($request_Account === false ) {
+
+      if($request_Account === false) {
         $requets = $this->model->AddUser($name, $email, $password);
         if($requets > 0) {
-          $arrResponse = array('status' => true, 'msg' => 'USUARIO REGISTRADOR CORRECTAMENTE');
+          $arrResponse = ['status' => true, 'msg' => 'USUARIO REGISTRADOR CORRECTAMENTE'];
         } else {
-          $arrResponse = array('status' => false, 'msg' => 'OCURRIO UN ERROR AL REGISTRAR EL USUARIO. INTENTELO MAS TARDE');
+          $arrResponse = ['status' => false, 'msg' => 'OCURRIO UN ERROR AL REGISTRAR EL USUARIO'];
         }
       } else {
-        $arrResponse =  array('status' => false, 'msg' => $request_Account);
+        $arrResponse = ['status' => false, 'msg' => $request_Account];
+      }
+
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
+    }
+
+    public function getUser() {
+      $name = strClean($_POST['username']);
+      $password = strClean($_POST['password']);
+      $requets_login = $this->model->CheckLogIn($name, $password);
+
+      if(is_array($requets_login) === true) {
+        $arrResponse = ['status' => true, 'msg' => 'USUARIO LOGUEADO CORRECTAMENTE'];
+				$_SESSION = ['dataUser' => $requets_login, 'islogin' => true];
+      } else {
+        $arrResponse = ['status' => false, 'msg' => 'DATOS INCORRECTOS'];
       }
 
       echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
