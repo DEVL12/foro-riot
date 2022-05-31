@@ -2,13 +2,11 @@
   <div id="panel">
     <div class="upper">
       <div class="wrapper">
-      <?php $InicioSession = true; // esta variable va a servir para comprobar si hay un session abierta o no, luego eso se manejara con $SESSION
-
-        if($InicioSession) { // AQUI SE COMPRUEBA EL LOGIN ?>
-        <div class="float_right" id="member_info_header"> <!--ESTO IRA CUANDO SE Usen variables de login-->
+      <?php
+        if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
+        <div class="float_right" id="member_info_header">
           <a href="" id="dropmenu"><span><img src="<?= base_url()?>assets/images/default_avatar.png" class="rounded-avatar" style="width:30px;height:30px;margin-bottom:-9px;"></span></a>
         </div>
-
       <?php } else { ?>
         <div class="float_right" id="guest_info_header">
           <a href="<?= base_url() ?>session/login" class="login"> <i class="fas fa-key"></i> &nbsp; Iniciar sesión</a>
@@ -27,7 +25,7 @@
           <li><a href="<?= base_url() ?>search">Búsqueda</a></li>
           <li><a href="<?= base_url() ?>memberList">Lista de miembros</a></li>
 
-          <?php if($InicioSession) {?>
+          <?php if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
           <li><a href="" id="moremenu"><span>Publicaciones</span> <i class="fa fa-caret-down"></i></a></li>
           <?php } else { ?>
             <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
@@ -39,7 +37,7 @@
     </div>
   </div>
 
-  <?php if($InicioSession) {?>
+  <?php if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
   <div id="moremenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 65px; left: 825.203px; display:none;">
     <div class="popup_item_container"><a href="#" class="popup_item">Mis Publicaciones</a></div>
     <div class="popup_item_container"><a href="#" class="popup_item">Ver nuevas publicaciones</a></div>
@@ -49,7 +47,7 @@
   <div id="dropmenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 41px; left: 1159.31px; display:none;">
     <div class="popup_item_container"><a href="<?= base_url()?>player/profile/UsuarioTAL" class="popup_item"><span>Ver perfil</span></a></div>
     <div class="popup_item_container"><a href="#" class="popup_item"><span>Editar Avatar</span></a></div>
-    <div class="popup_item_container"><a href="#" class="popup_item"><span>Cerrar sesión!</span></a></div>
+    <div class="popup_item_container"><a href="<?= base_url() ?>session/logout" class="popup_item"><span>Cerrar sesión!</span></a></div>
   </div>
   <?php } ?>
 
