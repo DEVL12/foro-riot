@@ -3,7 +3,7 @@
     <div class="upper">
       <div class="wrapper">
       <?php
-        if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
+        if(isset($_SESSION['islogin'])) {?>
         <div class="float_right" id="member_info_header">
           <a href="" id="dropmenu"><span><img src="<?= base_url()?>assets/images/default_avatar.png" class="rounded-avatar" style="width:30px;height:30px;margin-bottom:-9px;"></span></a>
         </div>
@@ -25,7 +25,7 @@
           <li><a href="<?= base_url() ?>search">Búsqueda</a></li>
           <li><a href="<?= base_url() ?>memberList">Lista de miembros</a></li>
 
-          <?php if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
+          <?php if(isset($_SESSION['islogin'])) {?>
           <li><a href="" id="moremenu"><span>Publicaciones</span> <i class="fa fa-caret-down"></i></a></li>
           <?php } else { ?>
             <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <?php if(isset($_SESSION['islogin']) && $_SESSION['islogin'] === true) {?>
+  <?php if(isset($_SESSION['islogin'])) {?>
   <div id="moremenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 65px; left: 825.203px; display:none;">
     <div class="popup_item_container"><a href="#" class="popup_item">Mis Publicaciones</a></div>
     <div class="popup_item_container"><a href="#" class="popup_item">Ver nuevas publicaciones</a></div>
