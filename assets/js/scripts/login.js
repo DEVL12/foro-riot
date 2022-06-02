@@ -1,8 +1,10 @@
 import validations from "./validations.js";
+import Ajax from "./ajax.js";
+
 const validar = new validations();
+const var_Ajax = new Ajax();
 const formLogin = document.getElementById('formLogin');
 const inputs = document.querySelectorAll('#formLogin input');
-
 let input = {
   password : false,
   username : false
@@ -13,7 +15,7 @@ const comprobar = (e) => {
     case 'username': validarInput(e.target, " _\\-¡!¿?:.^$", "3,16"); break;
     case 'password': validarInput(e.target, "_\\-¡!¿?:.^$#@&", "5,15"); break;
   }
-}
+};
 
 inputs.forEach((inputs) => {
    inputs.addEventListener('keyup', comprobar);
@@ -28,7 +30,7 @@ const validarInput = (target, simbols, limit) => {
     input[target.name] = false;
     ChangeClass("error", target.name)
   }
-}
+};
 
 const ChangeClass = (condicion, name) => {
   if(condicion === "correct") {
@@ -38,7 +40,7 @@ const ChangeClass = (condicion, name) => {
     document.getElementById(name).classList.remove('validado-input');
     document.getElementById(name).classList.add('errores-input');
   }
-}
+};
 
 const ShowMsg = (title, text, color) => {
   document.querySelector('.log_reg_table_msg').innerHTML =
@@ -47,20 +49,16 @@ const ShowMsg = (title, text, color) => {
     <ul style = "color: ${color};">${text}</ul>
   </div>
   <br>`;
-}
+};
 
-formLogin.addEventListener('submit', e => {
+formLogin.addEventListener('submit', (e) => {
   e.preventDefault();
   if(input.password && input.username) {
-    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+"session/getUser";
-    let formData = new FormData(formLogin);
-    request.open("POST",ajaxUrl,true);
-    request.send(formData);
+    const request = var_Ajax.sendPost("session/getUser", formLogin);
 
-    request.onreadystatechange = function(){
+    request.onreadystatechange = () => {
       if(request.readyState == 4 && request.status == 200) {
-        let objData = JSON.parse(request.responseText);
+        const objData = JSON.parse(request.responseText);
         if(objData.status) {
           ShowMsg(objData.msg, "<li>Su logueo se ha establecido con exito</li>", "green");
           setTimeout(() => { window.location = base_url+"discussion"; }, 2000);
@@ -71,7 +69,7 @@ formLogin.addEventListener('submit', e => {
           ChangeClass("error","password");
         }
       }
-    }
+    };
   } else {
     let text = `
       <li>La contraseña o el nombre de usuario son incorrectos</li>
