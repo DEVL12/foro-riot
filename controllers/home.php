@@ -8,25 +8,28 @@
 
     public function home()
     {
-      $data = array();
-      $data['title'] = "Foro Riot Games | Inicio";
-      $data['script'] = "prueba.js";
+      $data = [
+        'title' => "Foro Riot Games | Inicio",
+        'script' => "prueba.js",
+      ];
       $this->views->getViews($this, "home", $data);
     }
 
     public function aboutUs()
     {
-      $data = array();
-      $data['title'] = "Foro Riot Games | Sobre Nosotros";
-      $data['script'] = "prueba.js";
+      $data = [
+        'title' => "Foro Riot Games | Sobre Nosotros",
+        'script' => "prueba.js",
+      ];
       $this->views->getViews($this, "aboutUs", $data);
     }
 
     public function guide()
     {
-      $data = array();
-      $data['title'] = "Foro Riot Games | Guia de Uso";
-      $data['script'] = "prueba.js";
+      $data = [
+        'title' => "Foro Riot Games | Guia de Uso",
+        'script' => "prueba.js",
+      ];
       $this->views->getViews($this, "guide", $data);
     }
   }

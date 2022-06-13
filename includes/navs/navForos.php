@@ -31,7 +31,7 @@
             <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
           <?php } ?>
 
-          <li><a href="help.html" class="help">Ayuda</a></li>
+          <li><a href="<?= base_url() ?>help" class="help">Ayuda</a></li>
         </ul>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <a href="<?= base_url() ?>search"><i class="fas fa-search fa-fw"></i>Búsqueda</a>
       <a href="<?= base_url() ?>memberList"><i class="fas fa-users fa-fw"></i>Lista de miembros</a>
       <a href="<?= base_url() ?>discussion" style="border-bottom:none;"><i class="fas fa-comments fa-fw"></i>Nuevas Publicaciones</a>
-      <a href="#"><i class="fas fa-info-circle fa-fw"></i>Ayuda</a>
+      <a href="<?= base_url() ?>help"><i class="fas fa-info-circle fa-fw"></i>Ayuda</a>
     </div>
   </div>
 </div>
