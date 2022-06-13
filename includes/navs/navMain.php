@@ -16,7 +16,7 @@
      </div>
    </li>
    <li class="nav-item">
-     <a class="nav-link" href="category.html">Guia De Uso</a>
+     <a class="nav-link" href="<?= base_url()?>home/guide">Guia De Uso</a>
    </li>
    <li class="nav-item">
      <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>

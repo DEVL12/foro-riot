@@ -5,7 +5,7 @@
     <div class="wrapintro">
       <h1>BIENVENIDO A</h1>
       <h2 class="lead">Los foros de Riot Games, para mas información de los foros lee nuestra guia de uso</h2>
-      <a  href="#!" class="btn">Guia de Uso</a>
+      <a  href="<?= base_url()?>home/guide" class="btn">Guia de Uso</a>
     </div>
   </section>
 
