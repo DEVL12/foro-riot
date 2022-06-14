@@ -1,5 +1,16 @@
-<?php getHeader($data, "headerForos") ?>
+<?php getHeader($data, "headerForos");
 
+function DameElTotalDeHonoresDeEstaDiscusion($id){
+  //Esta es una función de prueba, esta función debería ser GetTotalDiscussionHonor($id) del HonorModel.php
+  return 16;
+}
+
+?>
+
+<div id="PopUp" class="disabled" style="left:40vw; top:25%; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; width:20vw; height:auto; background:#1b1c22; border:2px solid rgba(186, 51, 64, 1); position:fixed; z-index:9; border-radius:8px">
+  
+</div>
+  
 <div id="content">
   <div class="wrapper">
     <div class="navigation">
@@ -24,8 +35,19 @@
 
     <?php for ($i = 1; $i <= 3; $i++) { ?>
     <table border="0" cellspacing="0" cellpadding="5" class="tborder tfixed clear no-bs" style="background:none;">
-      <tr>
-        <td id="posts_container">
+      <tr style="display:flex;">
+        <td style="width:10%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0px">
+          <!-- Este botón es el de arriba, y debe llamar a la función AddHonor($id_del_jugador, $id_de_discusion, "discusion", 1)del HonorModel.php -->
+          <button name="AddHonor" id=<?php echo $i; ?> text="discusion" value="1" style="width:35px;height:20px; -webkit-transform: scaleY(-1); margin:0; background-size:contain; background-repeat:no-repeat; background-color:rgba(0,0,0,0); background-image:url(<?= base_url()?>assets/images/down_arrow.png)">
+
+          <!-- Este es el botón  que muestra el pop up con el desglose de todas las personas que han dado honor y qué tipo de honor dieorn-->
+          <button name="SeeHonors" id=<?php echo $i; ?> value="discusion" style="width:70px;height:70px;float:left;border-width:5px; margin:10px 0px; background-size:contain; background-repeat:no-repeat; background-image:url(<?= base_url()?>assets/images/honor.png)">
+            <span style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:20px"><?php echo DameElTotalDeHonoresDeEstaDiscusion($i); ?></span>
+          </button>
+          <!-- Este botón es el de abajo, y debe llamar a la función AddHonor($id_del_jugador, $id_de_discusion, "discusion", -1)del HonorModel.php -->
+          <button name="AddHonor" id=<?php echo $i?> text="discusion" value="-1" style="width:35px;height:20px; margin:0; background-size:contain; background-color:rgba(0,0,0,0); background-repeat:no-repeat; background-image:url(<?= base_url()?>assets/images/down_arrow.png)">
+        </td>
+        <td style="width:90%"id="posts_container">
           <div id="posts">
             <a name="pid1" id="pid1"></a>
             <div class="postbit_avatar_margins">
