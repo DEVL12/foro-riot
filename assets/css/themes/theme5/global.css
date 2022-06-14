@@ -2321,4 +2321,8 @@ div.jqi .jqisubstate .jqibuttons button{
 .alert-input{
   border: 2px solid orange !important;
 }
+
+.disabled{
+  display:none !important;
+}
 /** Impromptu End */
