@@ -27,6 +27,32 @@
       return $honors;
     }
 
+    public function GetTotalDiscussionHonor($id){
+      $sql = "SELECT puntaje FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'discusion'";
+      $request = $this->select($sql);
+
+      $honors = 0;
+      foreach ($request as $key => $value){
+        if(!empty($value['puntaje']))
+          $honors += $value['puntaje'];
+        else
+          $honors += $value;
+      }
+      return $honors;
+    }
+
+    public function GetHonorsOfADiscussion($id){
+      $sql = "SELECT * FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'discusion'";
+      $request = $this->select($sql);
+      return $request;
+    }
+
+    public function GetHonorsOfAnAnswer($id){
+      $sql = "SELECT * FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'respuesta'";
+      $request = $this->select($sql);
+      return $request;
+    }
+
     public function GetHonor($playerId, $targetId, $targetType) {
       $sql = "SELECT * FROM honor WHERE id_jugador = $playerId AND id_objetivo = $targetId AND tipo_objetivo = '$targetType'";
       $request = $this->select($sql);
@@ -61,5 +87,7 @@
       $request = $this->delete($sql);
       return $request;
     }
+
+    
   }
 ?>
