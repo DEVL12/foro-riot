@@ -20,7 +20,7 @@
     }
 
     public function GetPlayerById($id) {
-      $sql = "SELECT * FROM jugador WHERE id = {$id}";
+      $sql = "SELECT * FROM jugador WHERE id_jugador = {$id}";
       $request = $this->select($sql);
       return $request;
     }

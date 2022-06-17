@@ -8,11 +8,10 @@ class Ajax{
     return request;
   }
 
-  sendGet(url) {
-    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+url;
-    request.open("GET",ajaxUrl, true);
-    request.send();
+  sendGet(url, is_asynchronous) {
+    const request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    const ajaxUrl = base_url+url;
+    request.open("GET", ajaxUrl, is_asynchronous);
     return request;
   }
 }

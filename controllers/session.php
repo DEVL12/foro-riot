@@ -52,6 +52,21 @@
       die();
     }
 
+    public function GetPlayerById($id) {
+      if(!empty($id)) {
+        $request_player = $this->model->GetPlayerById($id);
+
+        $arrResponse = (!empty($request_player))
+          ? ['status' => true, 'data' => $request_player['nombre_jugador']]
+          : ['status' => false];
+      } else {
+        $arrResponse = ['status' => false];
+      }
+
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
+    }
+
     public function logout() {
       session_unset();
       session_destroy();

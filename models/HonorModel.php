@@ -41,53 +41,42 @@
       return $honors;
     }
 
-    public function GetHonorsOfADiscussion($id){
-      $sql = "SELECT * FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'discusion'";
-      $request = $this->select($sql);
+    public function GetHonorsOfADiscussion($id) {
+      $sql = "SELECT * FROM honor WHERE id_objetivo = {$id} AND tipo_objetivo = 'discusion'";
+      $request = $this->select_all($sql);
       return $request;
     }
 
     public function GetHonorsOfAnAnswer($id){
-      $sql = "SELECT * FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'respuesta'";
-      $request = $this->select($sql);
+      $sql = "SELECT * FROM honor WHERE id_objetivo = {$id} AND tipo_objetivo = 'respuesta'";
+      $request = $this->select_all($sql);
       return $request;
     }
 
     public function GetHonor($playerId, $targetId, $targetType) {
-      $sql = "SELECT * FROM honor WHERE id_jugador = $playerId AND id_objetivo = $targetId AND tipo_objetivo = '$targetType'";
+      $sql = "SELECT * FROM honor WHERE fk_jugador = $playerId AND id_objetivo = $targetId AND tipo_objetivo = '$targetType'";
       $request = $this->select($sql);
       return $request;
     }
 
     public function AddHonor($playerId, $targetId, $targetType, $honor) {
-      $sql = "INSERT INTO honor (id_jugador, id_objetivo, tipo_objetivo, puntaje) VALUES (?, ?, ?, ?)";
+      $sql = "INSERT INTO honor (fk_jugador, id_objetivo, tipo_objetivo, puntaje) VALUES (?, ?, ?, ?)";
       $arrData = array($playerId, $targetId, $targetType, $honor);
       $request = $this->insert($sql, $arrData);
       return $request;
     }
 
-    public function UpdateHonor($playerId, $targetId, $targetType, $honor) {
-      $row = $this->GetHonor($playerId, $targetId, $targetType);
-      if(!empty($row)) {
-        if($honor == 0)
-          return $this->DeleteHonor($row['id']);
-        else {
-          $sql = "UPDATE honor SET puntaje = ? WHERE id = {$row['id']}";
-          $arrData = array($honor);
-          $request = $this->update($sql, $arrData);
-          return $request;
-        }
-      }
-      else
-        return NULL;
-    }
-
-    public function DeleteHonor($id) {
-      $sql = "DELETE FROM honor WHERE id = {$id}";
-      $request = $this->delete($sql);
+    public function UpdateHonor($honorId, $honor) {
+      $sql = "UPDATE honor SET puntaje = ? WHERE id_honor = {$honorId}";
+      $arrData = array($honor);
+      $request = $this->update($sql, $arrData);
       return $request;
     }
 
-    
+    public function DeleteHonor($id) {
+      $sql = "DELETE FROM honor WHERE id_honor = {$id}";
+      $request = $this->delete($sql);
+      return $request;
+    }
   }
 ?>

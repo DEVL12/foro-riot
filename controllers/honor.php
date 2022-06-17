@@ -12,21 +12,57 @@
       $data['titulo'] = "Honores";
       $data['contenido'] = "Vista de los honores";
       $data['script'] = "prueba.js";
-
-      $request = "HOLA :D";
-
-      // $request = $this->model->GetHonorsOfAPlayer(1); SUPONGO QUE FUNCIONA XD Igualmente averigua si debe funcionar asi
-      // $request = $this->model->GetHonor(1, 5, "respuesta"); FUNCIONA
-      // $request = $this->model->AddHonor(3, 8, "respuesta", 1); FUNCIONA
-      // $request = $this->model->UpdateHonor(23, 8, "respuesta", 2); FUNCIONA
-      // $request = $this->model->DeleteHonor(5); FUNCIONA
-
-      if($request == NULL)
-        echo "No se encontró";
-      else
-        dep($request);
-
       $this->views->getViews($this,"honor",$data);
+    }
+
+    public function AddHonor($data)
+    {
+      $arr_data = explode(",",$data);
+      $id_player =$arr_data[0];
+      $id_target =$arr_data[1];
+      $target_type =$arr_data[2];
+      $honor =$arr_data[3];
+      $exist = $this->model->GetHonor($id_player, $id_target, $target_type);
+
+      if(!empty($exist) > 0) {
+        if ($exist['puntaje'] == $honor) {
+          $request_honor = $this->model->DeleteHonor($exist['id_honor']);
+          $arrResponse = (!empty($request_honor))
+            ? ['status' => true , 'msg' => "Su honor fue removido de esta publicación correctamente"]
+            : ['status' => false, 'msg' => "Ocurrio un error al momento de eliminar el honor, intente más tarde"];
+        } else {
+          $request_honor = $this->model->UpdateHonor($exist['id_honor'], $honor);
+          $arrResponse = (!empty($request_honor))
+            ? ['status' => true , 'msg' => "Su honor fue modificado en esta publicación correctamente"]
+            : ['status' => false, 'msg' => "Ocurrio un error al momento de modificar el honor, intente más tarde"];
+        }
+      } else {
+        $request_honor = $this->model->AddHonor($id_player, $id_target, $target_type, $honor);
+        $arrResponse = (!empty($request_honor))
+            ? ['status' => true , 'msg' => "El honor fue añadido en esta publicación correctamente"]
+            : ['status' => false, 'msg' => "Ocurrio un error al momento de añadir el honor, intente más tarde"];
+      }
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
+    }
+    public function GetHonor($data)
+    {
+      if(!empty($data)) {
+        $arr_data = explode(",",$data);
+
+        $request_honor = ($arr_data[0] == 'discusion')
+          ? $this->model->GetHonorsOfADiscussion($arr_data[1])
+          : $this->model->GetHonorsOfAnAnswer($arr_data[1]);
+
+        $arrResponse = (!empty($request_honor))
+          ? ['status' => true, 'data' => $request_honor]
+          : ['status' => false];
+      } else {
+        $arrResponse = ['status' => false];
+      }
+
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
     }
   }
 ?>
