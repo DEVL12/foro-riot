@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2022 a las 21:35:33
+-- Tiempo de generación: 17-06-2022 a las 19:51:55
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -72,6 +72,8 @@ INSERT INTO `discusion` (`id_discusion`, `titulo`, `contenido_discusion`, `conte
 CREATE TABLE `honor` (
   `id_honor` int(11) NOT NULL,
   `puntaje` int(11) NOT NULL,
+  `id_objetivo` int(11) NOT NULL,
+  `tipo_objetivo` varchar(30) NOT NULL,
   `fk_jugador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -231,7 +233,7 @@ ALTER TABLE `honor`
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `plataforma`
