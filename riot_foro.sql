@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2022 a las 19:51:55
+-- Tiempo de generación: 19-06-2022 a las 00:01:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -77,6 +77,14 @@ CREATE TABLE `honor` (
   `fk_jugador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `honor`
+--
+
+INSERT INTO `honor` (`id_honor`, `puntaje`, `id_objetivo`, `tipo_objetivo`, `fk_jugador`) VALUES
+(14, 1, 1, 'respuesta', 1),
+(15, -1, 2, 'respuesta', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -126,15 +134,23 @@ INSERT INTO `plataforma` (`id_plataforma`, `nombre_plataforma`) VALUES
 --
 
 CREATE TABLE `respuesta` (
-  `id_repuesta` int(11) NOT NULL,
-  `contenido_repuesta` text NOT NULL,
-  `contenido_original_repuesta` text NOT NULL,
-  `editado_repuesta` int(11) NOT NULL,
-  `fecha_repuesta` date NOT NULL,
-  `estado_repuesta` int(1) NOT NULL,
+  `id_respuesta` int(11) NOT NULL,
+  `contenido_respuesta` text NOT NULL,
+  `contenido_original_respuesta` text NOT NULL,
+  `editado_respuesta` int(11) NOT NULL,
+  `fecha_respuesta` date NOT NULL,
+  `estado_respuesta` int(1) NOT NULL,
   `fk_jugador` int(11) NOT NULL,
   `fk_discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `respuesta`
+--
+
+INSERT INTO `respuesta` (`id_respuesta`, `contenido_respuesta`, `contenido_original_respuesta`, `editado_respuesta`, `fecha_respuesta`, `estado_respuesta`, `fk_jugador`, `fk_discusion`) VALUES
+(1, 'Hola', 'Hola', 1, '2022-06-18', 1, 1, 1),
+(2, 'Primero', 'Primero', 1, '2022-06-16', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +213,7 @@ ALTER TABLE `plataforma`
 -- Indices de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  ADD PRIMARY KEY (`id_repuesta`),
+  ADD PRIMARY KEY (`id_respuesta`),
   ADD KEY `fk_Respuesta_Jugador1_idx` (`fk_jugador`),
   ADD KEY `fk_Respuesta_Discusion2` (`fk_discusion`);
 
@@ -227,7 +243,7 @@ ALTER TABLE `discusion`
 -- AUTO_INCREMENT de la tabla `honor`
 --
 ALTER TABLE `honor`
-  MODIFY `id_honor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_honor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `jugador`
@@ -245,7 +261,7 @@ ALTER TABLE `plataforma`
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `id_repuesta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_respuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tema`
