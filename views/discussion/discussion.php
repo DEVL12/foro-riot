@@ -96,9 +96,9 @@ function DameElTotalDeHonoresDeEstaDiscusion($id){
                         <tbody>
                           <tr>
                             <td>
-                                <span style="width:70px;height:70px;float:left;border-width:5px;margin-bottom:10px;margin-right:10px;margin-top:5px; background-size:contain; background-image:url(<?= base_url()?>assets/images/honor.png)">
-                                  <span style="display:flex; align-items: center; justify-content: center; width:100%; height:100%; font-size:20px"><?php echo DameElTotalDeHonoresDeEstaDiscusion(0); ?></span>                                  
-                                </span>
+                              <span class="view-honors">
+                                <span class="total-honors"><?php echo DameElTotalDeHonoresDeEstaDiscusion(0); ?></span>
+                              </span>
                             </td>
                             <td class="trow1" style="padding:0px;">
                               <table border="0" cellpadding="5" class="tfixed" style="width: 100%;">

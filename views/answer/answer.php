@@ -36,20 +36,20 @@ function DameElTotalDeHonoresDeEstaDiscusion($id){
     <?php for ($i = 1; $i <= 3; $i++) { ?>
     <table border="0" cellspacing="0" cellpadding="5" class="tborder tfixed clear no-bs" style="background:none;">
       <tr style="display:flex;">
-        <td style="width:10%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0px">
+        <td class="honors">
           <?php if($islogin) { ?>
-            <button name="AddHonor" value= "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $i; ?>,discusion, 1" style="width:35px;height:20px; -webkit-transform: scaleY(-1); margin:0; background-size:contain; background-repeat:no-repeat; background-color:rgba(0,0,0,0); background-image:url(<?= base_url()?>assets/images/down_arrow.png)">
+            <button class="add-positive-honor" name="AddHonor" value= "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $i; ?>,discusion, 1">
           <?php } ?>
 
-          <button name="SeeHonors" id="<?= $i ?>"value="discusion" style="width:70px;height:70px;float:left;border-width:5px; margin:10px 0px; background-size:contain; background-repeat:no-repeat; background-image:url(<?= base_url()?>assets/images/honor.png)">
-            <span style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:20px"><?php echo DameElTotalDeHonoresDeEstaDiscusion($i); ?></span>
+          <button class="view-honors" name="SeeHonors" id="<?= $i ?>"value="discusion">
+            <span class ="total-honors"><?php echo DameElTotalDeHonoresDeEstaDiscusion($i); ?></span>
           </button>
 
           <?php if($islogin) { ?>
-            <button name="AddHonor" value = "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $i; ?>,discusion,-1" style="width:35px;height:20px; margin:0; background-size:contain; background-color:rgba(0,0,0,0); background-repeat:no-repeat; background-image:url(<?= base_url()?>assets/images/down_arrow.png)">
+            <button class="add-negative-honor" name="AddHonor" value = "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $i; ?>,discusion,-1">
           <?php }?>
         </td>
-        <td style="width:90%"id="posts_container">
+        <td style="width:90%" id="posts_container">
           <div id="posts">
             <a name="pid1" id="pid1"></a>
             <div class="postbit_avatar_margins">

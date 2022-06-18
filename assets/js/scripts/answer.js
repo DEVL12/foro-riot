@@ -86,18 +86,18 @@ function PrintPopUp(honors){
   CanClosePopUp = false;
   popUp.className = "";
   popUp.innerHTML = "";
-  popUp.innerHTML += '<button id="ClosePopUp" onclick="" name="ClosePopUp" style="height:25px; width:20px; display:flex; align-self:flex-end; background-size:contain; background-color:rgba(200,150,144,1); background-repeat:no-repeat; background-image:url('+base_url+'assets/images/down_arrow.png)"></button>';
+  popUp.innerHTML += '<button class="ClosePopUp" id="ClosePopUp" onclick="" name="ClosePopUp"></button>';
 
   honors.forEach(honor => {
     if(honor !== undefined) {
 
       popUp.innerHTML +=
-      '<div style="width:80%; height:33px; display:flex; justify-content:center; align-items:center; margin:5px 0; background-color:rgba(0,0,0,0); background:#23242a; padding: 3px 0; border-radius:10px">' +
-      '   <img style="width:30px; height:30px; border-radius:50px; margin: 0 10px" src="'+base_url+'assets/images/default_avatar.png">' +
-      '   <span style="width:auto; height:auto; margin: 0 5px 0 0">' +
+      '<div class="PopUp">' +
+      '   <img class="img-PopUp" src="'+base_url+'assets/images/default_avatar.png">' +
+      '   <span class="name-player">' +
       GetNameOfPlayer(honor['fk_jugador']) +
       '   </span>' +
-      '   <span style="width:auto; height:auto">'+
+      '   <span class="honor-value">'+
       GetHonorValue(honor['puntaje']) +
       '   </span>' +
       ' </div>';

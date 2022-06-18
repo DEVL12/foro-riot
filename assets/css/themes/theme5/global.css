@@ -2326,3 +2326,111 @@ div.jqi .jqisubstate .jqibuttons button{
   display:none !important;
 }
 /** Impromptu End */
+
+td.honors {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px
+}
+
+button.add-positive-honor, button.add-negative-honor {
+  width: 35px;
+  height: 20px;
+  margin: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0);
+  background-image: url(../../../images/down_arrow.png);
+  transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+}
+
+button.add-negative-honor {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+}
+
+button.view-honors, span.view-honors {
+  width: 70px;
+  height: 70px;
+  float: left;
+  border-width: 5px;
+  margin: 10px 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../../images/honor.png);
+}
+
+span.view-honors {
+  margin-bottom:10px;
+  margin-right:10px;
+  margin-top:5px;
+}
+
+span.total-honors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px
+}
+
+
+button.ClosePopUp {
+  height: 25px;
+  width: 20px;
+  display: flex;
+  align-self: flex-end;
+  background-size: contain;
+  background-color: rgba(200,150,144,1);
+  background-repeat:no-repeat;
+  background-image:url(../../../images/down_arrow.png)
+}
+
+div.PopUp {
+  width: 80%;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  background-color: rgba(0,0,0,0);
+  background: #23242a;
+  padding: 3px 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+img.img-PopUp {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+span.name-player{
+ margin: 0 5px 0 0;
+}
+
+span.honor-value, span.name-player{
+  width:auto;
+  height:auto;
+}
