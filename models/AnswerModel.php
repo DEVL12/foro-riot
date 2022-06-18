@@ -18,7 +18,10 @@
     }
 
     public function GetAllAnswersOfADiscussion($discussionId) {
-      $sql = "SELECT * FROM respuesta WHERE id_discusion ={$discussionId}";
+      $sql = "SELECT id_jugador, id_respuesta, nombre_jugador, rol, contenido_respuesta, editado_respuesta, fecha_respuesta, estado_respuesta, id_respuesta
+              FROM respuesta
+              INNER JOIN jugador ON jugador.id_jugador = respuesta.fk_jugador
+              WHERE fk_discusion = {$discussionId} AND estado_respuesta != -1";
       $request = $this->select_all($sql);
       return $request;
     }

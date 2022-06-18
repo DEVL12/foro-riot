@@ -62,7 +62,7 @@ function DameLosHonoresDeEsto(id, type) {
     request.onreadystatechange = () => {
       if(request.readyState == 4 && request.status == 200) {
         const objData = JSON.parse(request.responseText);
-        return (objData.status)
+        response_JSON = (objData.status)
           ? objData.data
           : null;
       }
@@ -87,10 +87,10 @@ function PrintPopUp(honors){
   popUp.className = "";
   popUp.innerHTML = "";
   popUp.innerHTML += '<button class="ClosePopUp" id="ClosePopUp" onclick="" name="ClosePopUp"></button>';
+  console.log(honors);
 
-  honors.forEach(honor => {
-    if(honor !== undefined) {
-
+  if(honors !== null) {
+    honors.forEach(honor => {
       popUp.innerHTML +=
       '<div class="PopUp">' +
       '   <img class="img-PopUp" src="'+base_url+'assets/images/default_avatar.png">' +
@@ -101,8 +101,10 @@ function PrintPopUp(honors){
       GetHonorValue(honor['puntaje']) +
       '   </span>' +
       ' </div>';
-    }
-  });
+    });
+  } else{
+    popUp.innerHTML += '<br><h1> VACIO </h1><br>';
+  }
 }
 
 function GetHonorValue(honor){
