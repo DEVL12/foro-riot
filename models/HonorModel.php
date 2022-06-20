@@ -53,8 +53,8 @@
       return $request;
     }
 
-    public function GetHonor($playerId, $targetId, $targetType) {
-      $sql = "SELECT * FROM honor WHERE fk_jugador = $playerId AND id_objetivo = $targetId AND tipo_objetivo = '$targetType'";
+    public function GetHonor($targetId, $targetType) {
+      $sql = "SELECT * FROM honor WHERE id_objetivo = $targetId AND tipo_objetivo = '$targetType'";
       $request = $this->select($sql);
       return $request;
     }

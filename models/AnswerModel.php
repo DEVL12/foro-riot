@@ -5,6 +5,7 @@
       parent::__construct();
     }
 
+
     public function GetAnswerById($id) {
       $sql = "SELECT * FROM respuesta WHERE id ={$id}";
       $request = $this->select($sql);
@@ -76,6 +77,20 @@
       }
       else
         return NULL;
+    }
+
+    public function GetHonorsOf($id, $type){
+      $sql = "SELECT puntaje FROM honor WHERE id_objetivo = $id AND tipo_objetivo = '$type'";
+      $request = $this->select_all($sql);
+
+      $honors = 0;
+      foreach ($request as $key => $value){
+        if(!empty($value['puntaje']))
+          $honors += $value['puntaje'];
+        else
+          $honors += $value;
+      }
+      return $honors;
     }
   }
 ?>
