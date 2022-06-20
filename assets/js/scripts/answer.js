@@ -1,6 +1,7 @@
 import validations from "./validations.js";
 import Ajax from "./ajax.js";
 
+
 const validar = new validations();
 const var_Ajax = new Ajax();
 
@@ -20,8 +21,10 @@ elements.forEach(element => {
 document.addEventListener("click", function(){ClosePopUp(document.getElementById("PopUp"))});
 
 function AddHonor(value){
-  console.log(value);
+  var button = document.getElementById("r" + value.split(",")[1]);
+  //TotalHonorsButton
 
+  var currentHonor = parseInt(button.attributes[2].value);
   const request = var_Ajax.sendGet(`honor/AddHonor/${value}`, true);
   request.send();
   request.onreadystatechange = () => {
@@ -29,9 +32,25 @@ function AddHonor(value){
       const objData = JSON.parse(request.responseText);
       if (objData.status){
         alert(objData.msg);
-        /* MAS CODIGO PARA CAMBIAR EL N# DE HONOR EN LA PUBLICACION */
+        var result;
+        if(objData.msg == "El honor fue añadido en esta publicación correctamente"){
+          result = currentHonor + parseInt(value.split(",")[3])
+        }
+        else if(objData.msg == "Su honor fue modificado en esta publicación correctamente"){
+          result = currentHonor + (parseInt(value.split(",")[3]) * 2);
+        }
+        else if(objData.msg == "Su honor fue removido de esta publicación correctamente"){
+          result = currentHonor - parseInt(value.split(",")[3])
+        }
+        button = document.getElementById("r" + value.split(",")[1]);
+        button.attributes[2].value = result;
+        button.id = "r" + value.split(",")[1];
+        button.innerHTML = result;
       } else {
         alert(objData.msg);
+        var button = document.getElementById("r" + value.split(",")[1]);
+        
+        button.innerHTML = result
       }
     }
   };
