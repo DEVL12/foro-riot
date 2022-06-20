@@ -1,11 +1,8 @@
 <?php getHeader($data, "headerForos");
 $data_answer = $data['data_answers'];
+$honors = $data['honors'];
+//en el $honors[0][0] está el honor de la discusión
 $islogin = isset($_SESSION['islogin']);
-
-function DameElTotalDeHonoresDeEstaDiscusion($id){
-  //Esta es una función de prueba, esta función debería ser GetTotalDiscussionHonor($id) del HonorModel.php
-  return 16;
-}
 
 ?>
 
@@ -45,8 +42,8 @@ function DameElTotalDeHonoresDeEstaDiscusion($id){
               <button class="add-positive-honor" name="AddHonor" value= "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $data_answer[$i]['id_respuesta']?>,respuesta,1">
             <?php } ?>
 
-            <button class="view-honors" name="SeeHonors" id="<?= $data_answer[$i]['id_respuesta']?>" value="respuesta">
-              <span class ="total-honors"><?php echo DameElTotalDeHonoresDeEstaDiscusion($i); ?></span>
+            <button class="view-honors" name="SeeHonors" value="respuesta">
+              <span class ="total-honors" id="r<?php echo $data_answer[$i]['id_respuesta']; ?>" name="<?php echo $honors[1][$i]; ?>"><?php echo $honors[1][$i]; ?></span>
             </button>
 
             <?php if($islogin) { ?>
