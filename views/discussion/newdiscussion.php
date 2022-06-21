@@ -1,4 +1,8 @@
-<?php getHeader($data, "headerForos"); ?>
+<?php getHeader($data, "headerForos");
+$plataforms = $data['plataforms'];
+$topic = $data['topic'];
+?>
+
 <div id="content">
   <div class="wrapper">
     <div class="navigation">
@@ -31,28 +35,38 @@
           <tr>
             <td class="trow1" valign="top" style="font-size: 15px">
             <strong>Videojuego:</strong>
-            <td class="trow1">
-              <select name="forum">
-                <option value="" selected="selected" style="display: none;">Buscar en todos los foros</option>
-                <option value="League of Legends">League of Legends</option>
-                <option value="Valorant">Valorant</option>
-                <option value="League of Legends Wild Rift">League of Legends Wild Rift</option>
-                <option value="Legends of Runaterra">Legends of Runaterra</option>
-                <option value="Teamfight Tactics">Teamfight Tactics</option>
-              </select>
+            <?php if(is_array($plataforms)) { ?>
+              <td class="trow1">
+                <select name="forum">
+                  <option value="" selected="selected" style="display: none;">Selecciona el juego correspondiente</option>
+                  <?php for($i = 0; $i < count($plataforms); $i++) { ?>
+                    <option value="<?=$plataforms[$i]['id_plataforma']?>"><?=$plataforms[$i]['nombre_plataforma']?></option>
+                  <?php } ?>
+                </select>
+              </td>
+            <?php } else { ?>
+              <td class="trow1">
+                <?= $plataforms ?>
+              </td>
+            <?php } ?>
             </td>
-            <td>
           </tr>
           <tr>
             <td class="trow2" width="20%" style="font-size: 15px">
             <strong>Tematica:</strong>
+            <?php if(is_array($topic)) { ?>
               <td class="trow2">
                 <span class="smalltext">
-                  <input type="checkbox" class="checkbox" name="matchusername" value="1"> Reporte
-                  <input type="checkbox" class="checkbox" name="matchusername" value="2"> Bug
-                  <input type="checkbox" class="checkbox" name="matchusername" value="3"> Queja
+                  <?php for($i = 0; $i < count($topic); $i++) { ?>
+                    <input type="checkbox" class="checkbox" name="topic" value="<?=$topic[$i]['id_tema']?>"> <?=$topic[$i]['nombre_tema']?>
+                  <?php } ?>
                 </span>
               </td>
+            <?php } else { ?>
+              <td class="trow1">
+                <?= $topic ?>
+              </td>
+            <?php } ?>
             </td>
           </tr>
           <tr>

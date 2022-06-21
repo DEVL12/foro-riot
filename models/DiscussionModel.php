@@ -64,6 +64,12 @@
       return $request;
     }
 
+    public function GetAllTopics() {
+      $sql = "SELECT * FROM tema";
+      $request = $this->select_all($sql);
+      return $request;
+    }
+
     public function AddDiscussion($title, $authorId, $content, $topic, $platform, $image) {
     $sql = "INSERT INTO discusion (titulo, id_autor, contenido, contenido_original,
             editado, tema, plataforma, imagen, fecha, hora, estado)

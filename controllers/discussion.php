@@ -37,9 +37,16 @@
     }
 
     public function newdiscussion() {
-      $data = array();
-      $data['title'] = "Foro Riot Games";
-      $data['script'] = "newdiscussion.js";
+      $plataforms = $this->model->GetAllPlatforms();
+      $topic = $this->model->GetAllTopics();
+
+      $data = [
+        'title' => 'Foro Riot Game',
+        'script' => 'newdiscussion.js',
+        'plataforms' => !empty($plataforms) ? $plataforms : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay videojuegos registrados.</h1>',
+        'topic' => !empty($topic) ? $topic : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay tematicas registradas .</h1>',
+      ];
+
       $this->views->getViews($this,"newdiscussion",$data);
     }
   }
