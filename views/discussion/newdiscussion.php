@@ -37,7 +37,7 @@ $topic = $data['topic'];
             <strong>Videojuego:</strong>
             <?php if(is_array($plataforms)) { ?>
               <td class="trow1">
-                <select name="forum">
+                <select name="plataformas">
                   <option value="" selected="selected" style="display: none;">Selecciona el juego correspondiente</option>
                   <?php for($i = 0; $i < count($plataforms); $i++) { ?>
                     <option value="<?=$plataforms[$i]['id_plataforma']?>"><?=$plataforms[$i]['nombre_plataforma']?></option>
@@ -58,7 +58,7 @@ $topic = $data['topic'];
               <td class="trow2">
                 <span class="smalltext">
                   <?php for($i = 0; $i < count($topic); $i++) { ?>
-                    <input type="checkbox" class="checkbox" name="topic" value="<?=$topic[$i]['id_tema']?>"> <?=$topic[$i]['nombre_tema']?>
+                    <input type="checkbox" class="checkbox" name="tema" value="<?=$topic[$i]['id_tema']?>"> <?=$topic[$i]['nombre_tema']?>
                   <?php } ?>
                 </span>
               </td>
