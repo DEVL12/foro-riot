@@ -4,8 +4,10 @@ const formSearch = document.getElementById('new-disc'); // seleccionar el formul
 const contenido = document.querySelectorAll('#new-disc textarea'); //seleccionamos el textarea
 const plataforma = document.querySelectorAll('#new-disc select#plataformas');
 const tema = document.querySelectorAll('#new-disc select#tema');
+const titulo = document.querySelector('#new-disc input#titulo')
 
 let input = {
+  titulo: false,
   mensaje: false,
   plataformas: false,
   tematica : false,
@@ -13,15 +15,15 @@ let input = {
 
 const comprobar = (e) => {
   switch (e.target.name){
+    case 'titulo': validarInput(e.target, e.target.name, "4,50"); break;
     case 'mensaje': validarInput(e.target, e.target.name, "4,1000"); break;
     case 'plataformas': input.plataformas = (e.target.value !== "") ? true : false; break;
     case 'tema': input.tematica = (e.target.value !== "") ? true : false; break;
   }
 }
 
-console.log(tema, plataforma);
-
 contenido[0].addEventListener('keyup', comprobar);
+titulo.addEventListener('keyup', comprobar);
 if(typeof(plataforma) !==  "undefined") plataforma.forEach(input => {input.addEventListener('click' ,comprobar)});
 if(typeof(tema) !==  "undefined")  tema.forEach(input => {input.addEventListener('click' ,comprobar)});
 
@@ -53,6 +55,8 @@ formSearch.addEventListener('submit', e => {
 
   } else {
     let text = "";
+    if(input.titulo === false)
+      text += '<li>El titulo solo debe contener minimo de 4 y un maximo de 50 letras</li>';
     if(input.plataformas === false)
       text += "<li>Se debe seleccionar una plataforma de videojuego para poder seguir</li>";
     if(input.tematica === false)

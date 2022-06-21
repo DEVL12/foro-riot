@@ -21,15 +21,18 @@ $topic = $data['topic'];
       <div id ="log_reg_table" class="log_reg_table_msg" style="display: inline-block;"></div>
     </center>
 
-    <form id="new-disc">
+    <form id="new-disc" autocomplete="off">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
           <tr>
             <td class="thead" colspan="2" style="text-align: center;"><h2>Crear una nueva Discusión</h2></td>
           </tr>
           <tr>
-            <td>
-              <br>
+            <td class="trow1" style="font-size: 15px">
+            <strong>Título de la discusión:</strong>
+            <td class="trow1">
+              <input type="text" class="textbox" id="titulo" name="titulo" size="50" maxlength="85" placeholder="Escribe el titulo de tu discusión" tabindex="1">
+            </td>
             </td>
           </tr>
           <tr>
