@@ -37,7 +37,7 @@ $topic = $data['topic'];
             <strong>Videojuego:</strong>
             <?php if(is_array($plataforms)) { ?>
               <td class="trow1">
-                <select name="plataformas">
+                <select id ="plataformas" name="plataformas">
                   <option value="" selected="selected" style="display: none;">Selecciona el juego correspondiente</option>
                   <?php for($i = 0; $i < count($plataforms); $i++) { ?>
                     <option value="<?=$plataforms[$i]['id_plataforma']?>"><?=$plataforms[$i]['nombre_plataforma']?></option>
@@ -52,15 +52,16 @@ $topic = $data['topic'];
             </td>
           </tr>
           <tr>
-            <td class="trow2" width="20%" style="font-size: 15px">
+            <td class="trow1" valign="top" style="font-size: 15px">
             <strong>Tematica:</strong>
             <?php if(is_array($topic)) { ?>
-              <td class="trow2">
-                <span class="smalltext">
+              <td class="trow1">
+                <select id ="tema" name="tema">
+                <option value="" selected="selected" style="display: none;">Selecciona una tematica</option>
                   <?php for($i = 0; $i < count($topic); $i++) { ?>
-                    <input type="checkbox" class="checkbox" name="tema" value="<?=$topic[$i]['id_tema']?>"> <?=$topic[$i]['nombre_tema']?>
+                    <option value="<?=$topic[$i]['id_tema']?>"><?=$topic[$i]['nombre_tema']?></option>
                   <?php } ?>
-                </span>
+                </select>
               </td>
             <?php } else { ?>
               <td class="trow1">

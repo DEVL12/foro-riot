@@ -2,8 +2,8 @@ import validations from "./validations.js";
 const validar = new validations();
 const formSearch = document.getElementById('new-disc'); // seleccionar el formulario segun un id
 const contenido = document.querySelectorAll('#new-disc textarea'); //seleccionamos el textarea
-const select = document.querySelectorAll('#new-disc select'); //seleccionamos el textarea
-const check = document.querySelectorAll('#new-disc input.checkbox'); //seleccionamos el textarea
+const plataforma = document.querySelectorAll('#new-disc select#plataformas');
+const tema = document.querySelectorAll('#new-disc select#tema');
 
 let input = {
   mensaje: false,
@@ -15,13 +15,15 @@ const comprobar = (e) => {
   switch (e.target.name){
     case 'mensaje': validarInput(e.target, e.target.name, "4,1000"); break;
     case 'plataformas': input.plataformas = (e.target.value !== "") ? true : false; break;
-    case 'tema': console.log(e.target.value); input.tematica = (e.target.checked) ? true : false; break;
+    case 'tema': input.tematica = (e.target.value !== "") ? true : false; break;
   }
 }
 
+console.log(tema, plataforma);
+
 contenido[0].addEventListener('keyup', comprobar);
-if(typeof(select[0]) !==  "undefined") select.forEach(input => {input.addEventListener('click' ,comprobar)});
-if(typeof(check[0]) !==  "undefined")  check.forEach(input => {input.addEventListener('click' ,comprobar)});
+if(typeof(plataforma) !==  "undefined") plataforma.forEach(input => {input.addEventListener('click' ,comprobar)});
+if(typeof(tema) !==  "undefined")  tema.forEach(input => {input.addEventListener('click' ,comprobar)});
 
 
 const validarInput = (target, name, limit) => {
