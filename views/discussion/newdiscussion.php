@@ -29,26 +29,37 @@
             </td>
           </tr>
           <tr>
-            <td class="trow2" width="20%" style="font-size: 15px"><strong>Título de la Discusión:</strong></td>
-            <td class="trow2"><input type="text" class="textbox" id="titulo" name="titulo" size="50" maxlength="85" placeholder="Escribe el titulo de tu discusión" tabindex="1" style="font-size:15px"></td>
+            <td class="trow1" valign="top" style="font-size: 15px">
+            <strong>Videojuego:</strong>
+            <td class="trow1">
+              <select name="forum">
+                <option value="" selected="selected" style="display: none;">Buscar en todos los foros</option>
+                <option value="League of Legends">League of Legends</option>
+                <option value="Valorant">Valorant</option>
+                <option value="League of Legends Wild Rift">League of Legends Wild Rift</option>
+                <option value="Legends of Runaterra">Legends of Runaterra</option>
+                <option value="Teamfight Tactics">Teamfight Tactics</option>
+              </select>
+            </td>
+            <td>
           </tr>
-
           <tr>
-            <td class="trow2" valign="top" style="font-size: 15px"><strong>Que quieres Compartir:</strong><br>
+            <td class="trow2" width="20%" style="font-size: 15px">
+            <strong>Tematica:</strong>
+              <td class="trow2">
+                <span class="smalltext">
+                  <input type="checkbox" class="checkbox" name="matchusername" value="1"> Reporte
+                  <input type="checkbox" class="checkbox" name="matchusername" value="2"> Bug
+                  <input type="checkbox" class="checkbox" name="matchusername" value="3"> Queja
+                </span>
+              </td>
+            </td>
+          </tr>
+          <tr>
+            <td class="trow2" valign="top" style="font-size: 15px"><strong>Mensaje:</strong><br>
             </td>
             <td class="trow2">
               <textarea id="mensaje" name="mensaje" rows="20" cols="70" tabindex="2" style="width: 100%; background-color: #2E2D2D; color:#9F9C9C; font-size: 15px ;"></textarea>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="trow2" width="20%" style="font-size: 20px"><strong>Que tipo de tema es:</strong></td>
-            <td class="trow2">
-              <span class="smalltext">
-                <input type="checkbox" class="checkbox" name="matchusername" value="1">Reporte
-                <input type="checkbox" class="checkbox" name="matchusername" value="2">Bug
-                <input type="checkbox" class="checkbox" name="matchusername" value="3">Queja
-              </span>
             </td>
           </tr>
         </tbody>
@@ -59,9 +70,6 @@
         <input type="submit" class="button" name="submit" value="Crear Discusión" tabindex="3" accesskey="s">
       </div>
     </form>
-    <br>
-    <br clear="all">
-
   </div>
 </div>
 <?php getFooter($data, "footerForos")?>
