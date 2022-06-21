@@ -49,7 +49,7 @@ function AddHonor(value){
       } else {
         alert(objData.msg);
         var button = document.getElementById("r" + value.split(",")[1]);
-        
+
         button.innerHTML = result
       }
     }

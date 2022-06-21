@@ -42,7 +42,7 @@ $islogin = isset($_SESSION['islogin']);
               <button class="add-positive-honor" name="AddHonor" value= "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $data_answer[$i]['id_respuesta']?>,respuesta,1">
             <?php } ?>
 
-            <button class="view-honors" name="SeeHonors" value="respuesta">
+            <button class="view-honors" name="SeeHonors" id="<?= $data_answer[$i]['id_respuesta']?>" value="respuesta">
               <span class ="total-honors" id="r<?php echo $data_answer[$i]['id_respuesta']; ?>" name="<?php echo $honors[1][$i]; ?>"><?php echo $honors[1][$i]; ?></span>
             </button>
 

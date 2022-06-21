@@ -22,9 +22,9 @@
       $id_target =$arr_data[1];
       $target_type =$arr_data[2];
       $honor =$arr_data[3];
-      $exist = $this->model->GetHonor($id_player, $id_target, $target_type);
+      $exist = $this->model->GetHonor($id_target, $target_type);
 
-      if(!empty($exist) > 0) {
+      if(!empty($exist)) {
         if ($exist['puntaje'] == $honor) {
           $request_honor = $this->model->DeleteHonor($exist['id_honor']);
           $arrResponse = (!empty($request_honor))
