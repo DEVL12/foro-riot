@@ -1,12 +1,8 @@
 <?php getHeader($data, "headerForos");
 $discusiones = $data['discussion'];
+$honors = $data['honors'];
 $plataforms = $data['plataforms'];
 $islogin = isset($_SESSION['islogin']);
-
-function DameElTotalDeHonoresDeEstaDiscusion($id){
-    //Esta es una función de prueba, esta función debería ser GetTotalDiscussionHonor($id) del HonorModel.php
-    return 16;
-}
 
 ?>
 
@@ -97,7 +93,7 @@ function DameElTotalDeHonoresDeEstaDiscusion($id){
                           <tr>
                             <td>
                               <span class="view-honors">
-                                <span class="total-honors"><?php echo DameElTotalDeHonoresDeEstaDiscusion(0); ?></span>
+                                <span class="total-honors"><?php echo $honors[$i]; ?></span>
                               </span>
                             </td>
                             <td class="trow1" style="padding:0px;">
