@@ -49,5 +49,23 @@
 
       $this->views->getViews($this,"newdiscussion",$data);
     }
+
+
+    public function add_discussion()
+    {
+      $titulo = strClean($_POST['titulo']);
+      $id_usuario = $_SESSION['dataUser']['id_jugador'];
+      $mensaje = strClean($_POST['mensaje']);
+      $tema = strClean($_POST['tema']);
+      $plataformas = strClean($_POST['plataformas']);
+      $request_discussion = $this->model-> AddDiscussion($titulo, $id_usuario, $mensaje, $tema, $plataformas);
+
+      ($request_discussion > 0)
+        ? $arrResponse = ['status' => true, 'msg' => 'Tu discusión creada correctamente']
+        : $arrResponse = ['status' => false, 'msg' => 'Ocurrio un error al crear la discusión. intentelo mas tarde'];
+
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
+    }
   }
 ?>

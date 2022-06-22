@@ -1,4 +1,7 @@
 import validations from "./validations.js";
+import Ajax from "./ajax.js";
+
+const var_Ajax = new Ajax();
 const validar = new validations();
 const formSearch = document.getElementById('new-disc'); // seleccionar el formulario segun un id
 const contenido = document.querySelectorAll('#new-disc textarea'); //seleccionamos el textarea
@@ -51,8 +54,20 @@ const ShowMsg = (title, text, color) => {
 formSearch.addEventListener('submit', e => {
   e.preventDefault();
   if (input.plataformas && input.mensaje && input.tematica) {
-    ShowMsg("DISCUSION ENVIADA", "<li>Tu discusión creada correctamente</li>", "green");
+    const request = var_Ajax.sendPost("discussion/add_discussion", formSearch);
 
+    request.onreadystatechange = () => {
+      if(request.readyState == 4 && request.status == 200) {
+        const objData = JSON.parse(request.responseText);
+        if(objData.status) {
+          ShowMsg("DISCUSION ENVIADA", "<li>"+objData.msg+"", "green");
+          setTimeout(() => { window.location = base_url+"discussion" }, 3000);
+          document.getElementById('submit_discusion').setAttribute('hidden',"true");
+        } else {
+          ShowMsg("ERROR EN EL ENVIO", "<li>"+objData.msg+"</li>", "crimson");
+        }
+      }
+    };
   } else {
     let text = "";
     if(input.titulo === false)

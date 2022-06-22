@@ -85,7 +85,7 @@ $topic = $data['topic'];
       <br>
 
       <div align="center">
-        <input type="submit" class="button" name="submit" value="Crear Discusión" tabindex="3" accesskey="s">
+        <input id ="submit_discusion" type="submit" class="button" name="submit" value="Crear Discusión" tabindex="3" accesskey="s">
       </div>
     </form>
   </div>

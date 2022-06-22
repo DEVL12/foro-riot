@@ -70,13 +70,13 @@
       return $request;
     }
 
-    public function AddDiscussion($title, $authorId, $content, $topic, $platform, $image) {
-    $sql = "INSERT INTO discusion (titulo, id_autor, contenido, contenido_original,
-            editado, tema, plataforma, imagen, fecha, hora, estado)
-        VALUES (?, ?, ?, ?, 0, ?, ?, ?, '". date('d/m/Y') . "', '" . date('G:i') . "', 'abierta')";
-    $arrData = array($title, $authorId, $content, $content, $topic, $platform, $image);
-    $request = $this->insert($sql,$arrData);
-    return $request;
+    public function AddDiscussion($title, $authorId, $content, $topic, $platform) {
+      $sql = "INSERT INTO discusion (titulo, fk_jugador, contenido_discusion, contenido_original_discusion,
+              editado_discusion, fk_tema, fk_plataforma , fecha_discusion, estado_discusion)
+              VALUES (?, ?, ?, ?, 0, ?, ?, '". date('Y-m-d G:i:s') ."', 'abierta')";
+      $arrData = array($title, $authorId, $content, $content, $topic, $platform);
+      $request = $this->insert($sql,$arrData);
+      return $request;
     }
 
     public function UpdateDiscussion($id, $title, $content, $image) {
