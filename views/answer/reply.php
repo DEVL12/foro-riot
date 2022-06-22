@@ -1,4 +1,7 @@
-<?php getHeader($data, "headerForos"); ?>
+<?php
+getHeader($data, "headerForos");
+$data_answers = $data['data_answers'];
+?>
 <div id="content">
   <div class="wrapper">
     <div class="navigation">
@@ -31,17 +34,17 @@
           <tr>
             <td class="tcat" colspan="2">
               <span class="smalltext">
-                <strong>Respuesta al tema: Hola</strong>
+                <strong>Respuesta al tema: <?= $data['discussion']['titulo'] ?></strong>
               </span>
             </td>
           </tr>
 
           <tr>
             <td class="trow1" width="20%">
-              <strong>Nombre de usuario:</strong>
+              <strong>Creador de la discusión:</strong>
             </td>
             <td class="trow1">
-              Nautilus
+              <?= $data['discussion']['nombre_jugador'] ?>
               <span class="smalltext"></span>
             </td>
           </tr>
@@ -98,32 +101,32 @@
           <td class="thead" style="text-align: center;"><strong>Resumen del la discusión</strong></td>
         </tr>
         <!-- start: newreply_threadreview_post -->
-        <tr>
-          <td class="tcat"><span class="smalltext"><strong>Enviado por Nautilus - 04-06-2022, 03:24 PM</strong></span></td>
-        </tr>
-        <tr>
-          <td class="trow1 scaleimages">
-            Soy jose
-          </td>
-        </tr>
-        <!-- end: newreply_threadreview_post -->
-        <!-- start: newreply_threadreview_post -->
-        <tr>
-          <td class="tcat"><span class="smalltext"><strong>Enviado por Nautilus - 03-31-2022, 03:02 PM</strong></span></td>
-        </tr>
-        <tr>
-          <td class="trow2 scaleimages">
-            COMO ESTAS
-          </td>
-        </tr>
+        <?php
+        if(is_array($data_answers)) {
+          for($i = 0; $i < count($data_answers); $i++) { ?>
+          <tr>
+            <td class="tcat">
+              <span class="smalltext">
+                <strong>
+                  <?= 'Enviado por '.$data_answers[$i]['nombre_jugador'].' - '.$data_answers[$i]['fecha_respuesta']?>
+                </strong>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="trow1 scaleimages">
+              <?= $data_answers[$i]['contenido_respuesta'] ?>
+            </td>
+          </tr>
+        <?php
+          } // for
+        } else { ?>
+          <tr>
+            <td class="tcat"><span class="smalltext"><strong><?= $data_answers ?></strong></span></td>
+          </tr>
+        <?php
+        } ?>
 
-        <tr>
-          <td class="tcat"><span class="smalltext"><strong>Enviado por Nautilus - 03-31-2022, 02:49 PM</strong></span></td>
-        </tr>
-
-        <tr>
-          <td class="trow1 scaleimages"> :D HOLA :D </td>
-        </tr>
       </tbody>
     </table>
 
