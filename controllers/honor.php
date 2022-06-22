@@ -22,7 +22,7 @@
       $id_target =$arr_data[1];
       $target_type =$arr_data[2];
       $honor =$arr_data[3];
-      $exist = $this->model->GetHonor($id_target, $target_type);
+      $exist = $this->model->GetHonor($id_target, $target_type, $id_player);
 
       if(!empty($exist)) {
         if ($exist['puntaje'] == $honor) {

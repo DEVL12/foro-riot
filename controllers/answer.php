@@ -20,11 +20,17 @@
         array_push($honors[1], $this->model->GetHonorsOf($answers[$i]['id_respuesta'],'respuesta'));
       }
 
+      $discussion = $this->model->GetDiscussion($id_discussion);
+      array_push($discussion, $this->model->GetPlayerData($discussion[0]['fk_jugador']));
+      $final = $discussion[0];
+      array_push($final, $discussion[1]);
+
       $data = [
         'title' => "tal usuario - Respuestas",
         'script' => "answer.js",
         'data_answers' => (!empty($answers)) ? $answers : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay respuestas registradas.</h1>',
-        'honors' => $honors
+        'honors' => $honors,
+        'discussion' => $final
       ];
 
       $this->views->getViews($this,"answer",$data);
