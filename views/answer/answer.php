@@ -4,8 +4,6 @@ $honors = $data['honors'];
 $discussion = $data['discussion'];
 //en el $honors[0][0] está el honor de la discusión
 $islogin = isset($_SESSION['islogin']);
-
-
 ?>
 
 <div id="PopUp" class="disabled" style="left:40vw; top:25%; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; width:20vw; height:auto; background:#1b1c22; border:2px solid rgba(186, 51, 64, 1); position:fixed; z-index:9; border-radius:8px">
@@ -29,7 +27,7 @@ $islogin = isset($_SESSION['islogin']);
     <center>
       <span style="font-size:14px;font-weight:300;"></span>
       <h1>Season 2022</h1>
-      <span class="show_thread_stats"><?php echo count($data_answer); ?> Respuestas</span>
+      <span class="show_thread_stats"><?= is_array($data_answer) ? count($data_answer) : 0; ?> Respuestas</span>
       <div style="width:200px;"></div>
       <br>
     </center>
@@ -42,13 +40,13 @@ $islogin = isset($_SESSION['islogin']);
           <?php } ?>
 
           <button class="view-honors" name="SeeHonors" id="<?= $discussion['id_discusion']?>" value="discusion">
-            <span class ="total-honors" id="d<?php echo $discussion['id_discusion']; ?>" name="<?php echo $honors[0][0]; ?>"><?php echo $honors[0][0]; ?></span>
+            <span class ="total-honors" id="d<?= $discussion['id_discusion']; ?>" name="<?= $honors[0][0]; ?>"><?= $honors[0][0]; ?></span>
           </button>
 
           <?php if($islogin) { ?>
               <button class="add-negative-honor" name="AddHonor" value = "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $discussion['id_discusion']?>,discusion,-1">
             <?php }?>
-            
+
         </td>
         <td style="width:150%" id="posts_container">
           <div id="posts">
@@ -67,7 +65,7 @@ $islogin = isset($_SESSION['islogin']);
                       <a href="<?= base_url()?>player/profile/talUsuario">
                         <span style="color: green;">
                           <strong>
-                            <em><?php echo $discussion[0]['nombre_jugador']; ?></em>
+                            <em><?= $discussion[0]['nombre_jugador']; ?></em>
                           </strong>
                         </span>
                       </a>
@@ -76,22 +74,22 @@ $islogin = isset($_SESSION['islogin']);
                       <div class="postbit_status offline"></div>
                     </a>
                     &nbsp;
-                    <small style="color:#999;" class="mobile_line_break"><?php echo $discussion['fecha_discusion']; ?></small>
+                    <small style="color:#999;" class="mobile_line_break"><?= $discussion['fecha_discusion']; ?></small>
                     <div class="smalltext description">
-                      <?php echo $discussion[0]['rol']; ?><br/>
+                      <?= $discussion[0]['rol']; ?><br/>
                     </div>
                   </div>
 
                   <div class="post_head" style="float:right;">
                     <div class="float_right" style="vertical-align: top">
-                      
+
                     </div>
                   </div>
                 </div>
 
                 <div class="border_sep"></div>
                 <div class="post_body scaleimages" id="pid_1" style="min-height: auto;">
-                  <?php echo $discussion['contenido_discusion']; ?>
+                  <?= $discussion['contenido_discusion']; ?>
                 </div>
 
                 <div class="post_meta" id="post_meta_1">
@@ -101,7 +99,7 @@ $islogin = isset($_SESSION['islogin']);
                 <span class="post_edit" id="edited_by_1">
                   <span class="edited_post">(Última modificación: 03-29-2022, 03:09 PM por
                     <a href="<?= base_url()?>player/profile/talUsuario">
-                      <?php echo $discussion[0]['nombre_jugador']; ?>
+                      <?= $discussion[0]['nombre_jugador']; ?>
                     </a>.)
                   </span>
                 </span>
@@ -112,7 +110,7 @@ $islogin = isset($_SESSION['islogin']);
                   <ul>
                     <li>
                       <br>
-                      <a href="<?= base_url() ?>answer/reply/<?php echo $discussion['id_discusion']; ?>" title="Cita este mensaje en tu respuesta" class="postbit_quote postbit_mirage"><span>Responder</span></a>
+                      <a href="<?= base_url() ?>answer/reply/<?= $discussion['id_discusion']; ?>" title="Cita este mensaje en tu respuesta" class="postbit_quote postbit_mirage"><span>Responder</span></a>
                     </li>
                   </ul>
                 </div>
@@ -135,7 +133,7 @@ $islogin = isset($_SESSION['islogin']);
             <?php } ?>
 
             <button class="view-honors" name="SeeHonors" id="<?= $data_answer[$i]['id_respuesta']?>" value="respuesta">
-              <span class ="total-honors" id="r<?php echo $data_answer[$i]['id_respuesta']; ?>" name="<?php echo $honors[1][$i]; ?>"><?php echo $honors[1][$i]; ?></span>
+              <span class ="total-honors" id="r<?= $data_answer[$i]['id_respuesta']; ?>" name="<?= $honors[1][$i]; ?>"><?= $honors[1][$i]; ?></span>
             </button>
 
             <?php if($islogin) { ?>
