@@ -6,10 +6,13 @@
       parent::__construct();
     }
 
-    public function discussion() {
-      $discussion = $this->model->GetAllDiscussions();
-      $plataforms = $this->model->GetAllPlatforms(); //Vere como mejoro esto xd
+    public function discussion($name_plataform) {
+      $discussion = (empty($name_plataform))
+        ? $this->model->GetAllDiscussions()
+        : $this->model->GetAllDiscussionsByPlataform($name_plataform);
+      $plataforms = $this->model->GetAllPlatforms();
       $honors = [];
+
       for($i = 0; $i < count($discussion); $i++) {
         $honors[$i] = $this->model->GetDiscussionHonors($discussion[$i]["id_discusion"]);
         if($honors[$i] == null)
@@ -17,37 +20,19 @@
       }
 
       $data = [
-        'title' => "Foro general - Riot Games",
+        'title' => empty($name_plataform) ? "Foro general - Riot Games" : "Foro {$name_plataform} - Riot Games",
         'script' => "discussion.js",
         'discussion' => !empty($discussion) ? $discussion : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay discusiones registradas.</h1>',
         'plataforms' => !empty($plataforms) ? $plataforms : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay videojuegos registrados.</h1>',
         'honors' => !empty($honors) ? $honors : '<h1 style="color: rgba(186, 51, 64, 1);"></h1>',
-        'name_plataform' => "Riot Games"
+        'name_plataform' => empty($name_plataform) ? "Riot Games" : $name_plataform,
       ];
 
       $this->views->getViews($this,"discussion",$data);
     }
 
-    public function foro($name_plataform) {
-      $discussion = $this->model->GetAllDiscussionsByPlataform($name_plataform);
-      $plataforms = $this->model->GetAllPlatforms(); //Vere como mejoro estox2 xd
-      $honors = [];
-      for($i = 0; $i < count($discussion); $i++) {
-        $honors[$i] = $this->model->GetDiscussionHonors($discussion[$i]["id_discusion"]);
-        if($honors[$i] == null)
-          $honors[$i] = 0;
-      }
-
-      $data = [
-        'title' => "Foro {$name_plataform} - Riot Games",
-        'script' => "discussion.js",
-        'discussion' => !empty($discussion) ? $discussion : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay discusiones registradas.</h1>',
-        'plataforms' => !empty($plataforms) ? $plataforms : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay videojuegos registrados.</h1>',
-        'honors' => !empty($honors) ? $honors : '<h1 style="color: rgba(186, 51, 64, 1);"></h1>',
-        'name_plataform' => $name_plataform,
-      ];
-
-      $this->views->getViews($this,"discussion",$data);
+    public function foro($name_plataform){
+      $this->discussion($name_plataform);
     }
 
     public function newdiscussion() {
