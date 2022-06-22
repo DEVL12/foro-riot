@@ -21,9 +21,18 @@ elements.forEach(element => {
 document.addEventListener("click", function(){ClosePopUp(document.getElementById("PopUp"))});
 
 function AddHonor(value){
-  var button = document.getElementById("r" + value.split(",")[1]);
-  //TotalHonorsButton
+  var button = null;
+  var isDiscussion = null;
+  if(value.split(",")[2] == "respuesta"){
+    isDiscussion = false;
+    var button = document.getElementById("r" + value.split(",")[1]);
+  }
+  else{
+    isDiscussion = true;
+    button = document.getElementById("d" + value.split(",")[1]);
+  }
 
+  console.log(value.split(",")[1])
   var currentHonor = parseInt(button.attributes[2].value);
   const request = var_Ajax.sendGet(`honor/AddHonor/${value}`, true);
   request.send();
@@ -42,14 +51,24 @@ function AddHonor(value){
         else if(objData.msg == "Su honor fue removido de esta publicación correctamente"){
           result = currentHonor - parseInt(value.split(",")[3])
         }
-        button = document.getElementById("r" + value.split(",")[1]);
+        if(isDiscussion){
+          button = document.getElementById("d" + value.split(",")[1]);
+          button.id = "d" + value.split(",")[1];
+        }
+        else{
+            button = document.getElementById("r" + value.split(",")[1]);
+            button.id = "r" + value.split(",")[1];
+        }
+
         button.attributes[2].value = result;
-        button.id = "r" + value.split(",")[1];
         button.innerHTML = result;
       } else {
         alert(objData.msg);
-        var button = document.getElementById("r" + value.split(",")[1]);
-
+        if(isDiscussion)
+          button = document.getElementById("d" + value.split(",")[1]);
+        else
+          button = document.getElementById("r" + value.split(",")[1]);
+        
         button.innerHTML = result
       }
     }
