@@ -45,6 +45,14 @@
       return $request;
     }
 
+    public function GetTitleAndNameOfADiscussionByid($id) {
+      $sql = "SELECT titulo, nombre_jugador FROM discusion
+              INNER JOIN jugador ON jugador.id_jugador = discusion.fk_jugador
+              WHERE id_discusion = {$id}";
+      $request = $this->select($sql);
+      return $request;
+    }
+
     public function AddAnswer($content, $image, $authorId, $discussionId, $targetId, $targetType) {
       $sql = "INSERT INTO respuesta (contenido, contenido_original, editado, imagen,
           id_autor, id_discusion, id_objetivo, tipo_objetivo, fecha, hora)

@@ -23,34 +23,42 @@
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
           <tr>
-            <td class="thead" colspan="2"><strong>Enviar nueva respuesta</strong></td>
+            <td class="thead" colspan="2">
+              <strong>Enviar nueva respuesta</strong>
+            </td>
           </tr>
 
           <tr>
-            <td class="tcat" colspan="2"><span class="smalltext"><strong>Respuesta al tema: Hola</strong></span></td>
+            <td class="tcat" colspan="2">
+              <span class="smalltext">
+                <strong>Respuesta al tema: Hola</strong>
+              </span>
+            </td>
           </tr>
 
           <tr>
-            <td class="trow1" width="20%"><strong>Nombre de usuario:</strong></td>
-            <td class="trow1"> Nautilus <span class="smalltext"></span></td>
+            <td class="trow1" width="20%">
+              <strong>Nombre de usuario:</strong>
+            </td>
+            <td class="trow1">
+              Nautilus
+              <span class="smalltext"></span>
+            </td>
           </tr>
 
           <tr>
-            <td class="trow2" width="20%"><strong>Título del mensaje:</strong></td>
-            <td class="trow2"><input type="text" class="textbox" id="subject" name="subject" size="40" maxlength="85" placeholder="Escribe el titulo del mensaje" tabindex="1"></td>
-          </tr>
-
-          <tr>
-            <td class="trow2" valign="top"><strong>Tu mensaje:</strong><br>
+            <td class="trow2" valign="top">
+              <strong>Tu mensaje:</strong>
+            <br>
             </td>
             <td class="trow2">
               <textarea id="message" name="message" rows="20" cols="70" tabindex="2" style="width: 100%; background-color: #15161b; color:black; font-size: 18px ;"></textarea>
             </td>
           </tr>
 
-          <tr>
+          <!-- <tr>
             <td><a href="#!" onclick="document.getElementById('newreply_options').style.display = 'table';"><br>+ More Options</a></td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
       <br>
@@ -87,7 +95,7 @@
     <table border="0" cellspacing="0" cellpadding="5" class="tborder tfixed">
       <tbody>
         <tr>
-          <td class="thead" style="text-align: center;"><strong>Resumen del tema (Mensajes más nuevos primero)</strong></td>
+          <td class="thead" style="text-align: center;"><strong>Resumen del la discusión</strong></td>
         </tr>
         <!-- start: newreply_threadreview_post -->
         <tr>

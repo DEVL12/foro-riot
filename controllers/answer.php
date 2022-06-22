@@ -38,12 +38,20 @@
 
     public function reply($forum)
     {
-      if($forum == "")
+      if(empty($forum))
         header("location: ".base_url()."Errors");
 
-      $data = array();
-      $data['title'] = $forum." - Respondiendo";
-      $data['script'] = "reply.js";
+      $discussion = $this->model->GetTitleAndNameOfADiscussionByid($forum);
+      $answers = $this->model->GetAllAnswersOfADiscussion($forum);
+      if (empty($discussion)) header("location: ".base_url()."Errors");
+
+      $data = [
+        'title' => $discussion['titulo']." - Respondiendo",
+        'discussion' => $discussion,
+        'data_answers' => (!empty($answers)) ? $answers : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay respuestas registradas.</h1>',
+        'script' => 'reply.js',
+      ];
+
       $this->views->getViews($this,"reply",$data);
     }
   }
