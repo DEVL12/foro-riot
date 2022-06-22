@@ -14,13 +14,9 @@ $islogin = isset($_SESSION['islogin']);
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="foro.html">Foro Riot Games</a>
+      <strong>Foro Riot Games</strong>
       <span class="nav-spacer">&rsaquo;</span>
-      <a href="forumdisplay.php?fid=1">Foros</a>
-      <span class="nav-spacer">&rsaquo;</span>
-      <a href="forumdisplay.php?fid=3">League of Legends</a>
-      <span class="nav-spacer">&rsaquo;</span>
-      <span class="active">Season 2022</span>
+      <strong>Respuestas</strong>
     </div>
     <br/>
 

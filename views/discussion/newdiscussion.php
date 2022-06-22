@@ -7,13 +7,11 @@ $topic = $data['topic'];
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="<?= base_url() ?>">Foro Riot Games</a><!-- start: nav_sep -->
+      <strong>Foro Riot Games</strong><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>discussion">Foros</a><!-- start: nav_sep -->
+      <strong>Discusión</strong><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>discussion">Valorant</a><!-- start: nav_sep -->
-      <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>discussion">Crear nueva discusión</a>
+      <strong >Crear nueva discusión</strong>
     </div>
     <br>
 

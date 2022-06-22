@@ -3,9 +3,9 @@
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="foro.html">Foro Riot Games</a>
+      <strong>Foro Riot Games</strong>
       <span class="nav-spacer">&rsaquo;</span>
-      <span class="active">Pagina no encontrada</span>
+      <strong>Pagina no encontrada</strong>
     </div>
     <br/>
 

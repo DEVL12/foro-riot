@@ -4,9 +4,9 @@
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="<?= base_url() ?>">Foro Riot Games</a>
+      <strong>Foro Riot Games</strong>
       <span class="nav-spacer">&rsaquo;</span>
-      <span class="active">Perfil de Nautilus</span>
+      <strong class="active">Perfil de Nautilus</strong>
     </div>
     <br/>
 

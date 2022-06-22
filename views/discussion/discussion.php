@@ -10,7 +10,7 @@ $islogin = isset($_SESSION['islogin']);
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <span class="active">Foro Riot Games</span>
+      <strong class="active">Foro Riot Games</strong>
     </div>
     <br />
 

@@ -6,15 +6,9 @@ $data_answers = $data['data_answers'];
   <div class="wrapper">
     <div class="navigation">
       <span style="font-weight:300">Navigation</span>: &nbsp;
-      <a href="<?= base_url() ?>">Foro Riot Games</a><!-- start: nav_sep -->
-      <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>discussion">Foros</a><!-- start: nav_sep -->
-      <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>discussion">Valorant</a><!-- start: nav_sep -->
-      <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>answer">Hola</a>
-      <span class="nav-spacer">›</span>
-      <span class="active">Enviar respuesta</span>
+      <strong>Foro Riot Games</strong>
+      <span class="nav-spacer">&rsaquo;</span>
+      <strong>Respondiendo</strong>
     </div>
     <br>
 
