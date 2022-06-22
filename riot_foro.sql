@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2022 a las 00:01:11
+-- Tiempo de generación: 22-06-2022 a las 02:38:53
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -60,8 +60,8 @@ CREATE TABLE `discusion` (
 --
 
 INSERT INTO `discusion` (`id_discusion`, `titulo`, `contenido_discusion`, `contenido_original_discusion`, `editado_discusion`, `fecha_discusion`, `estado_discusion`, `fk_tema`, `fk_plataforma`, `fk_jugador`) VALUES
-(1, 'Quien para jugar?', 'Necesito amigos por favor :C', 'Necesito amigos por favor :C', 1, '2022-05-25 05:29:14', 'cerrada', 1, 1, 1),
-(2, 'I hate this game', 'SI, lo odio', 'No', 1, '2022-05-26 06:32:18', 'cerrada', 1, 3, 1);
+(1, 'Bienvenidos a League of legend', 'Sean bienvenidos :D', 'Sean bienvenidos :D', 0, '2022-06-21 20:35:21', 'abierta', 3, 1, 1),
+(2, 'Bienvenidos a Valorant', 'SE VIENE EVENTO DEL 2022', 'SE VIENE EVENTO DEL 2022', 0, '2022-06-21 20:36:33', 'abierta', 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -76,14 +76,6 @@ CREATE TABLE `honor` (
   `tipo_objetivo` varchar(30) NOT NULL,
   `fk_jugador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `honor`
---
-
-INSERT INTO `honor` (`id_honor`, `puntaje`, `id_objetivo`, `tipo_objetivo`, `fk_jugador`) VALUES
-(14, 1, 1, 'respuesta', 1),
-(15, -1, 2, 'respuesta', 1);
 
 -- --------------------------------------------------------
 
@@ -123,9 +115,10 @@ CREATE TABLE `plataforma` (
 --
 
 INSERT INTO `plataforma` (`id_plataforma`, `nombre_plataforma`) VALUES
-(1, ' League of Legends'),
-(2, 'League of Legends Wild Rift'),
-(3, 'Legends of Runaterra');
+(1, 'League of legends'),
+(2, 'Valorant'),
+(3, 'Legends of Runeterra'),
+(4, 'League of Legends: Wild Rift');
 
 -- --------------------------------------------------------
 
@@ -144,14 +137,6 @@ CREATE TABLE `respuesta` (
   `fk_discusion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `respuesta`
---
-
-INSERT INTO `respuesta` (`id_respuesta`, `contenido_respuesta`, `contenido_original_respuesta`, `editado_respuesta`, `fecha_respuesta`, `estado_respuesta`, `fk_jugador`, `fk_discusion`) VALUES
-(1, 'Hola', 'Hola', 1, '2022-06-18', 1, 1, 1),
-(2, 'Primero', 'Primero', 1, '2022-06-16', 1, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -168,7 +153,11 @@ CREATE TABLE `tema` (
 --
 
 INSERT INTO `tema` (`id_tema`, `nombre_tema`) VALUES
-(1, 'Nose');
+(1, 'Bug'),
+(2, 'Evento'),
+(3, 'Noticias'),
+(4, 'Nerf'),
+(5, 'buff');
 
 --
 -- Índices para tablas volcadas
@@ -243,7 +232,7 @@ ALTER TABLE `discusion`
 -- AUTO_INCREMENT de la tabla `honor`
 --
 ALTER TABLE `honor`
-  MODIFY `id_honor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_honor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `jugador`
@@ -255,19 +244,19 @@ ALTER TABLE `jugador`
 -- AUTO_INCREMENT de la tabla `plataforma`
 --
 ALTER TABLE `plataforma`
-  MODIFY `id_plataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_plataforma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `id_respuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_respuesta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tema`
 --
 ALTER TABLE `tema`
-  MODIFY `id_tema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_tema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
