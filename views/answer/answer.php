@@ -1,8 +1,10 @@
 <?php getHeader($data, "headerForos");
 $data_answer = $data['data_answers'];
 $honors = $data['honors'];
+$discussion = $data['discussion'];
 //en el $honors[0][0] está el honor de la discusión
 $islogin = isset($_SESSION['islogin']);
+
 
 ?>
 
@@ -27,10 +29,100 @@ $islogin = isset($_SESSION['islogin']);
     <center>
       <span style="font-size:14px;font-weight:300;"></span>
       <h1>Season 2022</h1>
-      <span class="show_thread_stats">0 Replies, 2 Views</span>
+      <span class="show_thread_stats"><?php echo count($data_answer); ?> Respuestas</span>
       <div style="width:200px;"></div>
       <br>
     </center>
+
+    <table border="0" cellspacing="0" cellpadding="5" class="tborder tfixed clear no-bs" style="background:none;">
+      <tr style="display:flex;">
+        <td class="honors">
+          <?php if($islogin) { ?>
+            <button class="add-positive-honor" name="AddHonor" value= "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?=  $discussion['id_discusion']?>,discusion,1">
+          <?php } ?>
+
+          <button class="view-honors" name="SeeHonors" id="<?= $discussion['id_discusion']?>" value="discusion">
+            <span class ="total-honors" id="d<?php echo $discussion['id_discusion']; ?>" name="<?php echo $honors[0][0]; ?>"><?php echo $honors[0][0]; ?></span>
+          </button>
+
+          <?php if($islogin) { ?>
+              <button class="add-negative-honor" name="AddHonor" value = "<?= $_SESSION['dataUser']['id_jugador']; ?>,<?= $discussion['id_discusion']?>,discusion,-1">
+            <?php }?>
+            
+        </td>
+        <td style="width:150%" id="posts_container">
+          <div id="posts">
+            <a name="pid1" id="pid1"></a>
+            <div class="postbit_avatar_margins">
+              <a href="<?= base_url()?>player/profile/talUsuario">
+                <img src="<?= base_url()?>assets/images/default_avatar.png" class="rounded-avatar box_shadowed avatar_white_border postbit_avatar" style="width:55px;height:55px;border-width:4px;" />
+              </a>
+            </div>
+
+            <div class="post  box_shadowed" id="post_1">
+              <div class="post_content">
+                <div class="post_author default_postbit">
+                  <div class="author_information" style="display:inline-block;">
+                    <h2 style="margin:0px;display:inline-block;">
+                      <a href="<?= base_url()?>player/profile/talUsuario">
+                        <span style="color: green;">
+                          <strong>
+                            <em><?php echo $discussion[0]['nombre_jugador']; ?></em>
+                          </strong>
+                        </span>
+                      </a>
+                    </h2>
+                    <a title="Sin conexión">
+                      <div class="postbit_status offline"></div>
+                    </a>
+                    &nbsp;
+                    <small style="color:#999;" class="mobile_line_break"><?php echo $discussion['fecha_discusion']; ?></small>
+                    <div class="smalltext description">
+                      <?php echo $discussion[0]['rol']; ?><br/>
+                    </div>
+                  </div>
+
+                  <div class="post_head" style="float:right;">
+                    <div class="float_right" style="vertical-align: top">
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border_sep"></div>
+                <div class="post_body scaleimages" id="pid_1" style="min-height: auto;">
+                  <?php echo $discussion['contenido_discusion']; ?>
+                </div>
+
+                <div class="post_meta" id="post_meta_1">
+                  <div class="float_right"></div>
+                </div>
+
+                <span class="post_edit" id="edited_by_1">
+                  <span class="edited_post">(Última modificación: 03-29-2022, 03:09 PM por
+                    <a href="<?= base_url()?>player/profile/talUsuario">
+                      <?php echo $discussion[0]['nombre_jugador']; ?>
+                    </a>.)
+                  </span>
+                </span>
+              </div>
+
+              <div class="post_controls">
+                <div class="postbit_buttons post_management_buttons">
+                  <ul>
+                    <li>
+                      <br>
+                      <a href="<?= base_url() ?>answer/reply/<?php echo $discussion['id_discusion']; ?>" title="Cita este mensaje en tu respuesta" class="postbit_quote postbit_mirage"><span>Responder</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
 
     <?php
     if(is_array($data_answer)) {
