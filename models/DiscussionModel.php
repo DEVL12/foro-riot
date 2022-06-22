@@ -115,6 +115,22 @@
       else
         return NULL;
     }
+    
+    public function GetDiscussionHonors($id){
+      $sql = "SELECT puntaje FROM honor WHERE id_objetivo = $id AND tipo_objetivo = 'discusion';";
+      $request = $this->select_all($sql);
+
+      $honors = 0;
+
+      if($request != NULL) {
+        for ($i=0; $i < count($request); $i++) { 
+          if(!empty($request[$i]['puntaje'])){
+            $honors += $request[$i]['puntaje'];
+          }
+        }
+      }
+      return $honors;
+    }
 
     // PRIVATE FUNCTIONS
     private function GetDiscusionQuery() {
