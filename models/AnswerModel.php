@@ -92,5 +92,17 @@
       }
       return $honors;
     }
+
+    public function GetDiscussion($id){
+      $sql = "SELECT * FROM discusion WHERE id_discusion = {$id}";
+      $request = $this->select_all($sql);
+      return $request;
+    }
+
+    public function GetPlayerData($id){
+      $sql = "SELECT nombre_jugador,rol FROM jugador WHERE id_jugador = {$id}";
+      $request = $this->select($sql);
+      return $request;
+    }
   }
 ?>
