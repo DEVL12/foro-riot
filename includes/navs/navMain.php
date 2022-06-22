@@ -21,11 +21,13 @@
    <li class="nav-item">
      <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>
    </li>
+   <?php if(empty($_SESSION)) { ?>
    <li class="nav-item">
      <a class="nav-link highlight" href="<?= base_url() ?>Session/register">Registrate</a>
    </li>
    <li class="nav-item">
      <a class="nav-link highlight" href="<?= base_url() ?>Session/login">Iniciar Sesión</a>
    </li>
+   <?php } ?>
  </ul>
  <!-- End Menu -->
