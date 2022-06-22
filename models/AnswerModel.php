@@ -46,18 +46,18 @@
     }
 
     public function GetTitleAndNameOfADiscussionByid($id) {
-      $sql = "SELECT titulo, nombre_jugador FROM discusion
+      $sql = "SELECT titulo, nombre_jugador, id_discusion FROM discusion
               INNER JOIN jugador ON jugador.id_jugador = discusion.fk_jugador
               WHERE id_discusion = {$id}";
       $request = $this->select($sql);
       return $request;
     }
 
-    public function AddAnswer($content, $image, $authorId, $discussionId, $targetId, $targetType) {
-      $sql = "INSERT INTO respuesta (contenido, contenido_original, editado, imagen,
-          id_autor, id_discusion, id_objetivo, tipo_objetivo, fecha, hora)
-          VALUES (?, ?, 0, ?, ?, ?, ?, ?, '". date('d/m/Y') . "', '" . date('G:i') . "')";
-      $arrData = array($content, $content, $image, $authorId, $discussionId, $targetId, $targetType);
+    public function AddAnswer($content, $authorId, $discussionId) {
+      $sql = "INSERT INTO respuesta (contenido_respuesta, contenido_original_respuesta, editado_respuesta,
+          fk_jugador, fk_discusion, estado_respuesta, fecha_respuesta)
+          VALUES (?, ?, 0, ?, ?, 1, '". date('Y-m-d G:i:s') ."')";
+      $arrData = array($content, $content, $authorId, $discussionId);
       $request = $this->insert($sql,$arrData);
       return $request;
     }

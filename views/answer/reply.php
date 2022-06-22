@@ -23,6 +23,7 @@ $data_answers = $data['data_answers'];
     </center>
 
     <form id="answer-riot">
+      <input type="hidden" name = "id_discusion" value="<?= $data['discussion']['id_discusion'] ?>">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
           <tr>
@@ -90,7 +91,7 @@ $data_answers = $data['data_answers'];
       <br>
 
       <div align="center">
-        <input type="submit" class="button" name="submit" value="Enviar respuesta" tabindex="3" accesskey="s">
+        <input type="submit" id="submit_reply" class="button" name="submit" value="Enviar respuesta" tabindex="3" accesskey="s">
       </div>
     </form>
 

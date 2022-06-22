@@ -26,7 +26,7 @@
       array_push($final, $discussion[1]);
 
       $data = [
-        'title' => "tal usuario - Respuestas",
+        'title' =>  $discussion[0]['titulo']." - Respuestas",
         'script' => "answer.js",
         'data_answers' => (!empty($answers)) ? $answers : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay respuestas registradas.</h1>',
         'honors' => $honors,
@@ -53,6 +53,24 @@
       ];
 
       $this->views->getViews($this,"reply",$data);
+    }
+
+    public function add_answer()
+    {
+      $id_discusion = strClean($_POST['id_discusion']);
+      $message = strClean($_POST['message']);
+      $id_usuario = $_SESSION['dataUser']['id_jugador'];
+
+      if(empty($this->model->GetTitleAndNameOfADiscussionByid($id_discusion)))
+        header("location: ".base_url()."Errors");
+
+      $request_answer = $this->model->AddAnswer($message, $id_usuario, $id_discusion);
+      ($request_answer > 0)
+        ? $arrResponse = ['status' => true, 'msg' => 'Tu repuesta fue enviada correctamente', 'direction' => $id_discusion]
+        : $arrResponse = ['status' => false, 'msg' => 'Ocurrio un error al momento de enviar tu respuesta. intentelo mas tarde'];
+
+      echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+      die();
     }
   }
 ?>
