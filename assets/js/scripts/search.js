@@ -1,5 +1,8 @@
 import validations from "./validations.js";
+import Ajax from "./ajax.js";
+
 const validar = new validations();
+const var_Ajax = new Ajax();
 const formSearch = document.getElementById('formSearch');
 
 let allOK = true;
@@ -26,23 +29,27 @@ const ChangeClass = (condicion, name) => {
   } else if(condicion == "cleanAlert") {
     document.getElementById(name).classList.remove('alert-input');
   }else{
-    
+
   }
 }
 
-formSearch.addEventListener('submit', e => {
+formSearch.addEventListener("submit", (e) => {
   e.preventDefault();
   allOK = true;
-
   validateInput(formSearch.author, " _\\-¡!¿?:.^$", "0,16");
-  validateInput(formSearch.keywords,"", "0,999");
-  if(parseInt(formSearch.numreplies.value)< 0){
-    ChangeClass("error",formSearch.numreplies.name);
+  validateInput(formSearch.keywords, "", "0,999");
+  if (parseInt(formSearch.numreplies.value) < 0) {
+    ChangeClass("error", formSearch.numreplies.name);
   }
-  
-  if(allOK){
-    alert("realizando búsqueda....");
-  }else{
+
+  if (allOK) {
+    const request = var_Ajax.sendPost("search/search_forum", formSearch);
+    request.onreadystatechange = () => {
+      if (request.readyState == 4 && request.status == 200) {
+
+      }
+    };
+  } else {
     alert("Hay campos inválidos");
   }
 });

@@ -8,10 +8,17 @@
 
     public function search()
     {
-      $data = array();
-      $data['title'] = "Foro Riot Games - Búsqueda";
-      $data['script'] = "search.js";
+      $data = [
+        'title' => 'Foro Riot Games - Búsqueda',
+        'script' => 'search.js',
+      ];
+
       $this->views->getViews($this,"search",$data);
+    }
+
+    public function search_forum()
+    {
+      dep($_POST);
     }
   }
 ?>

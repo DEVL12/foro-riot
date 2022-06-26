@@ -7,7 +7,7 @@
       <span class="nav-spacer">&rsaquo;</span>
       <strong class="active">Búsqueda</strong>
     </div>
-    <br />
+    <br/>
 
     <form id ="formSearch" autocomplete="off">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
