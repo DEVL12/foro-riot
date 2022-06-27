@@ -25,9 +25,9 @@
     }
 
     public function AddBlock($playerId, $date, $reason) {
-      $sql = "INSERT INTO bloqueo (id_jugador, fecha_bloqueo, fecha_tope, motivo, estado)
-      VALUES (?, '". date('d/m/Y') . "', ?, ?, 1)";
-      $arrData = array($playerId, $date, $reason);
+      $sql = "INSERT INTO bloqueo (fk_jugador, fecha_bloqueo, fecha_tope, motivo_bloqueo, estado_bloqueo)
+      VALUES (?, '". date('Y-m-d') . "', ?, ?, 1)";
+      $arrData = [$playerId, $date, $reason];
       $request = $this->insert($sql,$arrData);
       return $request;
     }

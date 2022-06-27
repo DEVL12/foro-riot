@@ -5,9 +5,7 @@
       <span style="font-weight:300">Navigation</span>: &nbsp;
       <a href="<?= base_url() ?>">Foro Riot Games</a><!-- start: nav_sep -->
       <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>block">Reportar usuario</a><!-- start: nav_sep -->
-      <span class="nav-spacer">›</span>
-      <a href="<?= base_url() ?>block">Usuario tal</a>
+      <strong>Reportar usuario</strong><!-- start: nav_sep -->
     </div>
     <br>
 
@@ -16,19 +14,21 @@
     </center>
 
     <form id="blockUser">
+      <input type="hidden" name="id_player" value="<?= $data['user']['id_jugador'] ?>">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tbody>
           <tr>
-            <td class="thead" colspan="2" style="text-align: center;"><h2>Reportando al jugador Nautilus</h2></td>
+            <td class="thead" colspan="2" style="text-align: center;"><h2>Reportando al jugador <?= $data['user']['nombre_jugador'] ?></h2></td>
           </tr>
-          <tr>
-            <td>
-              <br>
-            </td>
-          </tr>
+
           <tr>
             <td class="trow1" width="20%" style="font-size: 15px"><strong>Reporte dirigido a:</strong></td>
-            <td class="trow1"> Nautilus <span class="smalltext"></span></td>
+            <td class="trow1"> <?= $data['user']['nombre_jugador'] ?> <span class="smalltext"></span></td>
+          </tr>
+
+          <tr>
+            <td class="trow1" width="20%" style="font-size: 15px"><strong>Fecha limite del ban:</strong></td>
+            <td class="trow1"> <input type="date" min="<?= date("Y-m-d"); ?>" value="" name="date" required></td>
           </tr>
 
           <tr>
@@ -43,7 +43,7 @@
       <br>
 
       <div align="center">
-        <input type="submit" class="button" name="submit" value="Crear Discusión" tabindex="3" accesskey="s">
+        <input type="submit" id="submit_block" class="button" name="submit" value="Banear usuario" tabindex="3" accesskey="s">
       </div>
     </form>
     <br>

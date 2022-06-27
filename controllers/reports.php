@@ -44,7 +44,6 @@ class reports extends controllers
 
     $data = [
       'title' => 'Foro Riot Games | Reportes',
-      'script' => 'newdiscussion.js',
       'plataforms' => !empty($plataforms) ? $plataforms : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay videojuegos registrados.</h1>',
       'topic' => !empty($topic) ? $topic : '<h1 style="color: rgba(186, 51, 64, 1);">Lo sentimos, no hay tematicas registradas .</h1>',
     ];
@@ -327,30 +326,25 @@ class reports extends controllers
     $pdf->Cell(40, 5, 'motivo', 0, 0, 'C', true);
     $pdf->Cell(33, 5, 'fecha', 0, 0, 'C', true);
     $pdf->Cell(33, 5, 'fecha tope', 0, 0, 'C', true);
-    $pdf->Cell(15, 5, 'estado', 0, 1, 'C', true);
+    $pdf->Cell(33, 5, 'estado', 0, 1, 'C', true);
     $pdf->SetFont('Arial', '', 10);
     $pdf->SetFillColor(240, 240, 240);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetDrawColor(250, 250, 250);
 
     for ($i = 0; $i < count($datos); $i++) {
+      $estado = ($datos[$i]['estado_bloqueo'] === 1) ? "Baneo sin culminar" : "Baneo culminado";
       $pdf->Cell(8, 5, $datos[$i]['id_bloqueo'], 0, 0, 'C', true);
-      $pdf->Cell(22, 5, utf8_decode($datos[$i]['nombre_jugador']), 0, 0, 'C', true);
+      $pdf->Cell(22, 5, utf8_decode($datos[$i]['fk_jugador']), 0, 0, 'C', true);
       $pdf->Cell(40, 5, utf8_decode($datos[$i]['motivo_bloqueo']), 0, 0, 'C', true);
       $pdf->Cell(33, 5, utf8_decode($datos[$i]['fecha_bloqueo']), 0, 0, 'C', true);
       $pdf->Cell(33, 5, utf8_decode($datos[$i]['fecha_tope']), 0, 0, 'C', true);
-      $pdf->Cell(15, 5, utf8_decode($datos[$i]['estado_bloqueo']), 0, 0, 'C', true);
+      $pdf->Cell(33, 5, utf8_decode($estado), 0, 1, 'C', true);
       //la verdad no se si se refiere a que esta 1 o 0
       //si esta permabaneado o kickeado por dias asi q alli lo dejo
     }
 
-    $pdf->Cell(8, 5, '50', 0, 0, 'C', true); //prueba de como se veria
-    $pdf->Cell(22, 5, 'its a test', 0, 0, 'C', true);
-    $pdf->Cell(40, 5, 'piedrero sin remedio', 0, 0, 'C', true);
-    $pdf->Cell(33, 5, '10/06/2022', 0, 0, 'C', true);
-    $pdf->Cell(33, 5, '10/08/2022', 0, 0, 'C', true);
-    $pdf->Cell(15, 5, 'kickeado?', 0, 0, 'C', true);
-    $pdf->Output(); // oko xd
+    $pdf->Output();
   }
 }
 ?>

@@ -56,7 +56,7 @@ formReply.addEventListener('submit', e => {
       if(request.readyState == 4 && request.status == 200) {
         const objData = JSON.parse(request.responseText);
         if(objData.status) {
-          ShowMsg("RESPUESTA ENVIADA", "<li>"+objData.msg+"", "green");
+          ShowMsg("RESPUESTA ENVIADA", "<li>"+objData.msg+"</li>", "green");
           setTimeout(() => { window.location = base_url+"answer/answers_for/"+objData.direction }, 3000);
           document.getElementById('submit_reply').setAttribute('hidden',"true");
         } else {

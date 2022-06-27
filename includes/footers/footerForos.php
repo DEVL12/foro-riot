@@ -10,7 +10,9 @@
       </div>
     </div>
     <script> const base_url = "<?= base_url(); ?>"; </script>
+    <?php if(isset($data['script'])){ ?>
     <script src= "<?= base_url()?>assets/js/scripts/<?= $data['script'] ?>" type="module"></script>
+    <?php } ?>
   </body>
 </html>
 <!-- end: index -->
