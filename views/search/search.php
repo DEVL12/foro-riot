@@ -1,4 +1,7 @@
-<?php getHeader($data, "headerForos"); ?>
+<?php getHeader($data, "headerForos");
+$plataforms = $data['plataforms'];
+$topic = $data['topic'];
+?>
 <div id="content">
   <div class="wrapper">
     <div class="navigation">
@@ -7,9 +10,9 @@
       <span class="nav-spacer">&rsaquo;</span>
       <strong class="active">Búsqueda</strong>
     </div>
-    <br/>
+    <br />
 
-    <form id ="formSearch" autocomplete="off">
+    <form id="formSearch" autocomplete="off">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
         <tr>
           <td colspan="2" class="thead"><strong>Búsqueda</strong></td>
@@ -46,73 +49,55 @@
         </tr>
 
         <tr>
-          <td class="tcat"><strong>Buscar en foro(s)</strong></td>
+          <td class="tcat"><strong>Videojuego</strong></td>
           <td class="tcat"><strong>Opciones de búsqueda</strong></td>
         </tr>
 
         <tr>
-          <td class="trow1 no_bottom_border" rowspan="5">
-            <select name="forum" size="20" multiple="multiple" style="height:auto;">
-              <option value="all" selected="selected">Buscar en todos los foros</option>
-              <option value="all">----------------------</option>
-              <option value="1"> Foros</option>
-              <option value="3">&nbsp;&nbsp;&nbsp;&nbsp; League of Legends</option>
-              <option value="4">&nbsp;&nbsp;&nbsp;&nbsp; Valorant</option>
-              <option value="5">&nbsp;&nbsp;&nbsp;&nbsp; League of Legends Wild Rift</option>
-              <option value="6">&nbsp;&nbsp;&nbsp;&nbsp; Legends of Runaterra</option>
-              <option value="7">&nbsp;&nbsp;&nbsp;&nbsp; Teamfight Tactics</option>
-            </select>
+          <td valign="top" style="font-size: 15px">
+            <?php if (is_array($plataforms)) { ?>
+
+              <select id="plataformas" name="plataformas">
+                <option value="" selected="selected" style="display: none;">Selecciona el juego correspondiente</option>
+                <?php for ($i = 0; $i < count($plataforms); $i++) { ?>
+                  <option value="<?= $plataforms[$i]['id_plataforma'] ?>"><?= $plataforms[$i]['nombre_plataforma'] ?></option>
+                <?php } ?>
+              </select>
+            <?php
+            } else {
+              echo $plataforms;
+            } ?>
           </td>
 
-          <td class="trow1">
+          <td>
             <select name="findthreadst">
               <option value="1">Temas con un mínimo de</option>
               <option value="2">Temas con un máximo de</option>
-            </select> <input type="number" class="textbox" id="numreplies" name="numreplies" size="2" value = "0" maxlength="4" />&nbsp;Respuestas<br /><br />
-
-            <select name="postdate">
-              <option value="0">Mensajes de cualquier fecha</option>
-              <option value="1">Mensajes de ayer</option>
-              <option value="7">Mensajes de hace 1 semana</option>
-              <option value="14">Mensajes de hace 2 semanas</option>
-              <option value="30">Mensajes de hace 1 mes</option>
-              <option value="90">Mensajes de hace 3 meses</option>
-              <option value="180">Mensajes de hace 6 meses</option>
-              <option value="365">Mensajes de hace 1 año</option>
-            </select>&nbsp;&nbsp;
-            <input type="radio" class="radio" name="pddir" value="1"  />Y más nuevos
-            <input type="radio" class="radio" name="pddir" value="0" checked="checked" />Y más antiguos<br /><br />
+            </select> <input type="number" class="textbox" id="numreplies" name="numreplies" size="2" value="0" maxlength="4" />&nbsp;Respuestas<br /><br />
           </td>
         </tr>
 
         <tr>
-          <td class="tcat"><strong>Tema</strong></td>
+          <td class="tcat" width="50%"><strong>Tema</strong></td>
+          <td class="tcat" width="50%"><strong>Opciones de organización</strong></td>
         </tr>
 
         <tr>
-          <td class="trow1">
-            <select name="topic">
-            <option value="all">Todos</option>
-              <option value="Bug">Bug</option>
-              <option value="Creaciones de la comunidad">Creaciones de la comunidad</option>
-              <option value="Eventos">Eventos</option>
-              <option value="General">General</option>
-              <option value="Jugabilidad">Jugabilidad</option>
-              <option value="Memes">Memes</option>
-              <option value="Problemas tecnicos">Problemas técnicos</option>
-              <option value="Queja">Queja</option>
-              <option value="Reclutamiento">Reclutamiento</option>
-              <option value="Reporte a jugador">Reporte a jugador</option>
-            </select>
-        </tr>
-
-
-        <tr>
-          <td class="tcat"><strong>Opciones de organización</strong></td>
-        </tr>
-
-        <tr>
-          <td class="trow1">
+          <td class="trow1" valign="top" style="font-size: 15px">
+            <?php if (is_array($topic)) { ?>
+              <select id="plataformas" name="plataformas">
+                <option value="" selected="selected" style="display: none;">Selecciona el juego correspondiente</option>
+                <?php for ($i = 0; $i < count($topic); $i++) { ?>
+                  <option value="<?= $topic[$i]['id_tema'] ?>"><?= $topic[$i]['nombre_tema'] ?></option>
+                <?php } ?>
+              </select>
+            <?php } else { ?>
+          <td>
+            <?= $topic ?>
+          </td>
+          <?php } ?>
+          </td>
+          <td>
             <select name="sortby">
               <option value="lastpost">Resultados por fecha</option>
               <option value="starter">Resultados por autor</option>
@@ -122,18 +107,6 @@
             </select> En orden
             <input type="radio" class="radio" name="sortordr" value="asc" />Ascendente
             <input type="radio" class="radio" name="sortordr" value="desc" checked="checked" />Descendente
-          </td>
-        </tr>
-
-        <tr>
-          <td class="tcat"><strong>Opciones de muestra</strong></td>
-        </tr>
-
-        <tr>
-          <td class="trow1">
-            Mostrar resultados como
-            <input type="radio" class="radio" name="showresults" value="threads" checked="checked" />Temas
-            <input type="radio" class="radio" name="showresults" value="posts" />Mensajes
           </td>
         </tr>
       </table>

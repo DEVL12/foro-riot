@@ -21,7 +21,7 @@
    <li class="nav-item">
      <a class="nav-link" href="<?= base_url()?>home/aboutUs">Sobre Nosostros</a>
    </li>
-   <?php if(empty($_SESSION)) { ?>
+   <?php if(!isset($_SESSION['islogin'])) { ?>
    <li class="nav-item">
      <a class="nav-link highlight" href="<?= base_url() ?>Session/register">Registrate</a>
    </li>
