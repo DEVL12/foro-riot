@@ -24,6 +24,18 @@
       return array_reverse($request);
     }
 
+    public function GetAllActivesBlocksOfAPlayer($playerId) {
+      $sql = "SELECT * FROM bloqueo WHERE estado_bloqueo = 1 AND fk_jugador = {$playerId}";
+      $request = $this->select_all($sql);
+      return $request;
+    }
+
+    public function UpdateBans($playerId) {
+      $sql = "UPDATE bloqueo SET estado_bloqueo = 0 WHERE fk_jugador = ? AND fecha_tope <= ?";
+      $request = $this->update($sql, [$playerId, date("Y-m-d")]);
+      return $request;
+    }
+
     public function AddBlock($playerId, $date, $reason) {
       $sql = "INSERT INTO bloqueo (fk_jugador, fecha_bloqueo, fecha_tope, motivo_bloqueo, estado_bloqueo)
       VALUES (?, '". date('Y-m-d') . "', ?, ?, 1)";

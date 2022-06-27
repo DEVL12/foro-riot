@@ -33,5 +33,17 @@
       echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
       die();
     }
+
+    public function Check_bans()
+    {
+      if(isset($_SESSION['islogin'])) {
+        $this->model->UpdateBans($_SESSION['dataUser']['id_jugador']);
+        $request_ban = $this->model->GetAllActivesBlocksOfAPlayer($_SESSION['dataUser']['id_jugador']);
+
+        if(!empty($request_ban))
+          header("location: ".base_url()."session/logout");
+
+      }
+    }
   }
 ?>
