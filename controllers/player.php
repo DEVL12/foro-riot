@@ -7,7 +7,7 @@
       parent::__construct();
     }
 
-    public function profile($name_player = "")
+    public function profile($name_player)
     {
       if(empty($name_player))
         header("location: ".base_url()."Errors");

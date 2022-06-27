@@ -51,7 +51,7 @@ $data_user = $data['User'];
               </div>
 
               <div class="profile-ctbox">
-                <a href="<?= base_url()?>block/blockuser/<?= $data_user['id_jugador'] ?>">
+                <a href="<?= base_url()?>block/blockuser/<?= $data_user['nombre_jugador'] ?>">
                   <div><strong>Banear usuario</strong></div>
                 </a>
               </div>

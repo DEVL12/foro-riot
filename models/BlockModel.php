@@ -11,6 +11,13 @@
       return $request;
     }
 
+    public function GetPlayer_byName($name)
+    {
+      $sql = "SELECT id_jugador, nombre_jugador FROM jugador WHERE nombre_jugador = '{$name}'";
+      $request = $this->select($sql);
+      return $request;
+    }
+
     public function GetAllBlocksOfAPlayer($playerId) {
       $sql = "SELECT * FROM bloqueo WHERE id_jugador = {$playerId}";
       $request = $this->select_all($sql);
