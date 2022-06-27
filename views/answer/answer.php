@@ -48,7 +48,7 @@ $islogin = isset($_SESSION['islogin']);
           <div id="posts">
             <a name="pid1" id="pid1"></a>
             <div class="postbit_avatar_margins">
-              <a href="<?= base_url()?>player/profile/talUsuario">
+              <a href="<?= base_url()?>player/profile/<?= $discussion[0]['nombre_jugador']; ?>">
                 <img src="<?= base_url()?>assets/images/default_avatar.png" class="rounded-avatar box_shadowed avatar_white_border postbit_avatar" style="width:55px;height:55px;border-width:4px;" />
               </a>
             </div>
@@ -58,7 +58,7 @@ $islogin = isset($_SESSION['islogin']);
                 <div class="post_author default_postbit">
                   <div class="author_information" style="display:inline-block;">
                     <h2 style="margin:0px;display:inline-block;">
-                      <a href="<?= base_url()?>player/profile/talUsuario">
+                      <a href="<?= base_url()?>player/profile/<?= $discussion[0]['nombre_jugador']; ?>">
                         <span style="color: green;">
                           <strong>
                             <em><?= $discussion[0]['nombre_jugador']; ?></em>
@@ -91,14 +91,6 @@ $islogin = isset($_SESSION['islogin']);
                 <div class="post_meta" id="post_meta_1">
                   <div class="float_right"></div>
                 </div>
-
-                <span class="post_edit" id="edited_by_1">
-                  <span class="edited_post">(Última modificación: 03-29-2022, 03:09 PM por
-                    <a href="<?= base_url()?>player/profile/talUsuario">
-                      <?= $discussion[0]['nombre_jugador']; ?>
-                    </a>.)
-                  </span>
-                </span>
               </div>
 
               <div class="post_controls">
@@ -140,7 +132,7 @@ $islogin = isset($_SESSION['islogin']);
             <div id="posts">
               <a name="pid1" id="pid1"></a>
               <div class="postbit_avatar_margins">
-                <a href="<?= base_url()?>player/profile/talUsuario">
+                <a href="<?= base_url()?>player/profile/<?= $discussion[0]['nombre_jugador']; ?>">
                   <img src="<?= base_url()?>assets/images/default_avatar.png" class="rounded-avatar box_shadowed avatar_white_border postbit_avatar" style="width:55px;height:55px;border-width:4px;" />
                 </a>
               </div>
@@ -150,7 +142,7 @@ $islogin = isset($_SESSION['islogin']);
                   <div class="post_author default_postbit">
                     <div class="author_information" style="display:inline-block;">
                       <h2 style="margin:0px;display:inline-block;">
-                        <a href="<?= base_url()?>player/profile/talUsuario">
+                        <a href="<?= base_url()?>player/profile/<?= $discussion[0]['nombre_jugador']; ?>">
                           <span style="color: green;">
                             <strong>
                               <em><?= $data_answer[$i]['nombre_jugador']?></em>

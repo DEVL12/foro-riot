@@ -46,8 +46,8 @@
   </div>
 
   <div id="dropmenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 41px; left: 1159.31px; display:none;">
-    <div class="popup_item_container"><a href="<?= base_url()?>player/profile/UsuarioTAL" class="popup_item"><span>Ver perfil</span></a></div>
-    <div class="popup_item_container"><a href="#" class="popup_item"><span>Editar Avatar</span></a></div>
+    <div class="popup_item_container"><a href="<?= base_url()?>player/profile/<?= $_SESSION['dataUser']['nombre_jugador']?>" class="popup_item"><span>Ver perfil</span></a></div>
+    <!-- <div class="popup_item_container"><a href="#" class="popup_item"><span>Editar Avatar</span></a></div> -->
     <div class="popup_item_container"><a href="<?= base_url() ?>session/logout" class="popup_item"><span>Cerrar sesión!</span></a></div>
   </div>
   <?php } ?>

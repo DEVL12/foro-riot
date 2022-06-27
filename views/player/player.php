@@ -1,4 +1,7 @@
-<?php getHeader($data, "headerForos"); ?>
+<?php
+getHeader($data, "headerForos");
+$data_user = $data['User'];
+?>
 
 <div id="content">
   <div class="wrapper">
@@ -21,8 +24,8 @@
             <div class="sidebar-inner">
               <center>
                 <img src="<?= base_url() ?>assets/images/default_avatar.png" style="width:100px;height:100px;border-width:8px;" class="rounded-avatar avatar_white_border_transparent avatar_shadow">
-                <h1> <span style="color: green;"><strong><em>Nombre usuario</em></strong></span> </h1>
-                <span class="smalltext">ROL</span>
+                <h1> <span style="color: green;"><strong><em><?= $data_user['nombre_jugador'] ?></em></strong></span> </h1>
+                <span class="smalltext" style="text-transform: uppercase;"><?= $data_user['rol'] ?></span>
               </center>
             </div>
           </div>
@@ -38,17 +41,17 @@
               <div class="profile-ctbox">
                 <div><strong>Nombre de usuario:</strong></div>
                 <div class="smalltext description">
-                  <span class="online" style="font-weight: bold;">XD</span>
+                  <span class="online" style="font-weight: bold;"><?= $data_user['nombre_jugador'] ?></span>
                 </div>
               </div>
 
               <div class="profile-ctbox">
                 <div><strong>Correo:</strong></div>
-                <div class="smalltext description">XD</div>
+                <div class="smalltext description"><?= $data_user['correo'] ?></div>
               </div>
 
               <div class="profile-ctbox">
-                <a href="<?= base_url()?>">
+                <a href="<?= base_url()?>block/blockuser/<?= $data_user['id_jugador'] ?>">
                   <div><strong>Banear usuario</strong></div>
                 </a>
               </div>

@@ -28,7 +28,7 @@
             <img src="<?= base_url() ?>assets/images/default_avatar.png" alt="" class="rounded-avatar avatar_white_border_transparent avatar_shadow" style="border-width:8px;width:100px;height:100px;" />
             <br>
             <h1>
-              <a href="<?= base_url()?>player/profile/talUsuario"><span style="color: green;"><strong><em>Persona <?= $i ?></em></strong></span></a>
+              <a href="<?= base_url()?>player/profile/DEVL12"><span style="color: green;"><strong><em>Persona <?= $i ?></em></strong></span></a>
             </h1>
 
             <div class="smalltext" style="margin-bottom:5px;">Administrator</div>

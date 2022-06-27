@@ -7,14 +7,16 @@
       parent::__construct();
     }
 
-    public function profile($Usuario = "")
+    public function profile($name_player = "")
     {
-      if($Usuario == "")
-      header("location: ".base_url()."Errors");
+      if(empty($name_player))
+        header("location: ".base_url()."Errors");
 
-      $data = array();
-      $data['title'] = "Foro Riot Games - Perfil de " . $Usuario;
-      $data['script'] = "player.js";
+      $request_user = $this->model->GetPlayer($name_player);
+
+      (!empty($request_user))
+        ? $data = ['title' => "Foro Riot Games - Perfil de " . $name_player, 'script' => "player.js", 'User' => $request_user]
+        : header("location: ".base_url()."Errors");
 
       $this->views->getViews($this,"player",$data);
     }
