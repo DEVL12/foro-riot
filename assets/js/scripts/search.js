@@ -58,6 +58,7 @@ formSearch.addEventListener("submit", (e) => {
           $("html").animate({ scrollTop: 400 }, 700);
         } else {
           alert(objData.msg);
+          document.getElementById('results').innerHTML = '<h1>Total de resultados: 0</h1>';
         }
       }
     };

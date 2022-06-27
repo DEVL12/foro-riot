@@ -32,7 +32,7 @@ $topic = $data['topic'];
               <tr>
                 <td>
                   <span class="smalltext">
-                    <input type="radio" class="radio" name="postthread" value="1" checked="checked" /> Buscar en todo el mensaje <br />
+                    <input type="radio" class="radio" name="postthread" value="1" checked="checked" /> Buscar en el contenido <br />
                     <input type="radio" class="radio" name="postthread" value="2" /> Buscar solo en los títulos
                   </span>
                 </td>

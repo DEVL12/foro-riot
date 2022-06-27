@@ -26,7 +26,7 @@
     {
       $query = " WHERE ";
       if(!empty($_POST['keywords']))
-        $query .= ($_POST['postthread'] == 1) ? "titulo LIKE '%{$_POST['keywords']}%' AND " : "contenido_discusion LIKE '%{$_POST['keywords']}%' AND ";
+        $query .= ($_POST['postthread'] != 1) ? "titulo LIKE '%{$_POST['keywords']}%' AND " : "contenido_discusion LIKE '%{$_POST['keywords']}%' AND ";
 
 
       if(!empty($_POST['author']))
