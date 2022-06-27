@@ -27,6 +27,7 @@
 
           <?php if(isset($_SESSION['islogin'])) {?>
           <li><a href="" id="moremenu"><span>Publicaciones</span> <i class="fa fa-caret-down"></i></a></li>
+          <li><a href="<?= base_url() ?>reports">Reportes</a></li>
           <?php } else { ?>
             <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
           <?php } ?>
