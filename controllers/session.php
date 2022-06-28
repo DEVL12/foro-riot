@@ -41,8 +41,16 @@
       $requets_login = $this->model->CheckLogIn($name, $password);
 
       if(is_array($requets_login) === true) {
-        $arrResponse = ['status' => true, 'msg' => 'USUARIO LOGUEADO CORRECTAMENTE'];
-				$_SESSION = ['dataUser' => $requets_login, 'islogin' => true];
+        if(isset($requets_login[0]['fecha_tope'])) {
+          $text = "TU CUENTA ESTA BANEADA";
+          for($i = 1; $i <= count($requets_login); $i++) {
+            $text .= "<br>{$i}) Motivo: {$requets_login[$i-1]['motivo_bloqueo']}<br>Fecha de vencimiento: {$requets_login[$i-1]['fecha_tope']}<hr>";
+          }
+          $arrResponse = ['status' => false, 'msg' => "BLOQUEADO", 'ban_info' => $text];
+        } else {
+          $arrResponse = ['status' => true, 'msg' => 'USUARIO LOGUEADO CORRECTAMENTE'];
+          $_SESSION = ['dataUser' => $requets_login, 'islogin' => true];
+        }
       } else {
         $arrResponse = ['status' => false, 'msg' => 'DATOS INCORRECTOS'];
       }

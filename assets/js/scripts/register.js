@@ -143,6 +143,7 @@ formRegister.addEventListener("submit", (e) => {
           ShowMsg(objData.msg, "<li>Al parecer ocurrio un error con el servidor. Por favor intentelo mas tarde</li>", "crimson");
         }
       }
+      $("html").animate({ scrollTop: 0 }, 700);
     };
   } else {
     let text = "";

@@ -64,7 +64,10 @@ formLogin.addEventListener('submit', (e) => {
           setTimeout(() => { window.location = base_url+"discussion"; }, 2000);
           document.getElementById('btn_submit').setAttribute('hidden',"true");
         } else {
-          ShowMsg(objData.msg, "<li>Los datos no corresponden a ninguna cuenta. Intentelo nuevamente</li>", "crimson");
+          (typeof(objData.ban_info) === "string")
+            ? ShowMsg(objData.msg, `<li>${objData.ban_info}</li>`, "crimson")
+            : ShowMsg(objData.msg, "<li>Los datos no corresponden a ninguna cuenta. Intentelo nuevamente</li>", "crimson");
+
           ChangeClass("error","username");
           ChangeClass("error","password");
         }

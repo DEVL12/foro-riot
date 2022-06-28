@@ -36,13 +36,12 @@
 
     public function Check_bans()
     {
+      $this->model->UpdateBans();
       if(isset($_SESSION['islogin'])) {
-        $this->model->UpdateBans($_SESSION['dataUser']['id_jugador']);
         $request_ban = $this->model->GetAllActivesBlocksOfAPlayer($_SESSION['dataUser']['id_jugador']);
 
         if(!empty($request_ban))
           header("location: ".base_url()."session/logout");
-
       }
     }
   }

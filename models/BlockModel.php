@@ -30,9 +30,9 @@
       return $request;
     }
 
-    public function UpdateBans($playerId) {
-      $sql = "UPDATE bloqueo SET estado_bloqueo = 0 WHERE fk_jugador = ? AND fecha_tope <= ?";
-      $request = $this->update($sql, [$playerId, date("Y-m-d")]);
+    public function UpdateBans() {
+      $sql = "UPDATE bloqueo SET estado_bloqueo = 0 WHERE fecha_tope <= ?";
+      $request = $this->update($sql,[date("Y-m-d")]);
       return $request;
     }
 
@@ -41,6 +41,10 @@
       VALUES (?, '". date('Y-m-d') . "', ?, ?, 1)";
       $arrData = [$playerId, $date, $reason];
       $request = $this->insert($sql,$arrData);
+
+      if($request > 0)
+        $this->UpdatePlayerStatus($playerId);
+
       return $request;
     }
 
@@ -59,6 +63,12 @@
     public function RemoveLastBlockOfAPlayer($playerId) {
       $blocks = $this->GetAllBlocksOfAPlayer($playerId);
       $request = $this->RemoveBlock($blocks[0]['id']);
+      return $request;
+    }
+
+    private function UpdatePlayerStatus($id_player){
+      $sql = "UPDATE jugador SET estado_jugador = 0 WHERE id_jugador = ?";
+      $request = $this->update($sql, [$id_player]);
       return $request;
     }
   }

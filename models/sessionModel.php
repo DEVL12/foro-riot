@@ -56,6 +56,13 @@
     public function CheckLogIn($user, $password) {
       $sql = "SELECT id_jugador, nombre_jugador, correo, estado_jugador, rol FROM jugador WHERE nombre_jugador = '{$user}' AND contrasenia = '{$password}'";
       $request = $this->select($sql);
+
+      if(!empty($request)) {
+        $request_bans = $this->GetBans($request['id_jugador']);
+        if(!empty($request_bans))
+          return $request_bans;
+      }
+
       return (empty($request)) ? false : $request;
     }
 
@@ -75,6 +82,12 @@
       $sql = "SELECT * FROM jugador WHERE correo ='{$email}'";
       $request = $this->select($sql);
       return (empty($request)) ? false : true;
+    }
+
+    private function GetBans($id_user) {
+      $sql = "SELECT fecha_tope, motivo_bloqueo FROM bloqueo WHERE fk_jugador = '{$id_user}' AND estado_bloqueo = 1";
+      $request = $this->select_all($sql);
+      return (empty($request)) ? false : $request;
     }
   }
 ?>
