@@ -12,18 +12,6 @@
       </div>
       <div class="col-sm-3">
         <div class="footer-widget">
-          <h5 class="title">Foros</h5>
-          <ul>
-            <li><a href="<?= base_url()?>discussion">League of legends</a></li>
-            <li><a href="<?= base_url()?>discussion">Valorant</a></li>
-            <li><a href="<?= base_url()?>discussion">League of legends Wild Rift</a></li>
-            <li><a href="<?= base_url()?>discussion">Legends of Runaterra</a></li>
-            <li><a href="<?= base_url()?>discussion">Teamfight Tactics</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="footer-widget">
           <h5 class="title">Creadores</h5>
           <ul>
             <li>Jose A. Pérez</li>

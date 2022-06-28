@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2022 a las 02:38:53
+-- Tiempo de generación: 28-06-2022 a las 04:28:57
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -55,14 +55,6 @@ CREATE TABLE `discusion` (
   `fk_jugador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `discusion`
---
-
-INSERT INTO `discusion` (`id_discusion`, `titulo`, `contenido_discusion`, `contenido_original_discusion`, `editado_discusion`, `fecha_discusion`, `estado_discusion`, `fk_tema`, `fk_plataforma`, `fk_jugador`) VALUES
-(1, 'Bienvenidos a League of legend', 'Sean bienvenidos :D', 'Sean bienvenidos :D', 0, '2022-06-21 20:35:21', 'abierta', 3, 1, 1),
-(2, 'Bienvenidos a Valorant', 'SE VIENE EVENTO DEL 2022', 'SE VIENE EVENTO DEL 2022', 0, '2022-06-21 20:36:33', 'abierta', 2, 2, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -97,7 +89,8 @@ CREATE TABLE `jugador` (
 --
 
 INSERT INTO `jugador` (`id_jugador`, `nombre_jugador`, `correo`, `estado_jugador`, `rol`, `contrasenia`) VALUES
-(1, 'DEVL12', '1@gmail.com', 1, 'player', '12345');
+(1, 'DEVL12', 'DEVL12@gmail.com', 1, 'admin', 'admin'),
+(2, 'Douglas', 'douglas@gmail.com', 1, 'jugador', 'douglas');
 
 -- --------------------------------------------------------
 
@@ -226,7 +219,7 @@ ALTER TABLE `bloqueo`
 -- AUTO_INCREMENT de la tabla `discusion`
 --
 ALTER TABLE `discusion`
-  MODIFY `id_discusion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_discusion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `honor`
@@ -238,7 +231,7 @@ ALTER TABLE `honor`
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `plataforma`

@@ -7,6 +7,12 @@
     }
 
     public function blockuser($name_player) {
+      if(isset($_SESSION['islogin'])) {
+        if($_SESSION['dataUser']['rol'] != "admin") {
+          header("location: ".base_url()."Errors");
+        }
+      }
+
       if(empty($name_player))
         header("location: ".base_url()."Errors");
 
@@ -21,6 +27,12 @@
 
     public function add_block()
     {
+      if(isset($_SESSION['islogin'])) {
+        if($_SESSION['dataUser']['rol'] != "admin") {
+          header("location: ".base_url()."Errors");
+        }
+      }
+
       $id_player = strClean($_POST['id_player']);
       $date = strClean($_POST['date']);
       $mensaje = strClean($_POST['mensaje']);

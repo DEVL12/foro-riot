@@ -23,15 +23,14 @@
           <li><a href="<?= base_url() ?>">Inicio</a></li>
           <li><a href="<?= base_url() ?>discussion">Foros</a></li>
           <li><a href="<?= base_url() ?>search">Búsqueda</a></li>
-          <li><a href="<?= base_url() ?>memberList">Lista de miembros</a></li>
+          <!-- <li><a href="<?= base_url() ?>memberList">Lista de miembros</a></li> -->
 
-          <?php if(isset($_SESSION['islogin'])) {?>
-          <li><a href="" id="moremenu"><span>Publicaciones</span> <i class="fa fa-caret-down"></i></a></li>
+          <?php if(isset($_SESSION['islogin'])) {
+            if($_SESSION['dataUser']['rol'] == "admin") {?>
           <li><a href="<?= base_url() ?>reports">Reportes</a></li>
-          <?php } else { ?>
-            <li><a href="<?= base_url() ?>discussion">Nuevas Publicaciones</a></li>
-          <?php } ?>
-
+          <?php }} ?>
+          <li><a href="<?= base_url()?>home/guide" class="help">Guia de uso</a></li>
+          <li><a href="<?= base_url()?>home/aboutUs" class="help">Sobre nosotros</a></li>
           <li><a href="<?= base_url() ?>help" class="help">Ayuda</a></li>
         </ul>
       </div>
@@ -39,12 +38,6 @@
   </div>
 
   <?php if(isset($_SESSION['islogin'])) {?>
-  <div id="moremenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 65px; left: 825.203px; display:none;">
-    <div class="popup_item_container"><a href="#" class="popup_item">Mis Publicaciones</a></div>
-    <div class="popup_item_container"><a href="#" class="popup_item">Ver nuevas publicaciones</a></div>
-    <div class="popup_item_container"><a href="#" class="popup_item">Ver las publicaciones de hoy</a></div>
-  </div>
-
   <div id="dropmenu_popup" class="popup_menu pedit--adj" style="position: absolute; top: 41px; left: 1159.31px; display:none;">
     <div class="popup_item_container"><a href="<?= base_url()?>player/profile/<?= $_SESSION['dataUser']['nombre_jugador']?>" class="popup_item"><span>Ver perfil</span></a></div>
     <!-- <div class="popup_item_container"><a href="#" class="popup_item"><span>Editar Avatar</span></a></div> -->
@@ -60,7 +53,6 @@
       <a href="<?= base_url() ?>discussion"><i class="fas fa-home fa-fw"></i>Foros</a>
       <a href="<?= base_url() ?>search"><i class="fas fa-search fa-fw"></i>Búsqueda</a>
       <a href="<?= base_url() ?>memberList"><i class="fas fa-users fa-fw"></i>Lista de miembros</a>
-      <a href="<?= base_url() ?>discussion" style="border-bottom:none;"><i class="fas fa-comments fa-fw"></i>Nuevas Publicaciones</a>
       <a href="<?= base_url() ?>help"><i class="fas fa-info-circle fa-fw"></i>Ayuda</a>
     </div>
   </div>

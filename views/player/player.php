@@ -50,11 +50,15 @@ $data_user = $data['User'];
                 <div class="smalltext description"><?= $data_user['correo'] ?></div>
               </div>
 
+              <?php
+              if(isset($_SESSION['islogin'])) {
+                  if($_SESSION['dataUser']['rol'] == "admin") {?>
               <div class="profile-ctbox">
                 <a href="<?= base_url()?>block/blockuser/<?= $data_user['nombre_jugador'] ?>">
                   <div><strong>Banear usuario</strong></div>
                 </a>
               </div>
+              <?php } } ?>
             </div>
           </div>
         </div>

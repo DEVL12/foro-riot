@@ -92,52 +92,6 @@
         <div class="col-sm-4">
           <div class="sidebar">
             <div class="sidebar-section">
-              <h5><span>Novedades</span></h5>
-
-              <div id="id_novedades">
-                <button type="button" class="btn btn-danger position-relative">
-                  League of Legends
-                </button>
-                <br><br>
-                <button type="button" class="btn btn-danger position-relative">
-                  valorant
-                </button>
-                <br><br>
-                <button type="button" class="btn btn-danger position-relative">
-                  LoL Wild Rift
-                </button>
-                <br> <br>
-                <button type="button" class="btn btn-danger position-relative">
-                  Teamfight Tactics
-                </button>
-                <br><br>
-                <button type="button" class="btn btn-danger position-relative">
-                  Legends of Runaterra
-                </button>
-              </div>
-              <script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-              <script type='text/javascript'>
-                (function($) {
-                  window.fnames = new Array();
-                  window.ftypes = new Array();
-                  fnames[0] = 'EMAIL';
-                  ftypes[0] = 'email';
-                  fnames[3] = 'MMERGE3';
-                  ftypes[3] = 'text';
-                  fnames[1] = 'MMERGE1';
-                  ftypes[1] = 'text';
-                  fnames[2] = 'MMERGE2';
-                  ftypes[2] = 'text';
-                  fnames[4] = 'MMERGE4';
-                  ftypes[4] = 'text';
-                  fnames[5] = 'MMERGE5';
-                  ftypes[5] = 'text';
-                }(jQuery));
-                var $mcj = jQuery.noConflict(true);
-              </script>
-              <!--End mc_embed_signup-->
-            </div>
-            <div class="sidebar-section">
               <h5><span>Consejos</span></h5>
               <ul style="list-style: none;">
                 <li><a>Ser de mente abierta</a></li>
