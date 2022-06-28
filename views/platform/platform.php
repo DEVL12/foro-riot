@@ -17,85 +17,8 @@
         <h1> Plataformas </h1>
       </i>
       <br><br>
-      <a href="<?= base_url() ?>session/login" style="color:#fff;">Login</a> &nbsp;&nbsp;
-      <a href="<?= base_url() ?>session/register" style="color:#fff;width:auto;" class="button">Register</a>
     </div>
 
-    <!-- <div class="row listrecent"> Lo dejare asi hasta que acomodemos de mejor manera las imagenes
-      <div class="col-md-4 grid item">
-        <div class="card">
-          <a href="<?= base_url() ?>discussion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/images/7.jpg" alt="League of Legends">
-          </a>
-          <div class="card-block">
-            <center>
-              <h2 class="card-title"><a href="<?= base_url() ?>discussion">League of Legends</a></h2>
-            </center>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 grid-item">
-        <div class="card">
-          <a href="<?= base_url() ?>discussion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/images/6.jpg" alt="Red Riding Hood">
-          </a>
-          <div class="card-block">
-            <center>
-              <h2 class="card-title"><a href="<?= base_url() ?>discussion">Valorant</a></h2>
-            </center>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 grid-item">
-        <div class="card">
-          <a href="<?= base_url() ?>discussion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/images/2.jpg" alt="Red Riding Hood">
-          </a>
-          <div class="card-block">
-            <center>
-              <h2 class="card-title"><a href="<?= base_url() ?>discussion">League of Legends Wild Rift</a></h2>
-            </center>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row listrecent">
-      <div class="col-md-2 grid item">
-      </div>
-
-      <div class="col-md-4 grid-item">
-        <div class="card">
-          <a href="<?= base_url() ?>discussion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/images/5.jpg" alt="Red Riding Hood">
-          </a>
-          <div class="card-block">
-            <center>
-              <h2 class="card-title"><a href="<?= base_url() ?>discussion">Legends of Runaterra</a></h2>
-            </center>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 grid-item">
-        <div class="card">
-          <a href="<?= base_url() ?>discussion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/images/2.jpg" alt="Red Riding Hood">
-          </a>
-          <div class="card-block">
-            <center>
-              <h2 class="card-title"><a href="<?= base_url() ?>discussion">Teamfight Tactics</a></h2>
-            </center>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2 grid item">
-      </div>
-      <br>
-    </div>-->
 
     <form id="platform-riot" autocomplete="off">
       <table border="0" cellspacing="0" cellpadding="5" class="tborder">
@@ -112,7 +35,7 @@
       <br>
 
       <div align="center">
-        <input type="submit" class="button" name="submit" value="Enviar datos" tabindex="3" accesskey="s">
+        <input type="submit" class="button" name="submit" value="Crear Plataforma" tabindex="3" accesskey="s">
       </div>
       <br>
     </form>
