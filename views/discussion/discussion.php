@@ -67,6 +67,7 @@ $islogin = isset($_SESSION['islogin']);
                   }
                 } else echo $plataforms;
                 ?>
+                <a href="<?= base_url() ?>platform/platform" class="button btn_gradient" style="cursor:default !important;">Crear nuevo Foro</a>
               </ul>
               <br>
             </td>
